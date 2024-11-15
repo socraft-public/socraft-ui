@@ -1,0 +1,60 @@
+image: node:18
+
+stages:
+  - dependencies
+  - build
+  - pages
+  - release
+
+variables:
+  CI_REGISTRY: "registry.gitlab.com"
+  CI_SERVER_HOST: "gitlab.com"
+  CI_PROJECT_ID: "64522011"
+  CI_PROJECT_PATH: "socraft/socraft-ui"
+  PACKAGE_NAME: "socraft-ui"
+  REGISTRY_IMAGE: "${CI_REGISTRY}/${CI_PROJECT_PATH}/${PACKAGE_NAME}"
+
+cache:
+  paths:
+    - node_modules/
+    - .storybook-static/
+
+dependencies:
+  stage: dependencies
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm run rollup
+    - npm run build-storybook
+  artifacts:
+    paths:
+      - dist/
+      - storybook-static/
+
+pages:
+  stage: pages
+  script:
+    - mv storybook-static public
+  artifacts:
+    paths:
+      - public
+  pages: true
+  only:
+    - main
+
+release:
+  stage: release
+  script:
+    - git config --global user.email "ci@socraft.ch"
+    - git config --global user.name "socraft SA"
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
+    - npm version patch
+    - npm publish --registry "https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
+  only:
+    - main
