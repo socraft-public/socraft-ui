@@ -1,0 +1,36 @@
+@import "../../constants.css";
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 1em;
+  background-color: var(--white);
+  border: var(--border);
+  border-radius: 15px;
+}
+
+.input-group:has(.error-message) {
+  position: relative;
+}
+
+.input-group input {
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.input-group.error {
+  border: solid 2px var(--red);
+}
+
+.input-group .error-message {
+  position: absolute;
+  bottom: -1.5em;
+  left: 1em;
+  color: var(--red);
+}
