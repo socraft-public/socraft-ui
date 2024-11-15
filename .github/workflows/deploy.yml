@@ -26,6 +26,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Synchronize version with npm
+        run: |
+          CURRENT_VERSION=$(npm view socraft-ui version)
+          echo "Current version on npm: $CURRENT_VERSION"
+          npm version $CURRENT_VERSION --no-git-tag-version
+
+      - name: Increment version
+        run: npm version patch --no-git-tag-version
+
       - name: Build Storybook
         run: npx storybook build
 
@@ -38,8 +47,4 @@ jobs:
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          npm version patch
-          npm publish --access public
+        run: npm publish --access public
