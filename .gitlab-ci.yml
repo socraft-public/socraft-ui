@@ -3,8 +3,8 @@ image: node:18
 stages:
   - dependencies
   - build
-  - pages
-  - release
+  - deploy_storybook
+  - release_package
 
 variables:
   CI_REGISTRY: "registry.gitlab.com"
@@ -38,7 +38,7 @@ build:
       - storybook-static/
 
 pages:
-  stage: pages
+  stage: deploy_storybook
   script:
     - mv storybook-static public
   artifacts:
@@ -49,12 +49,9 @@ pages:
     - main
 
 release:
-  stage: release
+  stage: release_package
   script:
-    - git config --global user.email "ci@socraft.ch"
-    - git config --global user.name "socraft SA"
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
-    - npm version patch
     - npm publish --registry "https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
   only:
     - main
