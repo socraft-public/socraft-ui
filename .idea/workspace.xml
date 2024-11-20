@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="e8617c7e-bfec-4495-9e64-717b2591d19b" name="Changes" comment="" />
+=======
+    <list default="true" id="e8617c7e-bfec-4495-9e64-717b2591d19b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Assets/logo-dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navBar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +100,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "footer-component",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/thomasburkhalter/Developer/Socraft/socraft-ui",
+    "last_opened_file_path": "/Users/thomasburkhalter/Developer/Socraft/socraft-ui/src/Assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,6 +113,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/components" />
@@ -144,7 +160,11 @@
       <workItem from="1731690032210" duration="8000" />
       <workItem from="1732089311319" duration="248000" />
       <workItem from="1732103486946" duration="1124000" />
+<<<<<<< Updated upstream
       <workItem from="1732106334857" duration="6060000" />
+=======
+      <workItem from="1732106334857" duration="8816000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

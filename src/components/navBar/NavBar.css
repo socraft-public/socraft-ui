@@ -1,0 +1,73 @@
+@import "../../constants.css";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  border-bottom: var(--border);
+  padding: 10px 200px;
+  transition: all 100ms ease-in-out;
+}
+
+.navbar .logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  gap: 30px;
+}
+
+.navbar-content-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.navbar-content-tabs .tab {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+  transition: all 100ms linear;
+}
+
+.navbar-content-tabs .tab.active {
+  color: var(--yellow);
+}
+
+.navbar-content-tabs .tab:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+.navbar-content-buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar-content-buttons a {
+  background-color: var(--yellow);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 100ms linear;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.navbar-content-buttons a:hover {
+  opacity: 0.8;
+}
