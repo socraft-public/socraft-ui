@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/socraft/socraft-ui.git"
+    "url": "git+ssh://git@github.com:socraft-public/socraft-ui.git"
   },
   "keywords": [
     "socraft",
@@ -28,9 +28,9 @@
   "author": "socraft SA",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/socraft/socraft-ui/issues"
+    "url": "https://github.com/socraft-public/socraft-ui/issues"
   },
-  "homepage": "https://gitlab.com/socraft/socraft-ui#readme",
+  "homepage": "https://github.com/socraft-public/socraft-ui",
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
     "@chromatic-com/storybook": "^3.2.2",
