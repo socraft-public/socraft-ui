@@ -18,6 +18,10 @@
   font-family: "Montserrat", sans-serif !important;
 }
 
-.sb-show-main.sb-main-centered #storybook-root {
+#storybook-root {
   max-width: 100% !important;
+}
+
+.sb-show-main {
+  background-color: var(--lightGray);
 }

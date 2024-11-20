@@ -1,0 +1,35 @@
+@import "../../constants.css";
+
+.socraft-card {
+  background-color: var(--white);
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  padding: 1.5rem 2rem;
+  min-width: 400px;
+}
+
+.socraft-card .socraft-card-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 2em 0 0 0;
+}
+
+.p-card-title {
+  font-size: 2em !important;
+  font-weight: 500 !important;
+}
+
+.p-card-subtitle {
+  font-size: 1.25em !important;
+}
+
+.p-card-content {
+  p {
+    font-size: 1.1em !important;
+    opacity: 0.6;
+    font-weight: 500;
+    text-align: justify;
+    margin-block-end: 0;
+  }
+}
