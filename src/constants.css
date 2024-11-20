@@ -17,3 +17,7 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif !important;
 }
+
+.sb-show-main.sb-main-centered #storybook-root {
+  max-width: 100% !important;
+}
