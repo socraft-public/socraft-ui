@@ -1,0 +1,149 @@
+@import "../../constants.css";
+
+.footer {
+  display: flex;
+  padding: 12px 30px;
+  background-color: var(--white);
+}
+
+.footer-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  gap: 10em;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1330px) {
+  .footer-container {
+    width: 98%;
+    gap: 5em;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+.footer-content {
+  margin: 2em;
+  min-width: 200px;
+  width: 100%;
+}
+
+.footer-content a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-content:nth-child(2) {
+  text-align: center;
+}
+
+.footer-content:nth-child(2) * {
+  margin: 0 auto;
+}
+
+.footer-content:nth-child(3) {
+  text-align: right;
+}
+
+.footer-content h2 {
+  font-size: 1.2em;
+  opacity: 0.8;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.footer-content p {
+  opacity: 0.5;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.contact-icons a {
+  color: var(--yellow);
+}
+
+@media screen and (max-width: 1080px) {
+  .footer-content {
+    margin: 1em 0;
+  }
+
+  .footer-content:nth-child(2),
+  .footer-content:nth-child(3) {
+    text-align: left;
+  }
+
+  .footer-content:nth-child(2) * {
+    margin: unset;
+  }
+
+  .footer-content:nth-child(3) * {
+    margin: unset;
+  }
+
+  .contact-icons {
+    justify-content: flex-start;
+  }
+}
+
+.footer-adresse {
+  margin-top: 1em;
+  min-width: 200px;
+  width: 30%;
+}
+
+@media screen and (max-width: 1080px) {
+  .footer-adresse {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.center-buttons.vertical {
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-buttons.vertical a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #333;
+}
+
+.address {
+  display: block;
+  margin-top: 1em;
+  white-space: pre-line;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    gap: 1em;
+  }
+
+  .footer-content {
+    text-align: left;
+  }
+
+  .footer-content:nth-child(2),
+  .footer-content:nth-child(3) {
+    text-align: left;
+  }
+
+  .contact-icons {
+    justify-content: flex-start;
+  }
+}
