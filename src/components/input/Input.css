@@ -1,6 +1,6 @@
 @import "../../constants.css";
 
-.input-group {
+.socraft-input-group {
   display: flex;
   align-items: center;
   gap: 1em;
@@ -10,25 +10,25 @@
   border-radius: 15px;
 }
 
-.input-group:has(.error-message) {
+.socraft-input-group:has(.error-message) {
   position: relative;
 }
 
-.input-group input {
+.socraft-input-group input {
   border: none;
   background-color: transparent;
   font-size: 1em;
 }
 
-.input-group input:focus {
+.socraft-input-group input:focus {
   outline: none;
 }
 
-.input-group.error {
+.socraft-input-group.error {
   border: solid 2px var(--red);
 }
 
-.input-group .error-message {
+.socraft-input-group .error-message {
   position: absolute;
   bottom: -1.5em;
   left: 1em;

@@ -5,7 +5,7 @@ import "./Input.css";
 
 const Input: FC<InputProps> = ({ startIcon, endIcon, errorMessage, ...props }) => {
   return (
-    <div className={errorMessage !== undefined ? "input-group error" : "input-group"}>
+    <div className={errorMessage !== undefined ? "socraft-input-group error" : "socraft-input-group"}>
       {startIcon}
       <input {...props} />
       {endIcon}

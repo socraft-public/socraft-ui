@@ -1,6 +1,6 @@
 @import "../../constants.css";
 
-button {
+.socraft-button {
   border: none;
   font-size: 1em;
   padding: 0.5em 1em;
@@ -14,21 +14,21 @@ button {
   gap: 7px;
 }
 
-button:hover {
+.socraft-button:hover {
   opacity: 0.8;
 }
 
-button.yellow {
+.socraft-button.yellow {
   background-color: var(--yellow);
   color: var(--black);
 }
 
-button.black {
+.socraft-button.black {
   background-color: var(--black);
   color: var(--white);
 }
 
-button.outlined {
+.socraft-button.outlined {
   background-color: transparent;
   border: var(--border);
 }
