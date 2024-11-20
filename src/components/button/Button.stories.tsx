@@ -10,13 +10,13 @@ export default {
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
-export const YellowButton = Template.bind({});
+export const DefaultButton = Template.bind({});
 export const BlackButton = Template.bind({});
 export const OutlinedButton = Template.bind({});
 export const WithIcon = Template.bind({});
 
-YellowButton.args = {
-  children: <span>I'm a yellow button</span>,
+DefaultButton.args = {
+  children: <span>I'm a button</span>,
   variant: "yellow",
 };
 

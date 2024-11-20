@@ -10,7 +10,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button className={variant} {...props}>
+    <button className={`socraft-button ${variant}`} {...props}>
       {startIcon}
       {children}
       {endIcon}

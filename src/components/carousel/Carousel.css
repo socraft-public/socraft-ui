@@ -1,0 +1,13 @@
+@import "../../constants.css";
+
+.p-carousel-items-container {
+    align-items: center;
+}
+
+.p-carousel-next {
+    margin: 0 0 0 40px;
+}
+
+.p-carousel-prev {
+    margin: 0 40px 0 0;
+}

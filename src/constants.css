@@ -17,3 +17,11 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif !important;
 }
+
+#storybook-root {
+  max-width: 100% !important;
+}
+
+.sb-show-main {
+  background-color: var(--lightGray);
+}

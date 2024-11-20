@@ -10,27 +10,27 @@ export default {
 
 const Template: StoryFn<typeof Input> = (args) => <Input {...args} />;
 
-export const BaseInput = Template.bind({});
+export const DefaultInput = Template.bind({});
 export const InputWithStartIcon = Template.bind({});
 export const InputWithEndIcon = Template.bind({});
 export const InputWithError = Template.bind({});
 
-BaseInput.args = {
+DefaultInput.args = {
   placeholder: "Adresse E-Mail",
 };
 
 InputWithStartIcon.args = {
-  ...BaseInput.args,
+  ...DefaultInput.args,
   startIcon: <IconAt />,
 };
 
 InputWithEndIcon.args = {
-  ...BaseInput.args,
+  ...DefaultInput.args,
   endIcon: <IconAt />,
 };
 
 InputWithError.args = {
-  ...BaseInput.args,
+  ...DefaultInput.args,
   startIcon: <IconAt />,
   errorMessage: "L'adresse e-mail est invalide",
 };

@@ -40,7 +40,6 @@
     "@rollup/plugin-typescript": "^12.1.1",
     "@storybook/addon-essentials": "^8.4.4",
     "@storybook/addon-interactions": "^8.4.4",
-    "@storybook/addon-onboarding": "^8.4.4",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
     "@storybook/blocks": "^8.4.4",
     "@storybook/react": "^8.4.4",
@@ -68,9 +67,13 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "@storybook/addon-actions": "^8.4.4",
+    "@storybook/addon-links": "^8.4.4",
+    "@storybook/addon-viewport": "^8.4.4",
     "@tabler/icons-react": "^3.22.0",
     "@typescript-eslint/eslint-plugin": "^8.14.0",
     "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0"
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "primereact": "^10.8.4"
   }
 }
