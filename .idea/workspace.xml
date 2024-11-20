@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8617c7e-bfec-4495-9e64-717b2591d19b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/carousel/Carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/carousel/Carousel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-    </list>
+    <list default="true" id="e8617c7e-bfec-4495-9e64-717b2591d19b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +144,7 @@
       <workItem from="1731690032210" duration="8000" />
       <workItem from="1732089311319" duration="248000" />
       <workItem from="1732103486946" duration="1124000" />
-      <workItem from="1732106334857" duration="5729000" />
+      <workItem from="1732106334857" duration="6060000" />
     </task>
     <servers />
   </component>
