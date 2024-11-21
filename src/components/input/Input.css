@@ -34,3 +34,12 @@
   left: 1em;
   color: var(--red);
 }
+
+.socraft-input-group.dark {
+  background-color: var(--black);
+  border-color: #ffffff20;
+}
+
+.socraft-input-group.dark input {
+  color: var(--white);
+}
