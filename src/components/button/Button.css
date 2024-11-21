@@ -32,3 +32,8 @@
   background-color: transparent;
   border: var(--border);
 }
+
+.socraft-button.outlined.dark {
+  color: var(--white);
+  border-color: #ffffff20;
+}
