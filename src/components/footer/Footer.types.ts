@@ -1,5 +1,5 @@
 export interface FooterProps {
-  cities: string;
+  cities: string[];
   address: string;
   copyright: string;
   cguLink: string;

@@ -5,7 +5,6 @@
   border: var(--border);
   border-radius: var(--borderRadius);
   padding: 1.5rem 2rem;
-  min-width: 400px;
 }
 
 .socraft-card .socraft-card-buttons {
