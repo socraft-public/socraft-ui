@@ -7,10 +7,14 @@ const Button: FC<ButtonProps> = ({
   startIcon,
   endIcon,
   variant,
+  darkMode,
   ...props
 }) => {
   return (
-    <button className={`socraft-button ${variant}`} {...props}>
+    <button
+      className={`socraft-button ${variant} ${darkMode ? "dark" : ""}`}
+      {...props}
+    >
       {startIcon}
       {children}
       {endIcon}

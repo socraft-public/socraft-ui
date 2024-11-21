@@ -11,6 +11,7 @@ export default {
 const Template: StoryFn<NavBarProps> = (args) => <NavBar {...args} />;
 
 export const Default = Template.bind({});
+export const DarkMode = Template.bind({});
 
 Default.args = {
   tabs: [
@@ -23,4 +24,9 @@ Default.args = {
     { title: "Contact", url: "/contact" },
   ],
   buttons: [{ title: "Sign In", url: "/signin" }],
+};
+
+DarkMode.args = {
+  ...Default.args,
+  darkMode: true,
 };

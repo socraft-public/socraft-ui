@@ -147,3 +147,10 @@
     justify-content: flex-start;
   }
 }
+
+.footer.dark {
+  display: flex;
+  padding: 12px 30px;
+  background-color: var(--black);
+  color: var(--white);
+}

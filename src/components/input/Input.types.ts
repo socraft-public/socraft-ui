@@ -19,4 +19,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
    * This can be used to provide validation feedback to the user.
    */
   errorMessage?: string;
+  /**
+   * An optional dark mode for the input field.
+   */
+  darkMode?: boolean;
 }

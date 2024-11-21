@@ -39,4 +39,8 @@ export interface CarouselProps {
    * Centers the carousel within its container.
    */
   centered?: boolean;
+  /**
+   * Determines if the carousel should be in dark mode.
+   */
+  darkMode?: boolean;
 }

@@ -26,4 +26,8 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
    * - `outlined`: A button with an outlined style.
    */
   variant: "yellow" | "black" | "outlined";
+  /**
+   * Whether the button should be rendered in dark mode.
+   */
+  darkMode?: boolean;
 }

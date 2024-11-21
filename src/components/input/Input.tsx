@@ -11,11 +11,7 @@ const Input: FC<InputProps> = ({
 }) => {
   return (
     <div
-      className={
-        errorMessage !== undefined
-          ? "socraft-input-group error"
-          : "socraft-input-group"
-      }
+      className={`socraft-input-group ${errorMessage ? "error" : ""} ${props.darkMode ? "dark" : ""}`}
     >
       {startIcon}
       <input {...props} />
