@@ -27,7 +27,7 @@ const Footer: FC<FooterProps> = ({
     <footer className="footer" {...props}>
       <div className="footer-container">
         <div className="footer-content">
-          <h2>{cities}</h2>
+          <h2>{cities.join(" - ")}</h2>
           <div className="address">
             <p>
               {address.split("\n").map((line, index) => (
