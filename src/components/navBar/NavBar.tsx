@@ -1,58 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavBarProps } from "./NavBar.types";
 import "./NavBar.css";
 import { Button } from "../button";
 import logo from "../../assets/logo-dark.svg";
 
 const NavBar: React.FC<NavBarProps> = ({ tabs, buttons, ...props }) => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.getElementById("navbar");
-      if (navbar) {
-        if (window.scrollY > 0) {
-          navbar.style.top = "0";
-          navbar.style.transition = "top 0.5s ease-in-out";
-        } else {
-          navbar.style.top = "-100%";
-          navbar.style.transition = "top 0.3s ease-in-out";
-        }
-      }
-    };
-
-    const handleDOMContentLoaded = () => {
-      const navbar = document.getElementById("navbar");
-      if (navbar) {
-        if (window.scrollY === 0) {
-          navbar.style.top = "-100%";
-          navbar.style.transition = "top 0.3s ease-in-out";
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-
-    document.querySelectorAll(".tab").forEach((tab) => {
-      if (tab.getAttribute("data-slug") === window.location.pathname) {
-        tab.classList.add("active");
-      }
-    });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
-    };
-  }, []);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="socraft-navbar" id="navbar">
+    <nav className="socraft-navbar">
       <img
         src={logo}
         alt="logo"
         className="logo"
         onClick={() => (window.location.href = window.location.origin)}
       />
-      <div className="navbar-content">
+      <label className="hamburger">
+        <input
+          type="checkbox"
+          checked={isMenuOpen}
+          onChange={() => setIsMenuOpen(!isMenuOpen)}
+        />
+        <svg viewBox="0 0 32 32">
+          <path
+            className="line line-top-bottom"
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+          ></path>
+          <path className="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+      <div className={`navbar-content ${isMenuOpen ? "open" : ""}`}>
         <div className="navbar-content-tabs">
           {tabs.map((tabs, index) => (
             <div
