@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { NavBarProps } from "./NavBar.types";
 import "./NavBar.css";
+import { Button } from "../button";
+import logo from "../../assets/logo-dark.svg";
 
-const NavBar: React.FC<NavBarProps> = ({ logo, tabs, buttons, ...props }) => {
+const NavBar: React.FC<NavBarProps> = ({ tabs, buttons, ...props }) => {
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById("navbar");
@@ -43,27 +45,36 @@ const NavBar: React.FC<NavBarProps> = ({ logo, tabs, buttons, ...props }) => {
   }, []);
 
   return (
-    <nav className="navbar" id="navbar">
-      <img src={logo} alt="logo" className="logo" />
+    <nav className="socraft-navbar" id="navbar">
+      <img
+        src={logo}
+        alt="logo"
+        className="logo"
+        onClick={() => (window.location.href = window.location.origin)}
+      />
       <div className="navbar-content">
-        <div className="navbar-content-tabs"></div>
-        {tabs.map((tabs, index) => (
-          <div
-            key={index}
-            className="tab"
-            data-slug={`/${tabs.title.toLowerCase()}`}
-            onClick={() =>
-              (window.location.pathname = `/${tabs.url.toLowerCase()}`)
-            }
-          >
-            {tabs.title}
-          </div>
-        ))}
-        <div className="navbar-content-buttons">
+        <div className="navbar-content-tabs">
+          {tabs.map((tabs, index) => (
+            <div
+              key={index}
+              className="tab"
+              data-slug={`/${tabs.title.toLowerCase()}`}
+              onClick={() =>
+                (window.location.pathname = `/${tabs.url.toLowerCase()}`)
+              }
+            >
+              {tabs.title}
+            </div>
+          ))}
+
           {buttons.map((button, index) => (
-            <a key={index} href={button.url} className="button">
+            <Button
+              key={index}
+              variant="yellow"
+              onClick={() => window.open(button.url)}
+            >
               {button.title}
-            </a>
+            </Button>
           ))}
         </div>
       </div>

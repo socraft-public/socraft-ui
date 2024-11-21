@@ -1,5 +1,4 @@
 export interface NavBarProps {
-  logo: string;
   tabs: {
     title: string;
     url: string;
