@@ -21,10 +21,11 @@ const Footer: FC<FooterProps> = ({
   linkedinLink,
   facebookLink,
   youtubeLink,
+  darkMode,
   ...props
 }) => {
   return (
-    <footer className={props.darkMode ? "footer dark" : "footer"} {...props}>
+    <footer className={darkMode ? "footer dark" : "footer"} {...props}>
       <div className="footer-container">
         <div className="footer-content">
           <h2>{cities.join(" - ")}</h2>

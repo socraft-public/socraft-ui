@@ -7,6 +7,7 @@ const Profile: FC<ProfileProps> = ({
   crafter,
   opensTheProfile,
   opensTheProfileInANewTab,
+  darkMode,
 }) => {
   const { firstname, profilePicture, openToWork, shortId } = crafter;
 
@@ -25,7 +26,7 @@ const Profile: FC<ProfileProps> = ({
   };
 
   return (
-    <div className="crafter" onClick={handleClick}>
+    <div className={`crafter ${darkMode ? "dark" : ""}`} onClick={handleClick}>
       <img
         className="avatar"
         alt="avatar"

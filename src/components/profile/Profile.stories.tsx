@@ -5,12 +5,26 @@ import React from "react";
 export default {
   title: "socraft-ui/Profile",
   component: Profile,
+  decorators: [
+    (Story, context) => (
+      <div
+        style={{
+          backgroundColor: context.args.darkMode ? "#282828" : "transparent",
+          padding: "5em",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta<typeof Profile>;
 
 const Template: StoryFn<typeof Profile> = (args) => <Profile {...args} />;
 
 export const DefaultProfile = Template.bind({});
 export const OpenToWorkProfile = Template.bind({});
+export const DarkProfile = Template.bind({});
+export const DarkOpenToWorkProfile = Template.bind({});
 
 DefaultProfile.args = {
   crafter: {
@@ -36,4 +50,14 @@ OpenToWorkProfile.args = {
     job: "Entrepreneur",
     openToWork: true,
   },
+};
+
+DarkProfile.args = {
+  ...DefaultProfile.args,
+  darkMode: true,
+};
+
+DarkOpenToWorkProfile.args = {
+  ...OpenToWorkProfile.args,
+  darkMode: true,
 };

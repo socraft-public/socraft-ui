@@ -18,6 +18,10 @@ export interface ProfileProps {
    * If `true`, this overrides `opensTheProfile`.
    */
   opensTheProfileInANewTab?: boolean;
+  /**
+   * Determines if the profile is displayed in dark mode.
+   */
+  darkMode?: boolean;
 }
 
 /**
