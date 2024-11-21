@@ -6,7 +6,7 @@ import "./Card.css";
 
 const Card: FC<CardProps> = ({ ...props }) => {
   return (
-    <div className="socraft-card">
+    <div className={props.darkMode ? "socraft-card dark" : "socraft-card"}>
       <PrimeCard {...props} />
       {props.buttons && (
         <div className="socraft-card-buttons">{props.buttons}</div>
