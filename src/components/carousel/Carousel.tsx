@@ -14,6 +14,7 @@ const Carousel: FC<CarouselProps> = ({
   shouldOpenTheProfileInANewTab = true,
   width = "70%",
   centered,
+  darkMode,
 }) => {
   const [crafters, setCrafters] = useState<Crafter[]>([]);
 
@@ -76,7 +77,7 @@ const Carousel: FC<CarouselProps> = ({
         circular
         autoplayInterval={3000}
         itemTemplate={crafterTemplate}
-        className={`socraft-carousel crafters ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""}`}
+        className={`socraft-carousel crafters ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
         style={{ width, margin: fullWidth ? "0" : "0 auto" }}
         responsiveOptions={responsiveOptions}
       />
@@ -91,7 +92,7 @@ const Carousel: FC<CarouselProps> = ({
       circular
       autoplayInterval={3000}
       itemTemplate={customElementsTemplate}
-      className={`socraft-carousel custom-elements ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""}`}
+      className={`socraft-carousel custom-elements ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
       style={{ width, margin: fullWidth ? "0" : "0 auto" }}
     />
   );

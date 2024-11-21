@@ -11,3 +11,16 @@
 .p-carousel-prev {
   margin: 0 40px 0 0;
 }
+
+.darkmode .socraft-card {
+  background-color: var(--black);
+  border: 1px solid #ffffff20;
+}
+.darkmode .p-carousel-items-container {
+  color: #fff;
+}
+
+.darkmode .p-carousel-next,
+.darkmode .p-carousel-prev {
+  filter: invert(1);
+}
