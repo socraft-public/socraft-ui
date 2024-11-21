@@ -4,3 +4,4 @@ export * from "./profile";
 export * from "./carousel";
 export * from "./card";
 export * from "./footer";
+export * from "./navBar";

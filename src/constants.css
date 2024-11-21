@@ -11,6 +11,7 @@
   --green: #27ae60;
   --border: solid 1px #28282820;
   --borderRadius: 15px;
+  --box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 3px 0px;
 }
 
 * {

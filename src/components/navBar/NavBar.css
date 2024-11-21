@@ -1,0 +1,148 @@
+@import "../../constants.css";
+
+.socraft-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  border-bottom: var(--border);
+  padding: 10px 200px;
+  transition: all 100ms ease-in-out;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar-content-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.tab {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+  transition: all 100ms linear;
+}
+
+.tab:active {
+  color: var(--yellow);
+}
+
+.tab:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
+@media (max-width: 1000px) {
+  .socraft-navbar {
+    padding: 10px 50px;
+    width: 100%;
+  }
+
+  .logo {
+    height: 30px;
+    left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .socraft-navbar {
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    z-index: 10001;
+  }
+
+  .hamburger input {
+    display: none;
+  }
+
+  .hamburger svg {
+    height: 2.5em;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: var(--black);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition:
+      stroke-dasharray 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+
+  .navbar-content {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    transition: right 300ms ease-in-out;
+  }
+
+  .navbar-content.open {
+    right: 0;
+  }
+
+  .navbar-content-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tab {
+    font-size: 1.2rem;
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+  }
+
+  .tab:hover {
+    color: var(--yellow);
+  }
+}
