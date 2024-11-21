@@ -41,6 +41,7 @@
   color: var(--black);
   font-weight: 500;
   transition: all 100ms linear;
+  cursor: pointer;
 }
 
 .tab:active {
@@ -145,4 +146,22 @@
   .tab:hover {
     color: var(--yellow);
   }
+}
+
+.socraft-navbar.dark {
+  background-color: var(--black);
+  border-color: #ffffff20;
+}
+
+.socraft-navbar.dark .navbar-content .navbar-content-tabs .tab {
+  color: white;
+}
+
+.socraft-navbar.dark .hamburger .line,
+.socraft-navbar.dark .hamburger .line-top-bottom {
+  stroke: var(--white);
+}
+
+.socraft-navbar.dark .navbar-content {
+  background-color: var(--black);
 }

@@ -7,4 +7,5 @@ export interface NavBarProps {
     title: string;
     url: string;
   }[];
+  darkMode?: boolean;
 }

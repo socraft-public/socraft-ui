@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { NavBarProps } from "./NavBar.types";
 import "./NavBar.css";
 import { Button } from "../button";
-import logo from "../../assets/logo-dark.svg";
+import logoDark from "../../assets/logo-dark.svg";
+import logoLight from "../../assets/logo-light.svg";
 
 const NavBar: React.FC<NavBarProps> = ({ tabs, buttons, ...props }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="socraft-navbar">
+    <nav className={props.darkMode ? "socraft-navbar dark" : "socraft-navbar"}>
       <img
-        src={logo}
+        src={props.darkMode ? logoLight : logoDark}
         alt="logo"
         className="logo"
         onClick={() => (window.location.href = window.location.origin)}
