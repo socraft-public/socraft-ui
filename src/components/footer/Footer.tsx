@@ -24,7 +24,7 @@ const Footer: FC<FooterProps> = ({
   ...props
 }) => {
   return (
-    <footer className="footer" {...props}>
+    <footer className={props.darkMode ? "footer dark" : "footer"} {...props}>
       <div className="footer-container">
         <div className="footer-content">
           <h2>{cities.join(" - ")}</h2>

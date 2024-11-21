@@ -8,4 +8,5 @@ export interface FooterProps {
   linkedinLink: string;
   facebookLink: string;
   youtubeLink: string;
+  darkMode: boolean;
 }
