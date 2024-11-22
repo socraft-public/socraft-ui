@@ -34,16 +34,22 @@ DefaultCarousel.args = {};
 CarouselWithCustomElements.args = {
   useCustomElements: true,
   customElements: [
-    <Card title="A custom element" subTitle="A custom element's subtitle">
+    <Card
+      key={1}
+      title="A custom element"
+      subTitle="A custom element's subtitle"
+    >
       Hi, I&apos;m a custom element!
     </Card>,
     <Card
+      key={2}
       title="Another custom element"
       subTitle="Another custom element's subtitle"
     >
       Hi, I&apos;m another custom element!
     </Card>,
     <Card
+      key={3}
       title="Another custom element"
       subTitle="Another custom element's subtitle"
       buttons={
@@ -70,16 +76,22 @@ CarouselDark.args = {
 CarouselWithCustomElementsDark.args = {
   useCustomElements: true,
   customElements: [
-    <Card title="A custom element" subTitle="A custom element's subtitle">
+    <Card
+      key={1}
+      title="A custom element"
+      subTitle="A custom element's subtitle"
+    >
       Hi, I&apos;m a custom element!
     </Card>,
     <Card
+      key={2}
       title="Another custom element"
       subTitle="Another custom element's subtitle"
     >
       Hi, I&apos;m another custom element!
     </Card>,
     <Card
+      key={3}
       title="Another custom element"
       subTitle="Another custom element's subtitle"
       buttons={

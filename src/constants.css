@@ -7,7 +7,7 @@
   --gray: #bdbdbd;
   --lightGray: #f2f2f2;
   --darkGray: #4f4f4f;
-  --red: #da0e1b80;
+  --red: rgba(255, 0, 22, 0.5);
   --green: #27ae60;
   --border: solid 1px #28282820;
   --borderRadius: 15px;

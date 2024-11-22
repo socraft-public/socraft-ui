@@ -43,3 +43,11 @@
 .socraft-input-group.dark input {
   color: var(--white);
 }
+
+.socraft-input-group.dark .error-message {
+  color: #ff0016;
+}
+
+.socraft-input-group.error.dark {
+  border: solid 2px var(--red);
+}
