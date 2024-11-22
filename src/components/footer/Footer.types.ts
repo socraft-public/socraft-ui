@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface FooterProps {
   /**
    * The list of cities where the company is located.
@@ -39,4 +41,8 @@ export interface FooterProps {
    * An optional dark mode for the footer.
    */
   darkMode?: boolean;
+  /**
+   * Center buttons
+   */
+  centerButtons?: ReactNode[];
 }

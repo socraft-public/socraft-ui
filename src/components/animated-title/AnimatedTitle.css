@@ -1,0 +1,25 @@
+@import "../../constants.css";
+
+h1.animated-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 3em;
+  gap: 10px;
+  margin: 3em 1em 2em 1em;
+}
+
+h1.animated-title .yellow-words {
+  color: var(--yellow);
+}
+
+h1.animated-title.dark {
+  color: var(--white);
+}
+
+@media screen and (max-width: 890px) {
+  h1.animated-title {
+    font-size: 2.5em;
+  }
+}

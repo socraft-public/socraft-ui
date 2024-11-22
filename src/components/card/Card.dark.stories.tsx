@@ -5,7 +5,7 @@ import { Button } from "../button";
 import { IconArrowRight, IconPlus } from "@tabler/icons-react";
 
 export default {
-  title: "socraft-ui/Card",
+  title: "socraft-ui/Card/Dark-mode",
   component: Card,
   decorators: [
     (Story) => (
@@ -14,14 +14,17 @@ export default {
       </div>
     ),
   ],
+  parameters: {
+    backgrounds: {
+      default: "dark",
+    },
+  },
 } as Meta<typeof Card>;
 
 const Template: StoryFn<typeof Card> = (args) => <Card {...args} />;
 
 export const DefaultCard = Template.bind({});
 export const CardWithButtons = Template.bind({});
-export const DarkCard = Template.bind({});
-export const DarkCardWithButtons = Template.bind({});
 
 DefaultCard.args = {
   title: "Card title",
@@ -42,6 +45,7 @@ DefaultCard.args = {
       eu, posuere in magna. Etiam elementum imperdiet tincidunt.
     </p>
   ),
+  darkMode: true,
 };
 
 CardWithButtons.args = {
@@ -65,58 +69,7 @@ CardWithButtons.args = {
   ),
   buttons: (
     <>
-      <Button variant="outlined" endIcon={<IconPlus />}>
-        I&apos;m an action
-      </Button>
-      <Button variant="yellow" endIcon={<IconArrowRight />}>
-        I&apos;m an important action
-      </Button>
-    </>
-  ),
-};
-
-DarkCard.args = {
-  title: "Dark card",
-  subTitle: "This card has a dark mode",
-  children: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus ex,
-      volutpat ornare ex mattis, eleifend laoreet augue. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Maecenas volutpat viverra est non
-      aliquet. Nunc suscipit varius tincidunt. In eu elit a nisl vestibulum
-      facilisis. Cras nulla felis, tristique vitae pulvinar vehicula, finibus at
-      eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-      per inceptos himenaeos. Nulla tempus, nisl ut ullamcorper bibendum, mauris
-      arcu dignissim massa, pulvinar feugiat erat metus in dui. Pellentesque
-      diam turpis, iaculis ut posuere vitae, iaculis in dolor. Morbi malesuada
-      nunc ut metus bibendum, at scelerisque nulla lacinia. Ut id ligula rutrum,
-      iaculis urna vitae, commodo orci. Nulla erat aug
-    </p>
-  ),
-  darkMode: true,
-};
-
-DarkCardWithButtons.args = {
-  title: "Dark card with buttons",
-  subTitle: "This card has a dark mode and buttons",
-  children: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus ex,
-      volutpat ornare ex mattis, eleifend laoreet augue. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Maecenas volutpat viverra est non
-      aliquet. Nunc suscipit varius tincidunt. In eu elit a nisl vestibulum
-      facilisis. Cras nulla felis, tristique vitae pulvinar vehicula, finibus at
-      eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-      per inceptos himenaeos. Nulla tempus, nisl ut ullamcorper bibendum, mauris
-      arcu dignissim massa, pulvinar feugiat erat metus in dui. Pellentesque
-      diam turpis, iaculis ut posuere vitae, iaculis in dolor. Morbi malesuada
-      nunc ut metus bibendum, at scelerisque nulla lacinia. Ut id ligula rutrum,
-      iaculis urna vitae, commodo orci. Nulla erat aug
-    </p>
-  ),
-  buttons: (
-    <>
-      <Button variant="outlined" endIcon={<IconPlus />} darkMode>
+      <Button variant="outlined" darkMode endIcon={<IconPlus />}>
         I&apos;m an action
       </Button>
       <Button variant="yellow" endIcon={<IconArrowRight />}>
