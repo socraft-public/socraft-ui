@@ -35,13 +35,13 @@ CarouselWithCustomElements.args = {
   useCustomElements: true,
   customElements: [
     <Card title="A custom element" subTitle="A custom element's subtitle">
-      Hi, I'm a custom element!
+      Hi, I&apos;m a custom element!
     </Card>,
     <Card
       title="Another custom element"
       subTitle="Another custom element's subtitle"
     >
-      Hi, I'm another custom element!
+      Hi, I&apos;m another custom element!
     </Card>,
     <Card
       title="Another custom element"
@@ -49,15 +49,15 @@ CarouselWithCustomElements.args = {
       buttons={
         <>
           <Button variant="outlined" endIcon={<IconPlus />}>
-            I'm an action
+            I&apos;m an action
           </Button>
           <Button variant="yellow" endIcon={<IconArrowRight />}>
-            I'm an important action
+            I&apos;m an important action
           </Button>
         </>
       }
     >
-      Hi, I'm another custom element!
+      Hi, I&apos;m another custom element!
     </Card>,
   ],
 };
@@ -71,13 +71,13 @@ CarouselWithCustomElementsDark.args = {
   useCustomElements: true,
   customElements: [
     <Card title="A custom element" subTitle="A custom element's subtitle">
-      Hi, I'm a custom element!
+      Hi, I&apos;m a custom element!
     </Card>,
     <Card
       title="Another custom element"
       subTitle="Another custom element's subtitle"
     >
-      Hi, I'm another custom element!
+      Hi, I&apos;m another custom element!
     </Card>,
     <Card
       title="Another custom element"
@@ -85,15 +85,15 @@ CarouselWithCustomElementsDark.args = {
       buttons={
         <>
           <Button variant="outlined" endIcon={<IconPlus />} darkMode>
-            I'm an action
+            I&apos;m an action
           </Button>
           <Button variant="yellow" endIcon={<IconArrowRight />}>
-            I'm an important action
+            I&apos;m an important action
           </Button>
         </>
       }
     >
-      Hi, I'm another custom element!
+      Hi, I&apos;m another custom element!
     </Card>,
   ],
   darkMode: true,
