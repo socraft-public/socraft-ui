@@ -5,11 +5,8 @@ import {
   IconBrandLinkedin,
   IconBrandFacebook,
   IconBrandYoutube,
-  IconPhone,
-  IconFilePencil,
 } from "@tabler/icons-react";
 import "./Footer.css";
-import Button from "../button/Button";
 
 const Footer: FC<FooterProps> = ({
   cities,
@@ -22,6 +19,7 @@ const Footer: FC<FooterProps> = ({
   facebookLink,
   youtubeLink,
   darkMode,
+  centerButtons,
   ...props
 }) => {
   return (
@@ -46,23 +44,16 @@ const Footer: FC<FooterProps> = ({
             </p>
           </div>
         </div>
-        <div className="footer-content">
-          <h2>Un contact ?</h2>
-          <Button
-            variant="yellow"
-            style={{ marginTop: "30px" }}
-            endIcon={<IconPhone />}
-          >
-            Prendre rdv
-          </Button>
-          <Button
-            variant="yellow"
-            style={{ marginTop: "30px" }}
-            endIcon={<IconFilePencil />}
-          >
-            Nous écrire
-          </Button>
-        </div>
+        {centerButtons !== undefined && (
+          <div className="footer-content">
+            <h2>Un contact ?</h2>
+            <div className="center-buttons">
+              {centerButtons.map((button, key) => (
+                <span key={key}><br />{button}</span>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="footer-content">
           <h2>Follow us</h2>
           <div className="contact-icons">
