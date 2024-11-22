@@ -31,10 +31,10 @@ Default.args = {
   youtubeLink: "#",
   darkMode: true,
   centerButtons: [
-    <Button variant="outlined" darkMode endIcon={<IconMessage />}>
+    <Button key={1} variant="outlined" endIcon={<IconMessage />}>
       Nous écrire
     </Button>,
-    <Button variant="outlined" darkMode endIcon={<IconPhone />}>
+    <Button key={2} variant="outlined" endIcon={<IconPhone />}>
       Nous appeler
     </Button>,
   ],
