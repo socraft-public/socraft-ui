@@ -27,6 +27,9 @@ export const InputWithStartIcon = Template.bind({});
 export const InputWithEndIcon = Template.bind({});
 export const InputWithError = Template.bind({});
 export const DarkModeInput = Template.bind({});
+export const DarkModeInputWithStartIcon = Template.bind({});
+export const DarkModeInputWithEndIcon = Template.bind({});
+export const DarkModeInputWithError = Template.bind({});
 
 DefaultInput.args = {
   placeholder: "Adresse E-Mail",
@@ -50,5 +53,20 @@ InputWithError.args = {
 
 DarkModeInput.args = {
   ...DefaultInput.args,
+  darkMode: true,
+};
+
+DarkModeInputWithStartIcon.args = {
+  ...InputWithStartIcon.args,
+  darkMode: true,
+};
+
+DarkModeInputWithEndIcon.args = {
+  ...InputWithEndIcon.args,
+  darkMode: true,
+};
+
+DarkModeInputWithError.args = {
+  ...InputWithError.args,
   darkMode: true,
 };

@@ -13,9 +13,15 @@ const Input: FC<InputProps> = ({
     <div
       className={`socraft-input-group ${errorMessage ? "error" : ""} ${props.darkMode ? "dark" : ""}`}
     >
-      {startIcon}
+      {startIcon &&
+        React.cloneElement(startIcon as any, {
+          color: props.darkMode ? "white" : "black",
+        })}
       <input {...props} />
-      {endIcon}
+      {endIcon &&
+        React.cloneElement(endIcon as any, {
+          color: props.darkMode ? "white" : "black",
+        })}
       {errorMessage && <div className="error-message">{errorMessage}</div>}
     </div>
   );

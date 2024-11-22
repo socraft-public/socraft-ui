@@ -25,7 +25,7 @@ const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 export const DefaultButton = Template.bind({});
 export const BlackButton = Template.bind({});
 export const OutlinedButton = Template.bind({});
-export const WithIcon = Template.bind({});
+export const ButtonWithIcon = Template.bind({});
 export const DarkModeButton = Template.bind({});
 
 DefaultButton.args = {
@@ -43,7 +43,7 @@ OutlinedButton.args = {
   variant: "outlined",
 };
 
-WithIcon.args = {
+ButtonWithIcon.args = {
   children: <span>I&apos;m a button with an icon</span>,
   variant: "outlined",
   endIcon: <IconHome />,
