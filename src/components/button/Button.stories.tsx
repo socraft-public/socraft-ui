@@ -29,28 +29,28 @@ export const WithIcon = Template.bind({});
 export const DarkModeButton = Template.bind({});
 
 DefaultButton.args = {
-  children: <span>I'm a button</span>,
+  children: <span>I&apos;m a button</span>,
   variant: "yellow",
 };
 
 BlackButton.args = {
-  children: <span>I'm a black button</span>,
+  children: <span>I&apos;m a black button</span>,
   variant: "black",
 };
 
 OutlinedButton.args = {
-  children: <span>I'm an outlined button</span>,
+  children: <span>I&apos;m an outlined button</span>,
   variant: "outlined",
 };
 
 WithIcon.args = {
-  children: <span>I'm a button with an icon</span>,
+  children: <span>I&apos;m a button with an icon</span>,
   variant: "outlined",
   endIcon: <IconHome />,
 };
 
 DarkModeButton.args = {
-  children: <span>I'm a dark mode button</span>,
+  children: <span>I&apos;m a dark mode button</span>,
   variant: "outlined",
   darkMode: true,
 };

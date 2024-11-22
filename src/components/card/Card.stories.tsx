@@ -66,10 +66,10 @@ CardWithButtons.args = {
   buttons: (
     <>
       <Button variant="outlined" endIcon={<IconPlus />}>
-        I'm an action
+        I&apos;m an action
       </Button>
       <Button variant="yellow" endIcon={<IconArrowRight />}>
-        I'm an important action
+        I&apos;m an important action
       </Button>
     </>
   ),
@@ -117,10 +117,10 @@ DarkCardWithButtons.args = {
   buttons: (
     <>
       <Button variant="outlined" endIcon={<IconPlus />} darkMode>
-        I'm an action
+        I&apos;m an action
       </Button>
       <Button variant="yellow" endIcon={<IconArrowRight />}>
-        I'm an important action
+        I&apos;m an important action
       </Button>
     </>
   ),
