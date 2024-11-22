@@ -49,7 +49,10 @@ const Footer: FC<FooterProps> = ({
             <h2>Un contact ?</h2>
             <div className="center-buttons">
               {centerButtons.map((button, key) => (
-                <span key={key}><br />{button}</span>
+                <span key={key}>
+                  <br />
+                  {button}
+                </span>
               ))}
             </div>
           </div>

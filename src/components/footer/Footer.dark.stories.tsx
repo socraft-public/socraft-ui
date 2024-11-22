@@ -2,8 +2,8 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Footer from "./Footer";
 import { FooterProps } from "./Footer.types";
-import {Button} from "../button";
-import {IconMessage, IconPhone} from "@tabler/icons-react";
+import { Button } from "../button";
+import { IconMessage, IconPhone } from "@tabler/icons-react";
 
 export default {
   title: "socraft-ui/Footer/Dark-mode",
