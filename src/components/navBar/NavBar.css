@@ -44,14 +44,12 @@
   cursor: pointer;
 }
 
-.tab:active {
-  color: var(--yellow);
-}
-
+.tab.active,
 .tab:hover {
   color: var(--yellow);
   text-decoration: none;
 }
+
 @media (max-width: 1000px) {
   .socraft-navbar {
     padding: 10px 50px;
@@ -155,6 +153,11 @@
 
 .socraft-navbar.dark .navbar-content .navbar-content-tabs .tab {
   color: white;
+}
+
+.socraft-navbar.dark .navbar-content .navbar-content-tabs .tab.active,
+.socraft-navbar.dark .navbar-content .navbar-content-tabs .tab:hover {
+  color: var(--yellow);
 }
 
 .socraft-navbar.dark .hamburger .line,

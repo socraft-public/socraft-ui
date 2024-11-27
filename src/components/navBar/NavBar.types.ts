@@ -1,5 +1,9 @@
 export interface NavBarProps {
   /**
+   * The URL of the active tab
+   */
+  activeTabUrl: string;
+  /**
    * The tabs to display in the navbar
    */
   tabs: {

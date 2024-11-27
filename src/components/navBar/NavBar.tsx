@@ -5,7 +5,12 @@ import { Button } from "../button";
 import logoDark from "../../assets/logo-dark.svg";
 import logoLight from "../../assets/logo-light.svg";
 
-const NavBar: React.FC<NavBarProps> = ({ tabs, buttons, ...props }) => {
+const NavBar: React.FC<NavBarProps> = ({
+  activeTabUrl,
+  tabs,
+  buttons,
+  ...props
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -35,7 +40,7 @@ const NavBar: React.FC<NavBarProps> = ({ tabs, buttons, ...props }) => {
           {tabs.map((tab, index) => (
             <div
               key={index}
-              className="tab"
+              className={activeTabUrl === tab.url ? "tab active" : "tab"}
               onClick={() => (window.location.href = tab.url)}
             >
               {tab.title}
