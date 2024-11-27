@@ -1,4 +1,10 @@
-export interface StatCardType {
+export interface StatCardProps {
+  stat: Stat;
+  darkMode?: boolean;
+  loading?: boolean;
+}
+
+export interface Stat {
   /**
    * The title of the stat card
    */
@@ -14,8 +20,4 @@ export interface StatCardType {
     title: string;
     url: string;
   };
-  /**
-   * Whether the stat card should be displayed in dark mode
-   */
-  darkMode?: boolean;
 }

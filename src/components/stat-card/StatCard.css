@@ -1,15 +1,5 @@
 @import "../../constants.css";
 
-.stats-cards {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  margin: 5em;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 90%;
-}
-
 .stat-card {
   background-color: white;
   border: var(--border);
@@ -30,6 +20,23 @@
   border-radius: calc(35px - 0.6em);
   background-size: 200% 100%;
   animation: 1.5s shine linear infinite;
+  border: var(--border);
+}
+
+.skeleton.dark {
+  background: #ffffff20;
+  background: linear-gradient(110deg, #333333 8%, #444444 18%, #333333 33%);
+  background-size: 200% 100%;
+  border: 1px solid #ffffff20;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .stat-card h2 {
