@@ -32,16 +32,13 @@ const NavBar: React.FC<NavBarProps> = ({ tabs, buttons, ...props }) => {
       </label>
       <div className={`navbar-content ${isMenuOpen ? "open" : ""}`}>
         <div className="navbar-content-tabs">
-          {tabs.map((tabs, index) => (
+          {tabs.map((tab, index) => (
             <div
               key={index}
               className="tab"
-              data-slug={`/${tabs.title.toLowerCase()}`}
-              onClick={() =>
-                (window.location.pathname = `/${tabs.url.toLowerCase()}`)
-              }
+              onClick={() => (window.location.href = tab.url)}
             >
-              {tabs.title}
+              {tab.title}
             </div>
           ))}
 
