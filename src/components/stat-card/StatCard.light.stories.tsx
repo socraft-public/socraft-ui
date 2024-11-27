@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import StatCard from "./StatCard";
-import { Stat, StatCardProps } from "./StatCard.type";
+import { StatCardProps } from "./StatCard.type";
 
 export default {
   title: "socraft-ui/StatCard/Light-mode",
