@@ -1,0 +1,65 @@
+@import "../../constants.css";
+
+.stat-card {
+  background-color: white;
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+  padding: 2em 0;
+}
+
+.skeleton {
+  height: 200px;
+  width: 200px;
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: calc(35px - 0.6em);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+  border: var(--border);
+}
+
+.skeleton.dark {
+  background: #ffffff20;
+  background: linear-gradient(110deg, #333333 8%, #444444 18%, #333333 33%);
+  background-size: 200% 100%;
+  border: 1px solid #ffffff20;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.stat-card h2 {
+  font-size: 4em;
+  margin-block: 0;
+  color: var(--yellow);
+}
+
+.stat-card a {
+  color: var(--yellow);
+}
+
+.stat-card h4 {
+  font-size: 1.5em;
+  margin-block: 0;
+  font-weight: 500;
+}
+
+.stat-card.dark {
+  background-color: var(--black);
+  border: 1px solid #ffffff20;
+}
+
+.stat-card.dark h4 {
+  color: var(--white);
+}
