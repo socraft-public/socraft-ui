@@ -25,10 +25,10 @@ Default.args = {
   facebookLink: "#",
   youtubeLink: "#",
   centerButtons: [
-    <Button key={1} variant="outlined" endIcon={<IconMessage />}>
+    <Button key={1} variant="yellow" endIcon={<IconMessage />}>
       Nous écrire
     </Button>,
-    <Button key={2} variant="outlined" endIcon={<IconPhone />}>
+    <Button key={2} variant="yellow" endIcon={<IconPhone />}>
       Nous appeler
     </Button>,
   ],
