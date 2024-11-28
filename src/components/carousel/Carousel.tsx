@@ -28,6 +28,10 @@ const Carousel: FC<CarouselProps> = ({
     );
   };
 
+  const skeletonTemplate = () => {
+    return <div className={`skeleton ${darkMode ? "dark" : ""}`}></div>;
+  };
+
   const customElementsTemplate = (element: ReactNode) => <>{element}</>;
 
   const responsiveOptions = [
@@ -69,6 +73,21 @@ const Carousel: FC<CarouselProps> = ({
   }, [useCustomElements]);
 
   if (!useCustomElements) {
+    if (crafters.length === 0) {
+      return (
+        <PrimeCarousel
+          value={Array.from({ length: 5 })}
+          numVisible={5}
+          numScroll={1}
+          circular
+          autoplayInterval={3000}
+          itemTemplate={skeletonTemplate}
+          className={`socraft-carousel crafters ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
+          style={{ width, margin: fullWidth ? "0" : "0 auto" }}
+          responsiveOptions={responsiveOptions}
+        />
+      );
+    }
     return (
       <PrimeCarousel
         value={crafters}
