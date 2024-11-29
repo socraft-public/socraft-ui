@@ -15,6 +15,7 @@ const Carousel: FC<CarouselProps> = ({
   width = "70%",
   centered,
   darkMode,
+  numVisible = 1,
 }) => {
   const [crafters, setCrafters] = useState<Crafter[]>([]);
 
@@ -106,13 +107,16 @@ const Carousel: FC<CarouselProps> = ({
   return (
     <PrimeCarousel
       value={customElements}
-      numVisible={1}
+      numVisible={numVisible}
       numScroll={1}
       circular
       autoplayInterval={3000}
       itemTemplate={customElementsTemplate}
       className={`socraft-carousel custom-elements ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
-      style={{ width, margin: fullWidth ? "0" : "0 auto" }}
+      style={{
+        width: numVisible === 1 ? "100%" : width,
+        margin: fullWidth ? "0" : "0 auto",
+      }}
     />
   );
 };

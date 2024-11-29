@@ -12,6 +12,14 @@
   margin: 0 40px 0 0;
 }
 
+.logo {
+  filter: grayscale(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .skeleton {
   height: 150px;
   width: 150px;
