@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "npx eslint src",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "create": "chmod +x create-component.sh && ./create-component.sh"
   },
   "repository": {
     "type": "git",

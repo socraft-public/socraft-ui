@@ -18,6 +18,13 @@ socraft's components library
   yarn add socraft-ui
 ```
 
+## Create a component
+
+```bash
+npm run create -- <component-name>
+# Please use PascalCase for the component name
+```
+
 ## Documentation
 
 Once installed, it is very easy to use the components
