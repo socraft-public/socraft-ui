@@ -7,3 +7,4 @@ export * from "./footer";
 export * from "./navBar";
 export * from "./animated-title";
 export * from "./stat-card";
+export * from "./craftwork";

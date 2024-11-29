@@ -27,7 +27,7 @@ const ${COMPONENT_NAME}: FC<${COMPONENT_NAME}Props> = ({ ...props }) => {
 export default ${COMPONENT_NAME};
 EOL
 
-cat > "$COMPONENT_DIR/$COMPONENT_NAME.stories.light.tsx" <<EOL
+cat > "$COMPONENT_DIR/$COMPONENT_NAME.light.stories.tsx" <<EOL
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { ${COMPONENT_NAME} } from "./";
@@ -53,7 +53,7 @@ Default.args = {
 };
 EOL
 
-cat > "$COMPONENT_DIR/$COMPONENT_NAME.stories.dark.tsx" <<EOL
+cat > "$COMPONENT_DIR/$COMPONENT_NAME.dark.stories.tsx" <<EOL
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { ${COMPONENT_NAME} } from "./";
