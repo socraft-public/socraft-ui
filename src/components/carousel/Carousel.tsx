@@ -117,6 +117,7 @@ const Carousel: FC<CarouselProps> = ({
         width: numVisible === 1 ? "100%" : width,
         margin: fullWidth ? "0" : "0 auto",
       }}
+      responsiveOptions={responsiveOptions}
     />
   );
 };
