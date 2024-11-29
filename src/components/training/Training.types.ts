@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * Props for the Training component.
  */
@@ -40,7 +42,7 @@ export interface Training {
   /**
    * A description of the training session.
    */
-  description?: string;
+  description?: ReactNode | string;
 
   /**
    * The duration of the training (e.g., "2 hours", "3 days").

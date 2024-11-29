@@ -12,14 +12,18 @@ const Training: FC<TrainingProps> = ({ ...props }) => {
       <div className="body">
         {Array.isArray(training.trainers) && training.trainers.length > 0 && (
           <div className="heads">
-            {training.trainers.map((trainer, key) => (
-              <img
-                key={key}
-                className="head"
-                src={trainer.profilePicture}
-                alt={trainer.firstname}
-              />
-            ))}
+            {training.trainers.map((trainer, key) => {
+              if (trainer) {
+                return (
+                  <img
+                    key={key}
+                    className="head"
+                    src={trainer?.profilePicture}
+                    alt={trainer?.firstname}
+                  />
+                );
+              }
+            })}
           </div>
         )}
         <div className="content">
@@ -27,11 +31,7 @@ const Training: FC<TrainingProps> = ({ ...props }) => {
             <h2>{training.title}</h2>
             <span className="category">{training.category}</span>
           </div>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: training.description || "",
-            }}
-          />
+          {training.description !== undefined && training.description}
         </div>
       </div>
       <div className="training-footer">
