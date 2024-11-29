@@ -10,22 +10,24 @@ const Training: FC<TrainingProps> = ({ ...props }) => {
   return (
     <div className={props.darkMode ? "training dark" : "training"}>
       <div className="body">
-        {Array.isArray(training.trainers) && training.trainers.length > 0 && (
-          <div className="heads">
-            {training.trainers.map((trainer, key) => {
-              if (trainer) {
-                return (
-                  <img
-                    key={key}
-                    className="head"
-                    src={trainer?.profilePicture}
-                    alt={trainer?.firstname}
-                  />
-                );
-              }
-            })}
-          </div>
-        )}
+        {Array.isArray(training.trainers) &&
+          training.trainers.length > 0 &&
+          !training.trainers.some((trainer) => !trainer) && (
+            <div className="heads">
+              {training.trainers.map((trainer, key) => {
+                if (trainer) {
+                  return (
+                    <img
+                      key={key}
+                      className="head"
+                      src={trainer?.profilePicture}
+                      alt={trainer?.firstname}
+                    />
+                  );
+                }
+              })}
+            </div>
+          )}
         <div className="content">
           <div className="training-header">
             <h2>{training.title}</h2>

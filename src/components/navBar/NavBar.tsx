@@ -9,12 +9,15 @@ const NavBar: React.FC<NavBarProps> = ({
   activeTabUrl,
   tabs,
   buttons,
+  transparent,
   ...props
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={props.darkMode ? "socraft-navbar dark" : "socraft-navbar"}>
+    <nav
+      className={`socraft-navbar ${props.darkMode ? "dark" : ""} ${transparent ? "transparent" : ""}`}
+    >
       <img
         src={props.darkMode ? logoLight : logoDark}
         alt="logo"

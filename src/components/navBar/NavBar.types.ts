@@ -21,4 +21,8 @@ export interface NavBarProps {
    * Whether to display the navbar in dark mode
    */
   darkMode?: boolean;
+  /**
+   * Whether the navbar is transparent
+   */
+  transparent?: boolean;
 }
