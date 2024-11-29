@@ -30,6 +30,10 @@ export interface FooterProps {
    */
   linkedinLink: string;
   /**
+   * The link to the GitHub page.
+   */
+  githubLink: string;
+  /**
    * The link to the Facebook page.
    */
   facebookLink: string;

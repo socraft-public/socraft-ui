@@ -5,6 +5,7 @@ import {
   IconBrandLinkedin,
   IconBrandFacebook,
   IconBrandYoutube,
+  IconBrandGithub,
 } from "@tabler/icons-react";
 import "./Footer.css";
 
@@ -16,6 +17,7 @@ const Footer: FC<FooterProps> = ({
   cguText,
   instagramLink,
   linkedinLink,
+  githubLink,
   facebookLink,
   youtubeLink,
   darkMode,
@@ -65,6 +67,9 @@ const Footer: FC<FooterProps> = ({
             </a>
             <a href={linkedinLink}>
               <IconBrandLinkedin />
+            </a>
+            <a href={githubLink}>
+              <IconBrandGithub />
             </a>
             <a href={facebookLink}>
               <IconBrandFacebook />
