@@ -1,4 +1,5 @@
 import { Crafter } from "../profile/Profile.types";
+import { ReactNode } from "react";
 
 /**
  * Props for the Craftwork component.
@@ -22,7 +23,7 @@ export interface CraftworkProps {
   /**
    * A brief pitch or description of the craftwork.
    */
-  pitch: string;
+  pitch: string | ReactNode;
 
   /**
    * The website link associated with the craftwork.
