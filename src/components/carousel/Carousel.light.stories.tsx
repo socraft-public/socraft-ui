@@ -4,6 +4,7 @@ import React from "react";
 import { Card } from "../card";
 import { Button } from "../button";
 import { IconArrowRight, IconPlus } from "@tabler/icons-react";
+import icon from "../../assets/logo-dark.svg";
 
 export default {
   title: "socraft-ui/Carousel/Light-mode",
@@ -14,6 +15,7 @@ const Template: StoryFn<typeof Carousel> = (args) => <Carousel {...args} />;
 
 export const DefaultCarousel = Template.bind({});
 export const CarouselWithCustomElements = Template.bind({});
+export const CarouselWithImages = Template.bind({});
 
 DefaultCarousel.args = {};
 
@@ -51,5 +53,54 @@ CarouselWithCustomElements.args = {
     >
       Hi, I&apos;m another custom element!
     </Card>,
+  ],
+};
+
+CarouselWithImages.args = {
+  useCustomElements: true,
+  numVisible: 5,
+  customElements: [
+    <img
+      key={1}
+      className="logo"
+      src={icon}
+      alt="Placeholder image"
+      width={100}
+    />,
+    <img
+      key={2}
+      className="logo"
+      src={icon}
+      alt="Placeholder image"
+      width={100}
+    />,
+    <img
+      key={3}
+      className="logo"
+      src={icon}
+      alt="Placeholder image"
+      width={100}
+    />,
+    <img
+      key={4}
+      className="logo"
+      src={icon}
+      alt="Placeholder image"
+      width={100}
+    />,
+    <img
+      key={5}
+      className="logo"
+      src={icon}
+      alt="Placeholder image"
+      width={100}
+    />,
+    <img
+      key={6}
+      className="logo"
+      src={icon}
+      alt="Placeholder image"
+      width={100}
+    />,
   ],
 };

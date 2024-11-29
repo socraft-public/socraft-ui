@@ -43,4 +43,8 @@ export interface CarouselProps {
    * Determines if the carousel should be in dark mode.
    */
   darkMode?: boolean;
+  /**
+   * The number of crafters to display in the carousel.
+   */
+  numVisible?: number;
 }
