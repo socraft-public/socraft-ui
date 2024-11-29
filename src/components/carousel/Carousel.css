@@ -12,7 +12,7 @@
   margin: 0 40px 0 0;
 }
 
-.p-carousel-item .logo{
+.p-carousel-item .logo {
   filter: grayscale(100%);
   display: flex;
   justify-content: center;
