@@ -4,7 +4,7 @@ import "./WordsList.css";
 
 const WordsList: FC<WordsListProps> = ({ words, darkMode }) => {
   return (
-    <div className={`words ${darkMode ? "darkmode" : ""}`}>
+    <div className={darkMode ? "words dark" : "words"}>
       {words.map((word, index) => (
         <>
           <h3 className="word" key={index} style={{ display: "inline" }}>
