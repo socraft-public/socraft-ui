@@ -1,0 +1,23 @@
+@import "../../constants.css";
+
+.words {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.word {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+}
+
+.darkmode .word {
+  color: #fff;
+}

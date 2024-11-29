@@ -9,3 +9,4 @@ export * from "./animated-title";
 export * from "./stat-card";
 export * from "./craftwork";
 export * from "./training";
+export * from "./words-list";
