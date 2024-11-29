@@ -4,7 +4,7 @@ import React from "react";
 import { Card } from "../card";
 import { Button } from "../button";
 import { IconArrowRight, IconPlus } from "@tabler/icons-react";
-import icon from "../../assets/logo-light.svg";
+import icon from "../../assets/logo-dark.svg";
 
 export default {
   title: "socraft-ui/Carousel/Dark-mode",
