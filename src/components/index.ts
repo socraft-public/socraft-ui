@@ -12,3 +12,4 @@ export * from "./training";
 export * from "./words-list";
 export * from "./core-team-member";
 export * from "./toggle-switch";
+export * from "./popup";
