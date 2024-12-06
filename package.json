@@ -51,7 +51,7 @@
   "bugs": {
     "url": "https://github.com/socraft-public/socraft-ui/issues"
   },
-  "homepage": "https://github.com/socraft-public/socraft-ui",
+  "homepage": "https://socraft.ch",
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
     "@chromatic-com/storybook": "^3.2.2",
