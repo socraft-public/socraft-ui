@@ -21,12 +21,32 @@
   "keywords": [
     "socraft",
     "components",
-    "ui"
+    "ui",
+    "react",
+    "typescript",
+    "storybook",
+    "socraft"
   ],
   "publishConfig": {
     "access": "public"
   },
-  "author": "socraft SA",
+  "author": {
+    "name": "socraft SA",
+    "email": "info@socraft.ch",
+    "url": "https://socraft.ch"
+  },
+  "contributors": [
+    {
+      "name": "Gabriel Dovats",
+      "email": "gabriel@socraft.ch",
+      "url": "https://github.com/dovatgabriel"
+    },
+    {
+      "name": "Thomas Burkhalter",
+      "email": "thomas@socraft.ch",
+      "url": "https://github.com/PepitoSir"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/socraft-public/socraft-ui/issues"
