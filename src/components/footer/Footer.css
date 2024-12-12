@@ -4,6 +4,7 @@
   display: flex;
   padding: 12px 20px;
   background-color: var(--white);
+  border-top: var(--border);
 }
 
 .footer-container {
@@ -155,5 +156,6 @@
   display: flex;
   padding: 12px 30px;
   background-color: var(--black);
+  border-color: var(--white);
   color: var(--white);
 }
