@@ -53,7 +53,7 @@ const NavBar: React.FC<NavBarProps> = ({
           {buttons.map((button, index) => (
             <Button
               key={index}
-              variant="yellow"
+              variant={button.appearance}
               onClick={() => window.open(button.url)}
             >
               {button.title}

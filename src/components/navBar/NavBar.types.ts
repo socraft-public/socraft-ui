@@ -16,6 +16,7 @@ export interface NavBarProps {
   buttons: {
     title: string;
     url: string;
+    appearance: "yellow" | "link";
   }[];
   /**
    * Whether to display the navbar in dark mode
