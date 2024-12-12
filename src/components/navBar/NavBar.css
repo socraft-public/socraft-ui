@@ -70,6 +70,7 @@
     left: 0;
   }
 }
+
 @media (max-width: 768px) {
   .socraft-navbar {
     padding: 10px 20px;
