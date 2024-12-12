@@ -12,6 +12,7 @@
   border-bottom: var(--border);
   padding: 10px 200px;
   transition: all 100ms ease-in-out;
+  background-color: var(--white);
 }
 
 .logo {

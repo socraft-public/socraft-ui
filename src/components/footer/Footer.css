@@ -156,6 +156,6 @@
   display: flex;
   padding: 12px 30px;
   background-color: var(--black);
-  border-color: var(--white);
+  border-color: #ffffff20;
   color: var(--white);
 }
