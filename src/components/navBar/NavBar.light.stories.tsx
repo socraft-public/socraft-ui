@@ -14,13 +14,13 @@ export const Default = Template.bind({});
 
 Default.args = {
   tabs: [
-    { title: "Home", url: "/home" },
-    { title: "About", url: "/about" },
-    { title: "Contact", url: "/contact" },
+    { title: "Accueil", url: "/home" },
+    { title: "Craftworks", url: "/about" },
   ],
   buttons: [
-    { title: "Link button", url: "/signin", appearance: "link" },
-    { title: "Another link button", url: "/signin", appearance: "link" },
-    { title: "Yellow button", url: "/signup", appearance: "yellow" },
+    { title: "References", url: "/contact", appearance: "link" },
+    { title: "Formations", url: "/contact", appearance: "link" },
+    { title: "Blog", url: "/contact", appearance: "link" },
+    { title: "Communauté", url: "/contact", appearance: "yellow" },
   ],
 };

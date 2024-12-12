@@ -5,7 +5,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,6 +40,9 @@
   font-weight: 500;
   transition: all 100ms linear;
   cursor: pointer;
+}
+
+.tab:not(:first-child) {
   margin-left: 20px;
 }
 
@@ -50,16 +52,7 @@
   text-decoration: none;
 }
 
-.navbar-content-tabs .link {
-  padding: 0;
-  margin: 0 0 0 20px;
-}
-
-.navbar-content-tabs button:last-child {
-  margin: 0 0 0 20px;
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .socraft-navbar {
     padding: 10px 50px;
     width: 100%;
@@ -70,8 +63,7 @@
     left: 0;
   }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .socraft-navbar {
     padding: 10px 20px;
   }
@@ -121,15 +113,13 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 50%;
     height: 100%;
-    background-color: white;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    padding: 20px;
+    align-items: stretch;
     transition: right 300ms ease-in-out;
   }
 
@@ -140,9 +130,12 @@
   .navbar-content-tabs {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 20px;
   }
 
-  .tab {
+  .tab,
+  button.link {
     font-size: 1.2rem;
     color: var(--black);
     text-decoration: none;
@@ -152,6 +145,16 @@
 
   .tab:hover {
     color: var(--yellow);
+  }
+
+  .socraft-navbar.dark .navbar-content {
+    background-color: var(--black);
+    border-color: #ffffff20;
+  }
+
+  .tab:not(:first-child) {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 
