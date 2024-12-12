@@ -16,7 +16,7 @@ export default {
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
 export const DefaultButton = Template.bind({});
-export const BlackButton = Template.bind({});
+export const LinkButton = Template.bind({});
 export const OutlinedButton = Template.bind({});
 export const WithIcon = Template.bind({});
 
@@ -26,9 +26,9 @@ DefaultButton.args = {
   darkMode: true,
 };
 
-BlackButton.args = {
-  children: <span>I&apos;m a black button</span>,
-  variant: "black",
+LinkButton.args = {
+  children: <span>I&apos;m a link button</span>,
+  variant: "link",
   darkMode: true,
 };
 

@@ -22,10 +22,10 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   /**
    * The visual variant of the button.
    * - `yellow`: A yellow-colored button.
-   * - `black`: A black-colored button.
+   * - `link`: A button with a link style.
    * - `outlined`: A button with an outlined style.
    */
-  variant: "yellow" | "black" | "outlined";
+  variant: "yellow" | "link" | "outlined";
   /**
    * Whether the button should be rendered in dark mode.
    */
