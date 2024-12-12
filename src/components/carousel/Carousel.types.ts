@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import { CarouselProps as PrimeCarouselProps } from "primereact/carousel";
 
 /**
  * Props for the Carousel component.
  */
-export interface CarouselProps {
+export interface CarouselProps extends PrimeCarouselProps {
   /**
    * Indicates whether custom elements should be used in the carousel.
    */
@@ -13,15 +14,6 @@ export interface CarouselProps {
    * An optional array of custom elements to display in the carousel.
    */
   customElements?: ReactNode[];
-
-  /**
-   * Responsive options for the carousel.
-   */
-  responsiveOptions?: {
-    breakpoint: string;
-    numVisible: number;
-    numScroll: number;
-  }[];
 
   /**
    * Determines if the carousel should take the full width of its container.
@@ -52,8 +44,4 @@ export interface CarouselProps {
    * Determines if the carousel should be in dark mode.
    */
   darkMode?: boolean;
-  /**
-   * The number of crafters to display in the carousel.
-   */
-  numVisible?: number;
 }
