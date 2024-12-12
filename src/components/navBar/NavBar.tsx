@@ -49,11 +49,11 @@ const NavBar: React.FC<NavBarProps> = ({
               {tab.title}
             </div>
           ))}
-
           {buttons.map((button, index) => (
             <Button
               key={index}
               variant={button.appearance}
+              darkMode={props.darkMode}
               onClick={() => window.open(button.url)}
             >
               {button.title}

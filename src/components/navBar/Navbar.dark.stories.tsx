@@ -23,6 +23,9 @@ Default.args = {
     { title: "About", url: "/about" },
     { title: "Contact", url: "/contact" },
   ],
-  buttons: [{ title: "Sign In", url: "/signin" }],
+  buttons: [
+    { title: "Link button", url: "/signin", appearance: "link" },
+    { title: "Yellow button", url: "/signup", appearance: "yellow" },
+  ],
   darkMode: true,
 };

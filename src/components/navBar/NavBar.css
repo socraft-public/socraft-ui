@@ -33,7 +33,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
 }
 
 .tab {
@@ -42,12 +41,22 @@
   font-weight: 500;
   transition: all 100ms linear;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .tab.active,
 .tab:hover {
   color: var(--yellow);
   text-decoration: none;
+}
+
+.navbar-content-tabs .link {
+  padding: 0;
+  margin: 0 0 0 20px;
+}
+
+.navbar-content-tabs button:last-child {
+  margin: 0 0 0 20px;
 }
 
 @media (max-width: 1000px) {
@@ -130,7 +139,6 @@
   .navbar-content-tabs {
     display: flex;
     flex-direction: column;
-    gap: 20px;
   }
 
   .tab {
