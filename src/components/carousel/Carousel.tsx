@@ -6,9 +6,33 @@ import "./Carousel.css";
 import { Carousel as PrimeCarousel } from "primereact/carousel";
 import { Profile } from "../profile";
 
+const defaultResponsiveOptions = [
+  {
+    breakpoint: "1400px",
+    numVisible: 2,
+    numScroll: 1,
+  },
+  {
+    breakpoint: "1199px",
+    numVisible: 3,
+    numScroll: 1,
+  },
+  {
+    breakpoint: "767px",
+    numVisible: 2,
+    numScroll: 1,
+  },
+  {
+    breakpoint: "575px",
+    numVisible: 1,
+    numScroll: 1,
+  },
+];
+
 const Carousel: FC<CarouselProps> = ({
   useCustomElements,
   customElements,
+  responsiveOptions = defaultResponsiveOptions,
   fullWidth,
   shouldOpenTheProfile = true,
   shouldOpenTheProfileInANewTab = true,
@@ -34,29 +58,6 @@ const Carousel: FC<CarouselProps> = ({
   };
 
   const customElementsTemplate = (element: ReactNode) => <>{element}</>;
-
-  const responsiveOptions = [
-    {
-      breakpoint: "1400px",
-      numVisible: 2,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "1199px",
-      numVisible: 3,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "767px",
-      numVisible: 2,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "575px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-  ];
 
   useEffect(() => {
     const initCrafters = async (): Promise<void> => {

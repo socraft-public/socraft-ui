@@ -15,6 +15,15 @@ export interface CarouselProps {
   customElements?: ReactNode[];
 
   /**
+   * Responsive options for the carousel.
+   */
+  responsiveOptions?: {
+    breakpoint: string;
+    numVisible: number;
+    numScroll: number;
+  }[];
+
+  /**
    * Determines if the carousel should take the full width of its container.
    */
   fullWidth?: boolean;
