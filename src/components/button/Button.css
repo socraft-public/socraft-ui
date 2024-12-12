@@ -23,9 +23,12 @@
   color: var(--black);
 }
 
-.socraft-button.black {
-  background-color: var(--black);
-  color: var(--white);
+.socraft-button.link {
+  background-color: transparent;
+}
+
+.socraft-button.link:hover {
+  color: var(--yellow);
 }
 
 .socraft-button.outlined {
@@ -36,4 +39,12 @@
 .socraft-button.outlined.dark {
   color: var(--white);
   border-color: #ffffff20;
+}
+
+.socraft-button.link.dark {
+  color: var(--white);
+  background-color: transparent;
+}
+.socraft-button.link.dark:hover {
+  color: var(--yellow);
 }
