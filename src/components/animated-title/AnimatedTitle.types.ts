@@ -15,6 +15,10 @@ export interface AnimatedTitleProps {
    */
   fontSize?: number;
   /**
+   * The font weight of the title
+   */
+  fontWeight?: number;
+  /**
    * Whether the title is in dark mode
    */
   darkMode?: boolean;

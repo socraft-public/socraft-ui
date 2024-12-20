@@ -8,6 +8,7 @@ const AnimatedTitle: FC<AnimatedTitleProps> = ({
   staticPart,
   yellowWords,
   fontSize = 40,
+  fontWeight = 700,
   darkMode,
 }) => {
   const [index, setIndex] = useState<number>(0);
@@ -20,7 +21,7 @@ const AnimatedTitle: FC<AnimatedTitleProps> = ({
   return (
     <h1
       className={darkMode ? "animated-title dark" : "animated-title"}
-      style={{ fontSize: `${fontSize}px` }}
+      style={{ fontSize: `${fontSize}px`, fontWeight }}
     >
       {staticPart}
       <span className="yellow-words">
