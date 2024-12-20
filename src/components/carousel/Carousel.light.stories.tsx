@@ -60,47 +60,11 @@ CarouselWithImages.args = {
   useCustomElements: true,
   numVisible: 5,
   customElements: [
-    <img
-      key={1}
-      className="logo"
-      src={icon}
-      alt="Placeholder image"
-      width={100}
-    />,
-    <img
-      key={2}
-      className="logo"
-      src={icon}
-      alt="Placeholder image"
-      width={100}
-    />,
-    <img
-      key={3}
-      className="logo"
-      src={icon}
-      alt="Placeholder image"
-      width={100}
-    />,
-    <img
-      key={4}
-      className="logo"
-      src={icon}
-      alt="Placeholder image"
-      width={100}
-    />,
-    <img
-      key={5}
-      className="logo"
-      src={icon}
-      alt="Placeholder image"
-      width={100}
-    />,
-    <img
-      key={6}
-      className="logo"
-      src={icon}
-      alt="Placeholder image"
-      width={100}
-    />,
+    <img key={1} className="logo" src={icon} alt="Placeholder image" />,
+    <img key={2} className="logo" src={icon} alt="Placeholder image" />,
+    <img key={3} className="logo" src={icon} alt="Placeholder image" />,
+    <img key={4} className="logo" src={icon} alt="Placeholder image" />,
+    <img key={5} className="logo" src={icon} alt="Placeholder image" />,
+    <img key={6} className="logo" src={icon} alt="Placeholder image" />,
   ],
 };

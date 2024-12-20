@@ -63,3 +63,8 @@
 .darkmode .p-carousel-prev {
   filter: invert(1);
 }
+
+.socraft-carousel.custom-elements img {
+  width: 150px;
+  height: 100%;
+}
