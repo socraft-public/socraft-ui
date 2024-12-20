@@ -10,3 +10,4 @@ export * from "./stat-card";
 export * from "./craftwork";
 export * from "./training";
 export * from "./words-list";
+export * from "./core-team-member";
