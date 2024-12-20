@@ -10,6 +10,17 @@
   gap: 1.5rem;
   align-items: stretch;
   justify-content: space-between;
+
+  &:has(.socraft-card-image) {
+    .socraft-card-image {
+      height: 100px;
+      border-radius: var(--borderRadius);
+    }
+
+    .p-card-title {
+      margin-block: 20px 0;
+    }
+  }
 }
 
 .socraft-card .socraft-card-buttons {
