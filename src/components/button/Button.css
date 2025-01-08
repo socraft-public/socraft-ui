@@ -45,6 +45,7 @@
   color: var(--white);
   background-color: transparent;
 }
+
 .socraft-button.link.dark:hover {
   color: var(--yellow);
 }
