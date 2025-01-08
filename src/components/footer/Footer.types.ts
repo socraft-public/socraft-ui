@@ -49,4 +49,12 @@ export interface FooterProps {
    * Center buttons
    */
   centerButtons?: ReactNode[];
+  /**
+   * Whether to show the dark mode toggle
+   */
+  showDarkModeToggle?: boolean;
+  /**
+   * The function to call when the dark mode toggle is clicked
+   */
+  onDarkModeToggle?: (enabled: boolean) => void;
 }

@@ -13,6 +13,7 @@ export default {
 const Template: StoryFn<FooterProps> = (args) => <Footer {...args} />;
 
 export const Default = Template.bind({});
+export const WithDarkModeToggle = Template.bind({});
 
 Default.args = {
   cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
@@ -32,4 +33,26 @@ Default.args = {
       Nous appeler
     </Button>,
   ],
+};
+
+WithDarkModeToggle.args = {
+  cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
+  address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
+  copyright: "© 2025 socraft",
+  cguLink: "#",
+  cguText: "Conditions générales d'utilisation",
+  instagramLink: "#",
+  linkedinLink: "#",
+  facebookLink: "#",
+  youtubeLink: "#",
+  centerButtons: [
+    <Button key={1} variant="yellow" endIcon={<IconMessage />}>
+      Nous écrire
+    </Button>,
+    <Button key={2} variant="yellow" endIcon={<IconPhone />}>
+      Nous appeler
+    </Button>,
+  ],
+  showDarkModeToggle: true,
+  onDarkModeToggle: (enabled: boolean) => console.log(enabled),
 };

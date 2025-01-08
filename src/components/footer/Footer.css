@@ -159,3 +159,12 @@
   border-color: #ffffff20;
   color: var(--white);
 }
+
+.dark-mode-toggle {
+  display: flex;
+  justify-content: end;
+  margin: 15px 0 0 0;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}

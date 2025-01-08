@@ -8,6 +8,7 @@ import {
   IconBrandGithub,
 } from "@tabler/icons-react";
 import "./Footer.css";
+import { ToggleSwitch } from "../toggle-switch";
 
 const Footer: FC<FooterProps> = ({
   cities,
@@ -80,6 +81,18 @@ const Footer: FC<FooterProps> = ({
               <IconBrandYoutube />
             </a>
           </div>
+          {props.showDarkModeToggle && (
+            <div className="dark-mode-toggle">
+              <span className="label">
+                {darkMode ? "Mode clair" : "Mode sombre"}
+              </span>
+              <ToggleSwitch
+                darkMode={darkMode}
+                onToggle={props.onDarkModeToggle}
+                checked={darkMode}
+              />
+            </div>
+          )}
         </div>
       </div>
     </footer>
