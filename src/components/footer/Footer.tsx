@@ -39,11 +39,13 @@ const Footer: FC<FooterProps> = ({
               ))}
             </p>
             <p>{copyright}</p>
-            <p style={{ textDecoration: "underline" }}>
-              <a href={cguLink} style={{ color: "var(--primary-color)" }}>
-                {cguText}
-              </a>
-            </p>
+            {cguLink && cguText && (
+              <p style={{ textDecoration: "underline" }}>
+                <a href={cguLink} style={{ color: "var(--primary-color)" }}>
+                  {cguText}
+                </a>
+              </p>
+            )}
           </div>
         </div>
         {centerButtons !== undefined && (
@@ -60,7 +62,7 @@ const Footer: FC<FooterProps> = ({
           </div>
         )}
         <div className="footer-content">
-          <h2>Follow us</h2>
+          <h2>Nous suivre</h2>
           <div className="contact-icons">
             <a href={instagramLink}>
               <IconBrandInstagram />

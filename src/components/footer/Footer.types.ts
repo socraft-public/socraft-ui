@@ -16,11 +16,11 @@ export interface FooterProps {
   /**
    * The link to the terms and conditions.
    */
-  cguLink: string;
+  cguLink?: string;
   /**
    * The text to display for the terms and conditions
    */
-  cguText: string;
+  cguText?: string;
   /**
    * The link to the Instagram page.
    */
