@@ -8,7 +8,7 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
   return (
     <div className={"socraft-tribe-card" + (props.darkMode ? " dark" : "")}>
       <div
-        className="image"
+        className="tribe-image"
         style={{ backgroundImage: `url(${props.image})` }}
       />
       <div className="content">
