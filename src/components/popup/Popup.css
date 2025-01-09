@@ -1,1 +1,5 @@
 @import "../card/Card.css";
+
+.socraft-card.dark .p-dialog-header-close-icon {
+    color: #ffffff;
+}
