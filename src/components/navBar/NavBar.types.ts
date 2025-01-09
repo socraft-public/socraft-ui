@@ -17,6 +17,7 @@ export interface NavBarProps {
     title: string;
     url: string;
     appearance: "yellow" | "link";
+    opensTheLinkInNewTab?: boolean;
   }[];
   /**
    * Whether to display the navbar in dark mode

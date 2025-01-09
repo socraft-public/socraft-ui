@@ -54,7 +54,12 @@ const NavBar: React.FC<NavBarProps> = ({
               key={index}
               variant={button.appearance}
               darkMode={props.darkMode}
-              onClick={() => window.open(button.url)}
+              onClick={() =>
+                window.open(
+                  button.url,
+                  button.opensTheLinkInNewTab ? "_blank" : "_self",
+                )
+              }
             >
               {button.title}
             </Button>
