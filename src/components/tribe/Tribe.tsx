@@ -14,7 +14,7 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
       <div className="content">
         <div className="header">
           <h2 className="title">{props.name}</h2>
-          <span className="members">{props.members} membres</span>
+          <span className="members">{props.members} experts</span>
         </div>
         <p className="description">{props.description}</p>
         <div className="actions">
