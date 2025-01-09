@@ -18,6 +18,7 @@
   border: none;
   background-color: transparent;
   font-size: 1em;
+  width: 100%;
 }
 
 .socraft-input-group input:focus {
