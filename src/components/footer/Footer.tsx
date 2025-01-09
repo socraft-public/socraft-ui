@@ -83,9 +83,7 @@ const Footer: FC<FooterProps> = ({
           </div>
           {props.showDarkModeToggle && (
             <div className="dark-mode-toggle">
-              <span className="label">
-                {darkMode ? "Mode clair" : "Mode sombre"}
-              </span>
+              <span className="label">Mode sombre</span>
               <ToggleSwitch
                 darkMode={darkMode}
                 onToggle={props.onDarkModeToggle}
