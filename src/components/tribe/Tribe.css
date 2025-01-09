@@ -5,6 +5,9 @@
   border: var(--border);
   border-radius: var(--borderRadius);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .socraft-tribe-card.dark {
@@ -12,29 +15,35 @@
   color: var(--white);
 }
 
-.socraft-tribe-card .tribe-image {
+.socraft-tribe-card .header {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.socraft-tribe-card .header .tribe-image {
   height: 150px;
   width: 100%;
   background-size: cover;
   background-position: center;
 }
 
-.socraft-tribe-card .content {
-  padding: 1rem 2rem;
+.socraft-tribe-card .header .text {
+  margin: 20px 30px;
 }
 
-.socraft-tribe-card .content .header {
+.socraft-tribe-card .header .text .title-container {
   display: flex;
-  align-items: baseline;
-  gap: 15px;
+  gap: 10px;
+  align-items: center;
 }
 
-.socraft-tribe-card .content .header .title {
+.socraft-tribe-card .header .text .title-container .title {
   font-size: 1.5em;
   font-weight: 500;
 }
 
-.socraft-tribe-card .content .header .members {
+.socraft-tribe-card .header .text .title-container .members {
   text-transform: lowercase;
   font-size: 1em;
   background-color: #28282810;
@@ -42,14 +51,10 @@
   padding: 2px 8px;
   border-radius: 8px;
   font-weight: 500;
+  height: max-content;
 }
 
-.socraft-tribe-card.dark .content .header .members {
-  background-color: #ffffff10;
-  border-color: #ffffff20;
-}
-
-.socraft-tribe-card .content .description {
+.socraft-tribe-card .header .text .description {
   font-size: 1.2em;
   opacity: 0.6;
   font-weight: 400;
@@ -57,13 +62,22 @@
   margin-block: 0 30px;
 }
 
-.socraft-tribe-card .content .actions {
+.socraft-tribe-card.dark .header .text .members {
+  background-color: #ffffff10;
+  border-color: #ffffff20;
+}
+
+.socraft-tribe-card .content {
+  padding: 0 2rem 1rem 2rem;
+}
+
+.socraft-tribe-card .actions {
   display: flex;
   gap: 10px;
-  margin-block: 0 10px;
+  margin: 0 30px 20px 30px;
   flex-wrap: wrap;
 }
 
-.socraft-tribe-card .content .actions button {
+.socraft-tribe-card .actions button {
   flex: 1;
 }
