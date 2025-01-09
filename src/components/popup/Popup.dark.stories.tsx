@@ -19,7 +19,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   visible: true,
-  children: <p>I'm a popup</p>,
+  children: <p>I&apos;m a popup</p>,
   title: "Simple popup",
   subTitle: "This is a simple popup",
   darkMode: true,
