@@ -27,6 +27,7 @@
 
 .socraft-input-group.error {
   border: solid 2px var(--red);
+  margin: 0 0 15px 0;
 }
 
 .socraft-input-group .error-message {
