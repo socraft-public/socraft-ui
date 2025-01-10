@@ -35,12 +35,15 @@
 .socraft-tribe-card .header .text .title-container {
   display: flex;
   gap: 10px;
+  row-gap: 0;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .socraft-tribe-card .header .text .title-container .title {
   font-size: 1.5em;
   font-weight: 500;
+  margin-block: 10px;
 }
 
 .socraft-tribe-card .header .text .title-container .members {
@@ -52,6 +55,7 @@
   border-radius: 8px;
   font-weight: 500;
   height: max-content;
+  white-space: nowrap;
 }
 
 .socraft-tribe-card .header .text .description {
@@ -59,7 +63,7 @@
   opacity: 0.6;
   font-weight: 400;
   text-align: justify;
-  margin-block: 0 30px;
+  margin-block: 30px;
 }
 
 .socraft-tribe-card.dark .header .text .members {
