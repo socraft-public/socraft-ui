@@ -1,0 +1,54 @@
+@import "../../constants.css";
+
+.reference {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 400px;
+
+  .reference-head {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbbb1010;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+
+    .logo {
+      max-height: 100px;
+      max-width: 200px;
+      transition: all 0.15s ease-in;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .reference-body {
+    text-align: center;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .category {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      opacity: 0.5;
+    }
+  }
+}
+
+.reference.dark .reference-body {
+  color: var(--white);
+}
+
+.reference.dark .reference-head {
+  background-color: var(--black);
+}
