@@ -5,11 +5,10 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  width: 400px;
 
   .reference-head {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,8 +17,9 @@
     overflow: hidden;
 
     .logo {
-      max-height: 100px;
-      max-width: 200px;
+      width: auto;
+      height: auto;
+      max-width: 150px;
       transition: all 0.15s ease-in;
 
       &:hover {
@@ -34,6 +34,7 @@
     h2 {
       font-size: 1.5rem;
       margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .category {
