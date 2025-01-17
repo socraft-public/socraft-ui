@@ -15,7 +15,7 @@ const Profile: FC<ProfileProps> = ({
 
   const handleClick = () => {
     if (opensTheProfile) {
-      const url = `https://socraft.community/profile/${shortId}`;
+      const url = `https://socraft.community/profiles/${shortId}`;
 
       if (opensTheProfileInANewTab) {
         window.open(url, "_blank");
