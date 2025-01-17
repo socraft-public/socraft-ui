@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 500px;
+  max-width: 100%;
 }
 
 .socraft-tribe-card.dark {
@@ -44,31 +46,6 @@
   font-size: 1.5em;
   font-weight: 500;
   margin-block: 10px;
-}
-
-.socraft-tribe-card .header .text .title-container .members {
-  text-transform: lowercase;
-  font-size: 1em;
-  background-color: #28282810;
-  border: var(--border);
-  padding: 2px 8px;
-  border-radius: 8px;
-  font-weight: 500;
-  height: max-content;
-  white-space: nowrap;
-}
-
-.socraft-tribe-card .header .text .description {
-  font-size: 1.2em;
-  opacity: 0.6;
-  font-weight: 400;
-  text-align: justify;
-  margin-block: 30px;
-}
-
-.socraft-tribe-card.dark .header .text .members {
-  background-color: #ffffff10;
-  border-color: #ffffff20;
 }
 
 .socraft-tribe-card .content {

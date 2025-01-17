@@ -15,12 +15,7 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
         <div className="text">
           <div className="title-container">
             <h2 className="title">{props.name}</h2>
-            <span className="members">
-              {props.members}{" "}
-              {props.members > 1 ? "crafters experts" : "crafter expert"}
-            </span>
           </div>
-          <p className="description">{props.description}</p>
         </div>
       </div>
       <div className="actions">
