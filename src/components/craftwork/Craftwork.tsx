@@ -12,7 +12,7 @@ const Craftwork: FC<CraftworkProps> = ({ ...props }) => {
           <div className="holder-profile-container">
             <div className="holder-profile">
               <a
-                href={`https://socraft.community/profile/${props.holder?.shortId}`}
+                href={`https://socraft.community/profiles/${props.holder?.shortId}`}
               >
                 <img
                   alt="profile-picture"
