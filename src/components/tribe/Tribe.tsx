@@ -23,7 +23,7 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
           variant="outlined"
           darkMode={props.darkMode}
           endIcon={<IconArrowRight />}
-          onClick={() => window.open(`/${props.slug}`, "_self")}
+          onClick={() => (window.location.pathname = props.slug ?? "")}
         >
           Voir plus
         </Button>
