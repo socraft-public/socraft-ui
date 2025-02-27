@@ -25,7 +25,7 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
           endIcon={<IconArrowRight />}
           onClick={() => (window.location.pathname = props.slug ?? "")}
         >
-          Voir plus
+          {props.showMoreText}
         </Button>
       </div>
     </div>

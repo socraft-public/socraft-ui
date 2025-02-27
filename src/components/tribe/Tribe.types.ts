@@ -23,4 +23,8 @@ export interface TribeProps {
    * Whether the tribe is in dark mode
    */
   darkMode?: boolean;
+  /**
+   * The show more button's text
+   */
+  showMoreText?: string;
 }
