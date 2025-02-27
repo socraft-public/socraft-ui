@@ -99,7 +99,7 @@ const Footer: FC<FooterProps> = ({
                 darkMode={darkMode}
                 options={props.locales ?? []}
                 value={props.locale ?? ""}
-                onChange={props.onLocaleChange ?? ((_: string) => void 0)}
+                onChange={props.onLocaleChange ?? (() => void 0)}
               />
             </>
           )}
