@@ -9,6 +9,7 @@ import {
 } from "@tabler/icons-react";
 import "./Footer.css";
 import { ToggleSwitch } from "../toggle-switch";
+import { LocaleSelector } from "../locale-selector";
 
 const Footer: FC<FooterProps> = ({
   cities,
@@ -90,6 +91,17 @@ const Footer: FC<FooterProps> = ({
                 checked={darkMode}
               />
             </div>
+          )}
+          {props.showLocaleSelector && (
+            <>
+              <br />
+              <LocaleSelector
+                darkMode={darkMode}
+                options={props.locales ?? []}
+                value={props.locale ?? ""}
+                onChange={props.onLocaleChange ?? ((_: string) => void 0)}
+              />
+            </>
           )}
         </div>
       </div>

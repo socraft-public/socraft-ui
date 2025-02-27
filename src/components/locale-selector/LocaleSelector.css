@@ -1,0 +1,33 @@
+@import "../../constants.css";
+
+.p-selectbutton .p-button.p-highlight {
+  background-color: #fbbb10;
+  border-color: #fbbb10;
+  color: #282828 !important;
+}
+
+.p-selectbutton .p-button {
+  background-color: transparent;
+}
+
+.p-selectbutton.dark .p-button {
+  color: #ffffff;
+}
+
+.p-button:focus {
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 0 4px #fbbb10,
+    0 1px 2px 0 rgb(0, 0, 0);
+}
+
+.p-selectbutton.dark .p-button:focus {
+  box-shadow:
+    0 0 0 2px #282828,
+    0 0 0 4px #fbbb10,
+    0 1px 2px 0 rgb(0, 0, 0);
+}
+
+.p-button-label {
+  font-weight: 500;
+}
