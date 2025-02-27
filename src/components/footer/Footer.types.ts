@@ -22,6 +22,10 @@ export interface FooterProps {
    */
   cguText?: string;
   /**
+   * The text above social links
+   */
+  socialNetworksText?: string;
+  /**
    * The link to the Instagram page.
    */
   instagramLink: string;
@@ -46,6 +50,10 @@ export interface FooterProps {
    */
   darkMode?: boolean;
   /**
+   * The text above the center buttons
+   */
+  centerButtonsText?: string;
+  /**
    * Center buttons
    */
   centerButtons?: ReactNode[];
@@ -53,6 +61,10 @@ export interface FooterProps {
    * Whether to show the dark mode toggle
    */
   showDarkModeToggle?: boolean;
+  /**
+   * The text above the dark mode switch
+   */
+  darkModeText?: string;
   /**
    * The function to call when the dark mode toggle is clicked
    */

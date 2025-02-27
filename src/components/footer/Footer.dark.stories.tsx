@@ -26,11 +26,13 @@ Default.args = {
   copyright: "© 2025 socraft",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
+  socialNetworksText: "Suivez-nous sur les réseaux sociaux",
   instagramLink: "#",
   linkedinLink: "#",
   facebookLink: "#",
   youtubeLink: "#",
   darkMode: true,
+  centerButtonsText: "Contactez-nous",
   centerButtons: [
     <Button key={1} variant="yellow" endIcon={<IconMessage />}>
       Nous écrire
@@ -47,11 +49,13 @@ WithDarkModeToggle.args = {
   copyright: "© 2025 socraft",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
+  socialNetworksText: "Suivez-nous sur les réseaux sociaux",
   instagramLink: "#",
   linkedinLink: "#",
   facebookLink: "#",
   youtubeLink: "#",
   darkMode: true,
+  centerButtonsText: "Contactez-nous",
   centerButtons: [
     <Button key={1} variant="yellow" endIcon={<IconMessage />}>
       Nous écrire

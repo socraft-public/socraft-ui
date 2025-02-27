@@ -51,7 +51,7 @@ const Footer: FC<FooterProps> = ({
         </div>
         {centerButtons !== undefined && (
           <div className="footer-content">
-            <h2>Un contact ?</h2>
+            <h2>{props.centerButtonsText}</h2>
             <div className="center-buttons">
               {centerButtons.map((button, key) => (
                 <span key={key}>
@@ -63,7 +63,7 @@ const Footer: FC<FooterProps> = ({
           </div>
         )}
         <div className="footer-content">
-          <h2>Nous suivre</h2>
+          <h2>{props.socialNetworksText}</h2>
           <div className="contact-icons">
             <a href={instagramLink}>
               <IconBrandInstagram />
@@ -83,7 +83,7 @@ const Footer: FC<FooterProps> = ({
           </div>
           {props.showDarkModeToggle && (
             <div className="dark-mode-toggle">
-              <span className="label">Mode sombre</span>
+              <span className="label">{props.darkModeText}</span>
               <ToggleSwitch
                 darkMode={darkMode}
                 onToggle={props.onDarkModeToggle}
