@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { LocaleSelectorProps } from "./LocaleSelector.types";
 import "./LocaleSelector.css";
-import "primereact/resources/themes/lara-light-cyan/theme.css";
 import { SelectButton } from "primereact/selectbutton";
 
 const LocaleSelector: FC<LocaleSelectorProps> = ({ ...props }) => {
