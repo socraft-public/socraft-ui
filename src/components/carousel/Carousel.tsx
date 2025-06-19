@@ -41,6 +41,7 @@ const Carousel: FC<CarouselProps> = ({
   darkMode,
   numVisible = 1,
   autoplayInterval = 3000,
+  circular = true,
 }) => {
   const [crafters, setCrafters] = useState<Crafter[]>([]);
 
@@ -82,7 +83,7 @@ const Carousel: FC<CarouselProps> = ({
           value={Array.from({ length: 5 })}
           numVisible={5}
           numScroll={1}
-          circular
+          circular={circular}
           autoplayInterval={autoplayInterval}
           itemTemplate={skeletonTemplate}
           className={`socraft-carousel crafters ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
@@ -97,7 +98,7 @@ const Carousel: FC<CarouselProps> = ({
         value={crafters}
         numVisible={5}
         numScroll={1}
-        circular
+        circular={circular}
         autoplayInterval={autoplayInterval}
         itemTemplate={crafterTemplate}
         className={`socraft-carousel crafters ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
@@ -112,8 +113,9 @@ const Carousel: FC<CarouselProps> = ({
       value={customElements}
       numVisible={numVisible}
       numScroll={1}
-      circular
+      circular={circular}
       autoplayInterval={autoplayInterval}
+      showNavigators
       itemTemplate={customElementsTemplate}
       className={`socraft-carousel custom-elements ${fullWidth ? "full-width" : ""} ${centered ? "centered" : ""} ${darkMode ? "darkmode" : ""}`}
       style={{
