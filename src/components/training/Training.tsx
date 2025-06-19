@@ -43,7 +43,7 @@ const Training: FC<TrainingProps> = ({ ...props }) => {
           onClick={onClick}
           darkMode={props.darkMode}
         >
-          Voir plus
+          {props.language === "en" ? "See more" : "Voir plus"}
         </Button>
       </div>
     </div>

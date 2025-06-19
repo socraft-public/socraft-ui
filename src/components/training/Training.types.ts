@@ -18,6 +18,11 @@ export interface TrainingProps {
    * Optional flag to indicate if dark mode is enabled.
    */
   darkMode?: boolean;
+
+  /**
+   * The language to use for the component, affecting text content.
+   */
+  language?: "en" | "fr";
 }
 
 /**
