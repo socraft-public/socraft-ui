@@ -24,6 +24,7 @@ const Footer: FC<FooterProps> = ({
   youtubeLink,
   darkMode,
   centerButtons,
+  badges,
   ...props
 }) => {
   return (
@@ -94,7 +95,6 @@ const Footer: FC<FooterProps> = ({
           )}
           {props.showLocaleSelector && (
             <>
-              <br />
               <LocaleSelector
                 darkMode={darkMode}
                 options={props.locales ?? []}
@@ -102,6 +102,11 @@ const Footer: FC<FooterProps> = ({
                 onChange={props.onLocaleChange ?? (() => void 0)}
               />
             </>
+          )}
+          {(badges?.length ?? 0) > 0 && (
+            <div className="badges">
+              {badges?.map((badge) => badge)}
+            </div>
           )}
         </div>
       </div>

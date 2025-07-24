@@ -85,4 +85,8 @@ export interface FooterProps {
    * The list of available locales
    */
   locales?: string[];
+  /**
+   * Badges
+   */
+  badges?: ReactNode[];
 }
