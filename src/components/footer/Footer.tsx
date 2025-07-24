@@ -104,9 +104,7 @@ const Footer: FC<FooterProps> = ({
             </>
           )}
           {(badges?.length ?? 0) > 0 && (
-            <div className="badges">
-              {badges?.map((badge) => badge)}
-            </div>
+            <div className="badges">{badges?.map((badge) => badge)}</div>
           )}
         </div>
       </div>

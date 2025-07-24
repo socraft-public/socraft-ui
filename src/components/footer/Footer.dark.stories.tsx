@@ -122,8 +122,12 @@ WithBadges.args = {
   onLocaleChange: (locale: string) => console.log(locale),
   locale: "fr",
   badges: [
-    <div className="example-badge">I'm a badge !</div>,
-    <div className="example-badge">I'm another badge !</div>,
+    <div className="example-badge" key={1}>
+      I&apos;m a badge !
+    </div>,
+    <div className="example-badge" key={2}>
+      I&apos;m another badge !
+    </div>,
   ],
   darkMode: true,
 };
