@@ -50,6 +50,9 @@ const Footer: FC<FooterProps> = ({
               </p>
             )}
           </div>
+          {(badges?.length ?? 0) > 0 && (
+            <div className="badges">{badges?.map((badge) => badge)}</div>
+          )}
         </div>
         {centerButtons !== undefined && (
           <div className="footer-content">
@@ -102,9 +105,6 @@ const Footer: FC<FooterProps> = ({
                 onChange={props.onLocaleChange ?? (() => void 0)}
               />
             </>
-          )}
-          {(badges?.length ?? 0) > 0 && (
-            <div className="badges">{badges?.map((badge) => badge)}</div>
           )}
         </div>
       </div>
