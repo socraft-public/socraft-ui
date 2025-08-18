@@ -1,6 +1,5 @@
-import React, { ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import { CarouselProps } from "./Carousel.types";
-import { FC, useEffect, useState } from "react";
 import { Crafter } from "../profile/Profile.types";
 import "./Carousel.css";
 import { Carousel as PrimeCarousel } from "primereact/carousel";
@@ -42,9 +41,8 @@ const Carousel: FC<CarouselProps> = ({
   numVisible = 1,
   autoplayInterval = 3000,
   circular = true,
+  crafters = [],
 }) => {
-  const [crafters, setCrafters] = useState<Crafter[]>([]);
-
   const crafterTemplate = (crafter: Crafter) => {
     return (
       <Profile
@@ -60,21 +58,6 @@ const Carousel: FC<CarouselProps> = ({
   };
 
   const customElementsTemplate = (element: ReactNode) => <>{element}</>;
-
-  useEffect(() => {
-    const initCrafters = async (): Promise<void> => {
-      const result = await fetch(
-        `https://my.socraft.ch/api/public/profiles?orderBy=3`,
-      );
-      const profiles = (await result.json()).profiles;
-
-      setCrafters(profiles);
-    };
-
-    if (!useCustomElements) {
-      void initCrafters();
-    }
-  }, [useCustomElements]);
 
   if (!useCustomElements) {
     if (crafters.length === 0) {

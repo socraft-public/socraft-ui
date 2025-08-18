@@ -24,6 +24,33 @@ export const CarouselWithImages = Template.bind({});
 
 DefaultCarousel.args = {
   darkMode: true,
+  crafters: [
+    {
+      id: "1",
+      firstname: "Jane",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "2",
+      firstname: "Doe",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "3",
+      firstname: "John",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "4",
+      firstname: "Alice",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "5",
+      firstname: "Bob",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+  ],
 };
 
 CarouselWithCustomElements.args = {

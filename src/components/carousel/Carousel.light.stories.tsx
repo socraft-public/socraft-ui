@@ -17,10 +17,39 @@ export const DefaultCarousel = Template.bind({});
 export const CarouselWithCustomElements = Template.bind({});
 export const CarouselWithImages = Template.bind({});
 
-DefaultCarousel.args = {};
+DefaultCarousel.args = {
+  crafters: [
+    {
+      id: "1",
+      firstname: "Jane",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "2",
+      firstname: "Doe",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "3",
+      firstname: "John",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "4",
+      firstname: "Alice",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+    {
+      id: "5",
+      firstname: "Bob",
+      profilePicture: "https://placehold.co/100x100.png",
+    },
+  ],
+};
 
 CarouselWithCustomElements.args = {
   useCustomElements: true,
+
   customElements: [
     <Card
       key={1}

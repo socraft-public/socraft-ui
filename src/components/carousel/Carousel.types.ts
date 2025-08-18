@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { CarouselProps as PrimeCarouselProps } from "primereact/carousel";
+import { Crafter } from "../profile/Profile.types";
 
 /**
  * Props for the Carousel component.
@@ -44,4 +45,8 @@ export interface CarouselProps extends PrimeCarouselProps {
    * Determines if the carousel should be in dark mode.
    */
   darkMode?: boolean;
+  /**
+   * List of crafters.
+   */
+  crafters?: Crafter[];
 }
