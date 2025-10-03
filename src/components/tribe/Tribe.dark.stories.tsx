@@ -52,6 +52,7 @@ const mockCrafters: Crafter[] = [
 export const Default = Template.bind({});
 
 Default.args = {
+  id: "tribe-dev",
   name: "Développment (craft)",
   description:
     "Avec un nom comme socraft, nous ne pourrions pas faire l'impasse sur le software craftsmanship. Plus qu'un manifeste, il est pour nous une philosophie de vie dont les principes vont bien au-delà du code. Ainsi vous trouverez régulièrement des crafters affairés à creuser un sujet lors d'un meetup, expérimenter une nouvelle façon de tester au cours d'un atelier mob programming, ou plus simplement appliquer ces pratiques au sein d'une équipe de développement produit.",
@@ -61,3 +62,30 @@ Default.args = {
   showMoreText: "En savoir plus",
   opensTheProfileInANewTab: true,
 };
+
+export const MultipleTribes: StoryFn = () => (
+  <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+    <Tribe
+      key="tribe-dev-1"
+      id="tribe-dev-1"
+      name="Développement (craft)"
+      description="Avec un nom comme socraft, nous ne pourrions pas faire l'impasse sur le software craftsmanship. Plus qu'un manifeste, il est pour nous une philosophie de vie dont les principes vont bien au-delà du code."
+      image="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg"
+      crafters={mockCrafters}
+      darkMode={true}
+      showMoreText="En savoir plus"
+      opensTheProfileInANewTab={true}
+    />
+    <Tribe
+      key="tribe-dev-2"
+      id="tribe-design-2"
+      name="Design UX/UI"
+      description="Notre équipe de designers se concentre sur la création d'expériences utilisateur exceptionnelles. Nous croyons que le design n'est pas seulement une question d'esthétique, mais aussi de fonctionnalité."
+      image="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg"
+      crafters={mockCrafters}
+      darkMode={true}
+      showMoreText="En savoir plus"
+      opensTheProfileInANewTab={true}
+    />
+  </div>
+);

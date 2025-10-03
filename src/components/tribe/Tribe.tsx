@@ -19,7 +19,10 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
   const expertsTitle = isEnglish ? "The experts" : "Les experts";
 
   return (
-    <div className={"socraft-tribe-card" + (props.darkMode ? " dark" : "")}>
+    <div
+      className={"socraft-tribe-card" + (props.darkMode ? " dark" : "")}
+      data-tribe-id={props.id || props.name}
+    >
       <div className="header">
         <div
           className="tribe-image"

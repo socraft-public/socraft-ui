@@ -2,6 +2,10 @@ import { Crafter } from "../profile/Profile.types";
 
 export interface TribeProps {
   /**
+   * Unique identifier for the tribe (used for React key)
+   */
+  id?: string;
+  /**
    * The name of the tribe
    */
   name: string;
