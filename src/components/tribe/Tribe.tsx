@@ -14,6 +14,10 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
 
   const hasCrafters = props.crafters && props.crafters.length > 0;
 
+  const isEnglish =
+    typeof window !== "undefined" && window.location.pathname.includes("/en/");
+  const expertsTitle = isEnglish ? "The experts" : "Les experts";
+
   return (
     <div className={"socraft-tribe-card" + (props.darkMode ? " dark" : "")}>
       <div className="header">
@@ -37,7 +41,7 @@ const Tribe: FC<TribeProps> = ({ ...props }) => {
           </div>
           {hasCrafters && (
             <>
-              <h3 className="carousel-title">Les experts</h3>
+              <h3 className="carousel-title">{expertsTitle}</h3>
               <div className="carousel-container">
                 <Carousel
                   useCustomElements={false}

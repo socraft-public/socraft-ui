@@ -21,31 +21,31 @@ const mockCrafters: Crafter[] = [
     id: "1",
     firstname: "John",
     shortId: "doejoh",
-    profilePicture: "https://via.placeholder.com/150",
+    profilePicture: "https://placehold.co/100x100.png",
   },
   {
     id: "2",
     firstname: "John",
     shortId: "doejoh",
-    profilePicture: "https://via.placeholder.com/150",
+    profilePicture: "https://placehold.co/100x100.png",
   },
   {
     id: "3",
     firstname: "John",
     shortId: "doejoh",
-    profilePicture: "https://via.placeholder.com/150",
+    profilePicture: "https://placehold.co/100x100.png",
   },
   {
     id: "4",
     firstname: "John",
     shortId: "doejoh",
-    profilePicture: "https://via.placeholder.com/150",
+    profilePicture: "https://placehold.co/100x100.png",
   },
   {
     id: "5",
     firstname: "John",
     shortId: "doejoh",
-    profilePicture: "https://via.placeholder.com/150",
+    profilePicture: "https://placehold.co/100x100.png",
   },
 ];
 
