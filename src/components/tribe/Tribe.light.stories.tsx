@@ -65,7 +65,6 @@ Default.args = {
 export const MultipleTribes: StoryFn = () => (
   <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
     <Tribe
-      key="tribe-dev-1"
       id="tribe-dev-1"
       name="Développement (craft)"
       description="Avec un nom comme socraft, nous ne pourrions pas faire l'impasse sur le software craftsmanship. Plus qu'un manifeste, il est pour nous une philosophie de vie dont les principes vont bien au-delà du code."
@@ -75,7 +74,6 @@ export const MultipleTribes: StoryFn = () => (
       opensTheProfileInANewTab={true}
     />
     <Tribe
-      key="tribe-dev-2"
       id="tribe-design-2"
       name="Design UX/UI"
       description="Notre équipe de designers se concentre sur la création d'expériences utilisateur exceptionnelles. Nous croyons que le design n'est pas seulement une question d'esthétique, mais aussi de fonctionnalité."
