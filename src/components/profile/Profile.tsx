@@ -1,7 +1,6 @@
-import { FC } from "react";
-import { ProfileProps } from "./Profile.types";
-import React from "react";
+import React, { FC } from "react";
 import "./Profile.css";
+import { ProfileProps } from "./Profile.types";
 
 const Profile: FC<ProfileProps> = ({
   crafter,
@@ -9,7 +8,7 @@ const Profile: FC<ProfileProps> = ({
   opensTheProfileInANewTab,
   darkMode,
 }) => {
-  const { firstname, profilePicture, openToWork, shortId } = crafter;
+  const { firstname, profilePicture, shortId } = crafter;
 
   if (!firstname) return <></>;
 
@@ -35,7 +34,6 @@ const Profile: FC<ProfileProps> = ({
       />
       <div className="infos">
         <span className="firstname">{firstname}</span>
-        {openToWork && <span className="open-to-work">Open to work</span>}
       </div>
     </div>
   );

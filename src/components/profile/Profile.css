@@ -77,12 +77,6 @@
         border-radius: 13px;
       }
     }
-
-    .open-to-work {
-      color: green;
-      font-weight: 600;
-      font-size: 12px;
-    }
   }
 
   @keyframes shine {

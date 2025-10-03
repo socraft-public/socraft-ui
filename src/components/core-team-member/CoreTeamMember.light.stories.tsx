@@ -20,7 +20,7 @@ const Template: StoryFn<CoreTeamMemberProps> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  image: "https://via.placeholder.com/150",
+  image: "https://placehold.co/400",
   fullname: "John Doe",
   role: "Software Engineer",
 };
