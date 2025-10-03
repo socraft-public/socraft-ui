@@ -1,3 +1,5 @@
+import { Crafter } from "../profile/Profile.types";
+
 export interface TribeProps {
   /**
    * The name of the tribe
@@ -8,17 +10,13 @@ export interface TribeProps {
    */
   description: string;
   /**
-   * The number of members in the tribe
-   */
-  members: number;
-  /**
    * The image of the tribe
    */
   image: string;
   /**
-   * The slug of the tribe
+   * The crafters to display in the carousel (when expanded)
    */
-  slug?: string;
+  crafters?: Crafter[];
   /**
    * Whether the tribe is in dark mode
    */
@@ -27,4 +25,8 @@ export interface TribeProps {
    * The show more button's text
    */
   showMoreText?: string;
+  /**
+   * Determines if clicking the crafter profile opens it in a new tab
+   */
+  opensTheProfileInANewTab?: boolean;
 }
