@@ -1,5 +1,7 @@
 .core-team-member {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &.dark {
     color: #ffffff;
@@ -13,6 +15,7 @@
 
   .core-team-member__name {
     font-weight: 500;
-    margin-block: 10px;
+    margin-block-start: 10px;
+    margin-block-end: 5px;
   }
 }
