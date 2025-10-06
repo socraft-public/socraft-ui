@@ -2,13 +2,17 @@ import dayjs from "dayjs";
 import fr from "dayjs/locale/fr";
 
 export const extractTextFromContentfulRichText = (richText: any): string => {
-  if (!richText || !richText.content) {
+  const content = richText?.raw
+    ? JSON.parse(richText.raw).content
+    : richText?.content;
+
+  if (!content) {
     return "";
   }
 
   let extractedText = "";
 
-  for (const paragraph of richText.content) {
+  for (const paragraph of content) {
     if (paragraph.nodeType === "paragraph" && paragraph.content) {
       for (const textNode of paragraph.content) {
         if (textNode.nodeType === "text" && textNode.value) {
