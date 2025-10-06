@@ -16,6 +16,7 @@ export default {
 const Template: StoryFn<NavBarProps> = (args) => <NavBar {...args} />;
 
 export const Default = Template.bind({});
+export const WithDarkModeToggle = Template.bind({});
 
 Default.args = {
   tabs: [
@@ -29,4 +30,11 @@ Default.args = {
     { title: "Communauté", url: "/contact", appearance: "yellow" },
   ],
   darkMode: true,
+};
+
+WithDarkModeToggle.args = {
+  ...Default.args,
+  showDarkModeToggle: true,
+  darkMode: true,
+  onDarkModeToggle: () => void 0,
 };

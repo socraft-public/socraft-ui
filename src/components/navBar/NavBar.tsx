@@ -4,6 +4,8 @@ import "./NavBar.css";
 import { Button } from "../button";
 import logoDark from "../../assets/logo-dark.svg";
 import logoLight from "../../assets/logo-light.svg";
+import { ThemeToggle } from "../theme-toggle";
+import { LocaleSelector } from "../locale-selector";
 
 const NavBar: React.FC<NavBarProps> = ({
   activeTabUrl,
@@ -64,6 +66,28 @@ const NavBar: React.FC<NavBarProps> = ({
               {button.title}
             </Button>
           ))}
+        </div>
+        <div className="navbar-actions">
+          {props.showDarkModeToggle && (
+            <div className="dark-mode-toggle">
+              <span className="label">{props.darkModeText}</span>
+              <ThemeToggle
+                darkMode={props.darkMode}
+                onToggle={props.onDarkModeToggle}
+                checked={props.darkMode}
+              />
+            </div>
+          )}
+          {props.showLocaleSelector && (
+            <>
+              <LocaleSelector
+                darkMode={props.darkMode}
+                options={props.locales ?? []}
+                value={props.locale ?? ""}
+                onChange={props.onLocaleChange ?? (() => void 0)}
+              />
+            </>
+          )}
         </div>
       </div>
     </nav>
