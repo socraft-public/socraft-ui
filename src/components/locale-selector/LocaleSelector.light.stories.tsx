@@ -19,10 +19,10 @@ const Template: StoryFn<LocaleSelectorProps> = (args) => (
 
 export const Default = Template.bind({});
 
-const value = "English";
+const value = "EN";
 
 Default.args = {
-  options: ["English", "Français"],
+  options: ["EN", "FR"],
   onChange: () => void 0,
   value,
 };
