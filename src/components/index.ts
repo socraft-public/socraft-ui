@@ -16,3 +16,4 @@ export * from "./tribe";
 export * from "./popup";
 export * from "./reference";
 export * from "./locale-selector";
+export * from "./banner";

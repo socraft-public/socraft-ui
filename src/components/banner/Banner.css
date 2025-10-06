@@ -1,0 +1,49 @@
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbbb10;
+  color: #333;
+  padding: 10px 20px;
+  min-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-radius: 0 0 20px 20px;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.banner-title {
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.banner-description {
+  font-size: 0.9em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.banner-date {
+  font-size: 0.8em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
