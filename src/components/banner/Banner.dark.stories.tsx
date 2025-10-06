@@ -19,8 +19,26 @@ export const Default = Template.bind({});
 
 Default.args = {
   name: "Événement Nocturne",
-  description: "Une session spéciale en soirée pour les passionnés de code.",
+  description: {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [],
+            value:
+              "Une session spéciale en soirée pour les passionnés de code.",
+            nodeType: "text",
+          },
+        ],
+        nodeType: "paragraph",
+      },
+    ],
+    nodeType: "document",
+  },
   visibility: true,
-  date: "Le 22 juillet 2024 à 20h00",
+  date: "2024-07-22T20:00:00+00:00",
   link: "https://www.example.com/inscription-dark",
 };

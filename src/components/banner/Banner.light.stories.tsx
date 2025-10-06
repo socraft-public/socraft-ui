@@ -19,9 +19,26 @@ export const Default = Template.bind({});
 
 Default.args = {
   name: "Ton événement",
-  description:
-    "Rejoignez-nous pour une session interactive sur les dernières technologies web.",
+  description: {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [],
+            value:
+              "Rejoignez-nous pour une session interactive sur les dernières technologies web.",
+            nodeType: "text",
+          },
+        ],
+        nodeType: "paragraph",
+      },
+    ],
+    nodeType: "document",
+  },
   visibility: true,
-  date: "Le 15 juillet 2024 à 18h00",
+  date: "2024-07-15T18:00:00+00:00",
   link: "https://www.example.com/inscription-light",
 };

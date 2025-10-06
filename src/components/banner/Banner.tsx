@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { BannerProps } from "./Banner.types";
+import { extractTextFromContentfulRichText, formatEventDate } from "./utils";
 import "./Banner.css";
 
 const Banner: FC<BannerProps> = ({
@@ -13,6 +14,9 @@ const Banner: FC<BannerProps> = ({
     return null;
   }
 
+  const renderedDescription = extractTextFromContentfulRichText(description);
+  const formattedDate = formatEventDate(date);
+
   return (
     <div
       className="banner-container"
@@ -25,8 +29,8 @@ const Banner: FC<BannerProps> = ({
     >
       <div className="banner-content">
         <h3 className="banner-title">{name}</h3>
-        <p className="banner-description">{description}</p>
-        <p className="banner-date">{date}</p>
+        <p className="banner-description">{renderedDescription}</p>
+        <p className="banner-date">{formattedDate}</p>
       </div>
     </div>
   );
