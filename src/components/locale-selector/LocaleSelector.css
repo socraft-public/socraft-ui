@@ -24,3 +24,10 @@
   color: #fbbb10;
   background: #fbbb1030;
 }
+
+.p-dropdown-panel
+  .p-component
+  .p-ripple-disabled
+  .p-connected-overlay-enter-done {
+  z-index: 999999 !important;
+}

@@ -29,6 +29,12 @@
   gap: 30px;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .navbar-content-tabs {
   display: flex;
   align-items: center;
@@ -53,7 +59,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
   .socraft-navbar {
     padding: 10px 50px;
     width: 100%;
@@ -64,7 +70,7 @@
     left: 0;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1070px) {
   .socraft-navbar {
     padding: 10px 20px;
   }
@@ -119,8 +125,8 @@
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
     display: flex;
-    justify-content: center;
-    align-items: stretch;
+    flex-direction: column;
+    padding: 100px 0 0 0;
     transition: right 300ms ease-in-out;
   }
 

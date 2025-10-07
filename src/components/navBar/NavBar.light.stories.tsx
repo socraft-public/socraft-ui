@@ -12,6 +12,7 @@ const Template: StoryFn<NavBarProps> = (args) => <NavBar {...args} />;
 
 export const Default = Template.bind({});
 export const WithDarkModeToggle = Template.bind({});
+export const WithLocaleSelector = Template.bind({});
 
 Default.args = {
   tabs: [
@@ -30,4 +31,12 @@ WithDarkModeToggle.args = {
   ...Default.args,
   showDarkModeToggle: true,
   onDarkModeToggle: () => void 0,
+};
+
+WithLocaleSelector.args = {
+  ...WithDarkModeToggle.args,
+  showLocaleSelector: true,
+  locale: "FR",
+  locales: ["FR", "EN", "DE", "IT"],
+  onLocaleChange: () => void 0,
 };
