@@ -1,16 +1,20 @@
+import CloseIcon from "@mui/icons-material/Close";
+import { IconExternalLink } from "@tabler/icons-react";
 import React, { FC } from "react";
+import "./Banner.css";
 import { BannerProps } from "./Banner.types";
 import { extractTextFromContentfulRichText, formatEventDate } from "./utils";
-import "./Banner.css";
 
 const Banner: FC<BannerProps> = ({
   name,
   description,
   visibility,
+  isVisible,
   date,
   link,
+  onClose,
 }) => {
-  if (!visibility) {
+  if (!visibility || !isVisible) {
     return null;
   }
 
@@ -18,19 +22,18 @@ const Banner: FC<BannerProps> = ({
   const formattedDate = formatEventDate(date);
 
   return (
-    <div
-      className="banner-container"
-      onClick={() => {
-        if (link) {
-          window.open(link, "_blank", "noopener,noreferrer");
-        }
-      }}
-      style={{ cursor: link ? "pointer" : "default" }}
-    >
+    <div className="banner-container">
       <div className="banner-content">
         <h3 className="banner-title">{name}</h3>
-        <p className="banner-description">{renderedDescription}</p>
-        <p className="banner-date">{formattedDate}</p>
+        <p className="banner-description">
+          {formattedDate}, {renderedDescription}
+        </p>
+        <a href={link} target="_blank" rel="noreferrer" className="banner-link">
+          Inscription <IconExternalLink />
+        </a>
+        <button className="banner-close-button" onClick={onClose}>
+          <CloseIcon />
+        </button>
       </div>
     </div>
   );

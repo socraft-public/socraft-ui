@@ -12,13 +12,22 @@ export interface BannerProps {
    */
   visibility: boolean;
   /**
+   * Is visible or not
+   */
+
+  isVisible: boolean;
+  /**
    * Date of event
    */
   date: string;
   /**
-   * Link for subscribe
+   * link for subscribe
    */
-  link?: string;
+  link: string;
+  /**
+   * onClose function
+   */
+  onClose: () => void;
 }
 
 /**

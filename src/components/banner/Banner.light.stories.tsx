@@ -39,6 +39,7 @@ Default.args = {
     nodeType: "document",
   },
   visibility: true,
+  isVisible: true,
   date: "2024-07-15T18:00:00+00:00",
   link: "https://www.example.com/inscription-light",
 };
