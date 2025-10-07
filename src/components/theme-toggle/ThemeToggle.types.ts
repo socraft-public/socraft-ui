@@ -1,4 +1,4 @@
-export interface ToggleSwitchProps {
+export interface ThemeToggleProps {
   /**
    * Whether the toggle switch is in dark mode
    */

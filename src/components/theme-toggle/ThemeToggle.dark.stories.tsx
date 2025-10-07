@@ -1,11 +1,11 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { ToggleSwitch } from "./";
-import { ToggleSwitchProps } from "./ToggleSwitch.types";
+import { ThemeToggle } from ".";
+import { ThemeToggleProps } from "./ThemeToggle.types";
 
 export default {
-  title: "socraft-ui/ToggleSwitch/Dark-mode",
-  component: ToggleSwitch,
+  title: "socraft-ui/ThemeToggle/Dark-mode",
+  component: ThemeToggle,
   parameters: {
     backgrounds: {
       default: "dark",
@@ -13,9 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<ToggleSwitchProps> = (args) => (
-  <ToggleSwitch {...args} />
-);
+const Template: StoryFn<ThemeToggleProps> = (args) => <ThemeToggle {...args} />;
 
 export const Default = Template.bind({});
 

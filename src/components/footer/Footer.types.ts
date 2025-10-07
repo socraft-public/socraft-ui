@@ -58,34 +58,6 @@ export interface FooterProps {
    */
   centerButtons?: ReactNode[];
   /**
-   * Whether to show the dark mode toggle
-   */
-  showDarkModeToggle?: boolean;
-  /**
-   * The text above the dark mode switch
-   */
-  darkModeText?: string;
-  /**
-   * The function to call when the dark mode toggle is clicked
-   */
-  onDarkModeToggle?: (enabled: boolean) => void;
-  /**
-   * Wheter to show the locale selector
-   */
-  showLocaleSelector?: boolean;
-  /**
-   * The function to call when the locale is changed
-   */
-  onLocaleChange?: (locale: string) => void;
-  /**
-   * The current locale
-   */
-  locale?: string;
-  /**
-   * The list of available locales
-   */
-  locales?: string[];
-  /**
    * Badges
    */
   badges?: ReactNode[];

@@ -13,8 +13,6 @@ export default {
 const Template: StoryFn<FooterProps> = (args) => <Footer {...args} />;
 
 export const Default = Template.bind({});
-export const WithDarkModeToggle = Template.bind({});
-export const WithLocaleSelector = Template.bind({});
 export const WithBadges = Template.bind({});
 
 Default.args = {
@@ -39,56 +37,6 @@ Default.args = {
   ],
 };
 
-WithDarkModeToggle.args = {
-  cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
-  address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
-  copyright: "© 2025 socraft",
-  cguLink: "#",
-  cguText: "Conditions générales d'utilisation",
-  socialNetworksText: "Suivez-nous sur les réseaux sociaux",
-  instagramLink: "#",
-  linkedinLink: "#",
-  facebookLink: "#",
-  youtubeLink: "#",
-  centerButtonsText: "Contactez-nous",
-  centerButtons: [
-    <Button key={1} variant="yellow" endIcon={<IconMessage />}>
-      Nous écrire
-    </Button>,
-    <Button key={2} variant="yellow" endIcon={<IconPhone />}>
-      Nous appeler
-    </Button>,
-  ],
-  showDarkModeToggle: true,
-  onDarkModeToggle: (enabled: boolean) => console.log(enabled),
-};
-
-WithLocaleSelector.args = {
-  cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
-  address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
-  copyright: "© 2025 socraft",
-  cguLink: "#",
-  cguText: "Conditions générales d'utilisation",
-  socialNetworksText: "Suivez-nous sur les réseaux sociaux",
-  instagramLink: "#",
-  linkedinLink: "#",
-  facebookLink: "#",
-  youtubeLink: "#",
-  centerButtonsText: "Contactez-nous",
-  centerButtons: [
-    <Button key={1} variant="yellow" endIcon={<IconMessage />}>
-      Nous écrire
-    </Button>,
-    <Button key={2} variant="yellow" endIcon={<IconPhone />}>
-      Nous appeler
-    </Button>,
-  ],
-  showLocaleSelector: true,
-  locales: ["fr", "en"],
-  onLocaleChange: (locale: string) => console.log(locale),
-  locale: "fr",
-};
-
 WithBadges.args = {
   cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
   address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
@@ -109,10 +57,6 @@ WithBadges.args = {
       Nous appeler
     </Button>,
   ],
-  showLocaleSelector: true,
-  locales: ["fr", "en"],
-  onLocaleChange: (locale: string) => console.log(locale),
-  locale: "fr",
   badges: [
     <div className="example-badge" key={1}>
       I&apos;m a badge !
