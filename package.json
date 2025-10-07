@@ -94,8 +94,6 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.4",
     "@tabler/icons-react": "^3.22.0",
     "dayjs": "^1.11.18",
     "primereact": "^10.8.4",

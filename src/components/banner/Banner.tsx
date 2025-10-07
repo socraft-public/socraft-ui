@@ -1,5 +1,4 @@
-import CloseIcon from "@mui/icons-material/Close";
-import { IconExternalLink } from "@tabler/icons-react";
+import { IconExternalLink, IconX } from "@tabler/icons-react";
 import React, { FC } from "react";
 import "./Banner.css";
 import { BannerProps } from "./Banner.types";
@@ -32,7 +31,7 @@ const Banner: FC<BannerProps> = ({
           Inscription <IconExternalLink />
         </a>
         <button className="banner-close-button" onClick={onClose}>
-          <CloseIcon />
+          <IconX />
         </button>
       </div>
     </div>
