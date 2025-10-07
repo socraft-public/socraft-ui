@@ -155,22 +155,6 @@
   color: var(--white);
 }
 
-.dark-mode-toggle {
-  display: flex;
-  justify-content: end;
-  margin: 15px 0 0 0;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 1080px) {
-  .dark-mode-toggle {
-    padding: 20px 0 0 0;
-    justify-content: start;
-  }
-}
-
 .badges {
   display: flex;
   align-items: center;
