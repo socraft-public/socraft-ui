@@ -29,7 +29,7 @@ const Banner: FC<BannerProps> = ({
           {formattedDate}, {renderedDescription}
         </p>
         <a href={link} target="_blank" rel="noreferrer" className="banner-link">
-          {labelButton} <IconExternalLink />
+          {labelButton} <IconExternalLink size={16} />
         </a>
         <button className="banner-close-button" onClick={onClose}>
           <IconX />

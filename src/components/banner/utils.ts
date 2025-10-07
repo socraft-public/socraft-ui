@@ -27,5 +27,11 @@ export const extractTextFromContentfulRichText = (richText: any): string => {
 export const formatEventDate = (dateString: string): string => {
   dayjs.locale(fr);
   const date = dayjs(dateString);
-  return `Le ${date.format("DD.MM.YY")} à ${date.format("HH[h]mm")}`;
+  if (
+    typeof window !== "undefined" &&
+    window.location.pathname.startsWith("/en")
+  ) {
+    return date.locale("en").format("[On] MM/DD/YY [at] h:mm A");
+  }
+  return date.format("[Le] DD.MM.YY [à] HH[h]mm");
 };
