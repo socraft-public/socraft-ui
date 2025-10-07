@@ -56,3 +56,34 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 1350px) {
+  .banner-container {
+    height: auto;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .banner-title {
+    white-space: normal;
+  }
+
+  .banner-description {
+    white-space: normal;
+  }
+
+  .banner-link {
+    justify-content: center;
+  }
+
+  .banner-close-button {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+  }
+}
