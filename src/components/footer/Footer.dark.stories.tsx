@@ -19,6 +19,7 @@ const Template: StoryFn<FooterProps> = (args) => <Footer {...args} />;
 
 export const Default = Template.bind({});
 export const WithBadges = Template.bind({});
+export const WithMoreActions = Template.bind({});
 
 Default.args = {
   cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
@@ -72,4 +73,11 @@ WithBadges.args = {
     </div>,
   ],
   darkMode: true,
+};
+
+WithMoreActions.args = {
+  ...WithBadges.args,
+  moreActions: (
+    <Button variant="yellow">S&apos;inscrire à la newsletter</Button>
+  ),
 };

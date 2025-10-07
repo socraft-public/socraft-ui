@@ -84,6 +84,7 @@ const Footer: FC<FooterProps> = ({
               <IconBrandYoutube />
             </a>
           </div>
+          {props.moreActions !== undefined && props.moreActions}
         </div>
       </div>
     </footer>

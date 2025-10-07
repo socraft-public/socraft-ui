@@ -61,4 +61,8 @@ export interface FooterProps {
    * Badges
    */
   badges?: ReactNode[];
+  /**
+   * More actions
+   */
+  moreActions?: ReactNode;
 }
