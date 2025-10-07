@@ -41,6 +41,6 @@ Default.args = {
   visibility: true,
   isVisible: true,
   labelButton: "Inscription",
-  date: "2024-07-15T18:00:00+00:00",
+  date: "2024-07-15T00:00:00+00:00",
   link: "https://www.example.com/inscription-light",
 };

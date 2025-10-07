@@ -27,11 +27,21 @@ export const extractTextFromContentfulRichText = (richText: any): string => {
 export const formatEventDate = (dateString: string): string => {
   dayjs.locale(fr);
   const date = dayjs(dateString);
+
+  const isMidnight = date.hour() === 0 && date.minute() === 0;
+
   if (
     typeof window !== "undefined" &&
     window.location.pathname.startsWith("/en")
   ) {
+    if (isMidnight) {
+      return date.locale("en").format("[On] MM/DD/YY");
+    }
     return date.locale("en").format("[On] MM/DD/YY [at] h:mm A");
+  }
+
+  if (isMidnight) {
+    return date.format("[Le] DD.MM.YY");
   }
   return date.format("[Le] DD.MM.YY [à] HH[h]mm");
 };
