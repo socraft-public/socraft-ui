@@ -28,6 +28,10 @@ export interface BannerProps {
    * onClose function
    */
   onClose: () => void;
+  /**
+   * label for button
+   */
+  labelButton: string;
 }
 
 /**

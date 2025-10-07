@@ -7,6 +7,7 @@ import { extractTextFromContentfulRichText, formatEventDate } from "./utils";
 const Banner: FC<BannerProps> = ({
   name,
   description,
+  labelButton,
   visibility,
   isVisible,
   date,
@@ -28,7 +29,7 @@ const Banner: FC<BannerProps> = ({
           {formattedDate}, {renderedDescription}
         </p>
         <a href={link} target="_blank" rel="noreferrer" className="banner-link">
-          Inscription <IconExternalLink />
+          {labelButton} <IconExternalLink />
         </a>
         <button className="banner-close-button" onClick={onClose}>
           <IconX />
