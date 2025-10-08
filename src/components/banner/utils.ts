@@ -35,13 +35,13 @@ export const formatEventDate = (dateString: string): string => {
     window.location.pathname.startsWith("/en")
   ) {
     if (isMidnight) {
-      return date.locale("en").format("[On] MM/DD/YY");
+      return date.locale("en").format("MM/DD");
     }
-    return date.locale("en").format("[On] MM/DD/YY [at] h:mm A");
+    return date.locale("en").format("MM/DD h:mm A");
   }
 
   if (isMidnight) {
-    return date.format("[Le] DD.MM.YY");
+    return date.format("DD/MM");
   }
-  return date.format("[Le] DD.MM.YY [à] HH[h]mm");
+  return date.format("DD/MM HH:mm");
 };

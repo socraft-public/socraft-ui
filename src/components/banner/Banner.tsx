@@ -26,7 +26,7 @@ const Banner: FC<BannerProps> = ({
       <div className="banner-content">
         <h3 className="banner-title">{name}</h3>
         <p className="banner-description">
-          {formattedDate}, {renderedDescription}
+          {formattedDate} - {renderedDescription} -
         </p>
         <a href={link} target="_blank" rel="noreferrer" className="banner-link">
           {labelButton} <IconExternalLink size={16} />

@@ -44,6 +44,7 @@
   align-items: center;
   gap: 3px;
   color: #282828;
+  margin-left: -10px;
 }
 
 .banner-close-button {
