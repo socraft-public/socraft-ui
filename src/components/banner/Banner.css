@@ -1,5 +1,4 @@
 .banner-container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +9,8 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: auto;
+  width: 100%;
+  position: relative;
 }
 
 .banner-content {
@@ -19,6 +19,11 @@
   gap: 15px;
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 0;
+  padding-right: 50px;
 }
 
 .banner-title {
@@ -47,26 +52,38 @@
   margin-left: -10px;
 }
 
+.banner-button {
+  position: absolute;
+  right: 20px;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
 .banner-close-button {
   background-color: transparent;
   border: none;
-  right: 0;
   cursor: pointer;
   color: #333;
-  display: flex;
-  align-items: center;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 800px) {
   .banner-container {
     height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .banner-content {
+    width: 100%;
+    max-width: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 8px;
+    margin: 0;
+    padding-right: 0;
+    padding-bottom: 5px;
   }
 
   .banner-title {
@@ -77,9 +94,10 @@
     white-space: normal;
   }
 
-  .banner-close-button {
+  .banner-button {
     position: absolute;
     top: 0.5em;
     right: 0.5em;
+    transform: translateY(0);
   }
 }

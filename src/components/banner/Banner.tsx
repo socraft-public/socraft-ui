@@ -31,6 +31,8 @@ const Banner: FC<BannerProps> = ({
         <a href={link} target="_blank" rel="noreferrer" className="banner-link">
           {labelButton} <IconExternalLink size={16} />
         </a>
+      </div>
+      <div className="banner-button">
         <button className="banner-close-button" onClick={onClose}>
           <IconX />
         </button>
