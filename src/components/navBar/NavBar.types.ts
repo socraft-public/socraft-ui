@@ -9,6 +9,10 @@ export interface NavBarProps {
   tabs: {
     title: string;
     url: string;
+    children?: {
+      title: string;
+      url: string;
+    }[];
   }[];
   /**
    * The buttons to display in the navbar

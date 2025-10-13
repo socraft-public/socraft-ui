@@ -18,6 +18,7 @@ const Template: StoryFn<NavBarProps> = (args) => <NavBar {...args} />;
 export const Default = Template.bind({});
 export const WithDarkModeToggle = Template.bind({});
 export const WithLocaleSelector = Template.bind({});
+export const WithTwoLevelMenu = Template.bind({});
 
 Default.args = {
   tabs: [
@@ -46,4 +47,20 @@ WithLocaleSelector.args = {
   locale: "FR",
   locales: ["FR", "EN", "DE", "IT"],
   onLocaleChange: () => void 0,
+};
+
+WithTwoLevelMenu.args = {
+  ...WithLocaleSelector.args,
+  tabs: [
+    { title: "Accueil", url: "/home" },
+    { title: "Craftworks", url: "/about" },
+    {
+      title: "Services",
+      url: "",
+      children: [
+        { title: "Service 1", url: "/craftwork-1" },
+        { title: "Service 2", url: "/craftwork-2" },
+      ],
+    },
+  ],
 };

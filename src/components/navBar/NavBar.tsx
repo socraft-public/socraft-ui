@@ -15,6 +15,7 @@ const NavBar: React.FC<NavBarProps> = ({
   ...props
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   return (
     <nav
@@ -45,10 +46,32 @@ const NavBar: React.FC<NavBarProps> = ({
           {tabs.map((tab, index) => (
             <div
               key={index}
-              className={activeTabUrl === tab.url ? "tab active" : "tab"}
-              onClick={() => (window.location.href = tab.url)}
+              className={`tab ${activeTabUrl === tab.url ? "active" : ""} ${
+                openDropdown === index ? "open" : ""
+              }`}
+              onMouseEnter={() => tab.children && setOpenDropdown(index)}
+              onMouseLeave={() => tab.children && setOpenDropdown(null)}
+              onClick={() => {
+                if (!tab.children) {
+                  window.location.href = tab.url;
+                }
+              }}
             >
               {tab.title}
+              {tab.children && <span className="arrow" />}
+              {openDropdown === index && tab.children && (
+                <div className="dropdown-menu">
+                  {tab.children.map((child, childIndex) => (
+                    <div
+                      key={childIndex}
+                      className="dropdown-item"
+                      onClick={() => (window.location.href = child.url)}
+                    >
+                      {child.title}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
           {buttons.map((button, index) => (
