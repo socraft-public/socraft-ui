@@ -171,6 +171,8 @@
     width: 100%;
     align-items: flex-start;
     padding-left: 20px;
+    flex-direction: column;
+    display: flex;
   }
 
   .tab-container:not(:first-child) {
