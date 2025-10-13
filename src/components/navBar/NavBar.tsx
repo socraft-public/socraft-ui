@@ -49,10 +49,10 @@ const NavBar: React.FC<NavBarProps> = ({
               className={`tab ${activeTabUrl === tab.url ? "active" : ""} ${
                 openDropdown === index ? "open" : ""
               }`}
-              onMouseEnter={() => tab.children && setOpenDropdown(index)}
-              onMouseLeave={() => tab.children && setOpenDropdown(null)}
               onClick={() => {
-                if (!tab.children) {
+                if (tab.children) {
+                  setOpenDropdown(openDropdown === index ? null : index);
+                } else {
                   window.location.href = tab.url;
                 }
               }}

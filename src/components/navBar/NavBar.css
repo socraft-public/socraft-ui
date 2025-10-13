@@ -144,6 +144,11 @@
     gap: 20px;
   }
 
+  .tab {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .tab,
   button.link {
     font-size: 1.2rem;
@@ -178,6 +183,11 @@
   .tab-container:not(:first-child) {
     margin-left: 0;
   }
+
+  .dropdown-item {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .socraft-navbar.dark {
@@ -204,9 +214,13 @@
   border-color: transparent !important;
 }
 
+.socraft-navbar.dark .arrow {
+  border-color: var(--white);
+}
+
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 2em;
   left: 50%;
   transform: translateX(-50%);
   min-width: 150px;
@@ -214,8 +228,6 @@
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 10px 0;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-item {
@@ -227,20 +239,6 @@
 
 .dropdown-item:hover {
   background-color: #f5f5f5;
-}
-
-.socraft-navbar.dark .dropdown-menu {
-  background-color: var(--black);
-  border-color: #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.socraft-navbar.dark .dropdown-item {
-  color: var(--white);
-}
-
-.socraft-navbar.dark .dropdown-item:hover {
-  background-color: #222;
 }
 
 .arrow {
@@ -257,18 +255,38 @@
   transform: rotate(-135deg);
 }
 
-.dropdown-menu {
-  left: 50%;
-  top: 1.5em;
-  transform: translateX(-50%);
+.socraft-navbar.dark .dropdown-menu {
+  background-color: var(--black);
+  border-color: #333;
+}
+
+.socraft-navbar.dark .dropdown-item {
+  color: var(--white);
+}
+
+.socraft-navbar.dark .dropdown-item:hover {
+  background-color: #222;
+}
+
+.socraft-navbar.dark .arrow {
+  border-color: var(--white);
 }
 
 @media (max-width: 1070px) {
   .dropdown-menu {
     position: static;
-    padding: 10px 0 5px 20px;
-    width: 100%;
     transform: none;
+    max-height: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    width: 90%;
+  }
+
+  .tab.open .dropdown-menu {
+    max-height: 100%;
+    padding-top: 20px;
+    padding-bottom: 5px;
   }
 
   .socraft-navbar.dark .dropdown-menu {
@@ -278,8 +296,4 @@
   .dropdown-item {
     padding: 10px 0;
   }
-}
-
-.socraft-navbar.dark .arrow {
-  border-color: var(--white);
 }
