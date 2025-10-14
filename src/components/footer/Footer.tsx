@@ -7,7 +7,7 @@ import {
   IconBrandYoutube,
   IconBrandGithub,
 } from "@tabler/icons-react";
-import { Button } from "../ui/button";
+import { Button } from "../button";
 import { Input } from "../ui/input";
 import { cn } from "../../lib/utils";
 
@@ -86,7 +86,7 @@ const Footer: FC<FooterProps> = ({
 
             {cguLink && cguText && (
               <Button
-                variant="link"
+                variant="socraft-link"
                 asChild
                 className="h-auto p-0 text-sm hover:brightness-110 transition-all duration-200"
                 style={{
@@ -158,29 +158,19 @@ const Footer: FC<FooterProps> = ({
               {socialLinks.map(({ href, icon: Icon, label }) => (
                 <Button
                   key={label}
-                  variant="ghost"
+                  variant="socraft-icon"
                   size="icon"
+                  darkMode={darkMode}
                   asChild
-                  className={cn(
-                    "h-9 w-9 p-1.5 transition-all duration-200 hover:scale-110 hover:z-10",
-                    darkMode ? "text-gray-300" : "text-foreground",
-                  )}
+                  className="h-9 w-9 p-1.5"
                 >
                   <a
                     href={href}
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full h-full"
                   >
-                    <Icon
-                      className={cn(
-                        "h-5 w-5",
-                        darkMode
-                          ? "text-gray-300 hover:text-gray-300"
-                          : "text-current",
-                      )}
-                    />
+                    <Icon className="h-5 w-5" />
                   </a>
                 </Button>
               ))}
@@ -226,14 +216,11 @@ const Footer: FC<FooterProps> = ({
                 />
                 <Button
                   type="submit"
+                  variant="yellow"
                   className={cn(
                     "w-full",
-                    "text-black hover:brightness-110 transition-all duration-200",
+                    "hover:brightness-110 transition-all duration-200",
                   )}
-                  style={{
-                    backgroundColor: "var(--yellow)",
-                    borderColor: "var(--yellow)",
-                  }}
                 >
                   {newsletterButtonText}
                 </Button>

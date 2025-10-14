@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import logoDark from "../../assets/logo-dark.svg";
 import logoLight from "../../assets/logo-light.svg";
-import { MenuIcon, MoonIcon, SunIcon } from "./icons";
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from "./icons";
 import { NavBarProps } from "./NavBar.types";
+import { Button } from "../button";
 
 const NavBar: React.FC<NavBarProps> = ({
   activeTabUrl,
@@ -150,10 +151,11 @@ const NavBar: React.FC<NavBarProps> = ({
           <div className="flex items-center gap-3 ml-3">
             {showDarkModeToggle && (
               <div className="flex items-center gap-2">
-                <button
-                  className={`p-2 rounded-md transition-colors ${
-                    darkMode ? "text-yellow-500" : "hover:text-yellow-800"
-                  }`}
+                <Button
+                  variant="socraft-icon"
+                  size="icon"
+                  darkMode={darkMode}
+                  className="h-8 w-8 p-2"
                   onClick={() =>
                     onDarkModeToggle && onDarkModeToggle(!darkMode)
                   }
@@ -163,7 +165,7 @@ const NavBar: React.FC<NavBarProps> = ({
                   ) : (
                     <SunIcon className="h-4 w-4" />
                   )}
-                </button>
+                </Button>
               </div>
             )}
             {showLocaleSelector && (
@@ -199,12 +201,15 @@ const NavBar: React.FC<NavBarProps> = ({
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <button
-            className={`p-2 ${darkMode ? "text-white" : "text-gray-900"}`}
+          <Button
+            variant="socraft-icon"
+            size="icon"
+            darkMode={darkMode}
+            className="h-10 w-10 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <MenuIcon className="h-6 w-6" />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -222,30 +227,16 @@ const NavBar: React.FC<NavBarProps> = ({
             style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
           >
             {/* Close Button */}
-            <button
-              className={`absolute top-4 right-4 p-2 rounded-md ${
-                darkMode
-                  ? "text-white hover:bg-gray-800"
-                  : "text-gray-900 hover:bg-gray-100"
-              }`}
+            <Button
+              variant="socraft-icon"
+              size="icon"
+              darkMode={darkMode}
+              className="absolute top-4 right-4 h-10 w-10 p-2"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+              <XIcon className="h-6 w-6" />
+            </Button>
 
             <div className="flex flex-col gap-4 mt-12">
               {/* Mobile Navigation */}
@@ -352,12 +343,11 @@ const NavBar: React.FC<NavBarProps> = ({
                     >
                       {darkModeText || "Dark Mode"}
                     </span>
-                    <button
-                      className={`p-2 rounded-md transition-colors ${
-                        darkMode
-                          ? "bg-gray-800 text-yellow-500"
-                          : "hover:bg-gray-100"
-                      }`}
+                    <Button
+                      variant="socraft-icon"
+                      size="icon"
+                      darkMode={darkMode}
+                      className="h-8 w-8 p-2"
                       onClick={() =>
                         onDarkModeToggle && onDarkModeToggle(!darkMode)
                       }
@@ -367,7 +357,7 @@ const NavBar: React.FC<NavBarProps> = ({
                       ) : (
                         <SunIcon className="h-4 w-4" />
                       )}
-                    </button>
+                    </Button>
                   </div>
                 )}
 

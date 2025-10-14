@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Footer from "./Footer";
 import { FooterProps } from "./Footer.types";
-import { Button } from "../ui/button";
+import { Button } from "../button";
 import { IconMessage, IconPhone } from "@tabler/icons-react";
 
 export default {
@@ -35,11 +35,11 @@ Default.args = {
   darkMode: true,
   centerButtonsText: "Contactez-nous",
   centerButtons: [
-    <Button key={1} variant="outline" className="gap-2">
+    <Button key={1} variant="outlined" darkMode className="gap-2">
       <IconMessage className="h-4 w-4" />
       Nous écrire
     </Button>,
-    <Button key={2} variant="outline" className="gap-2">
+    <Button key={2} variant="outlined" darkMode className="gap-2">
       <IconPhone className="h-4 w-4" />
       Nous appeler
     </Button>,
@@ -60,11 +60,11 @@ WithBadges.args = {
   youtubeLink: "#",
   centerButtonsText: "Contactez-nous",
   centerButtons: [
-    <Button key={1} variant="outline" className="gap-2">
+    <Button key={1} variant="outlined" darkMode className="gap-2">
       <IconMessage className="h-4 w-4" />
       Nous écrire
     </Button>,
-    <Button key={2} variant="outline" className="gap-2">
+    <Button key={2} variant="outlined" darkMode className="gap-2">
       <IconPhone className="h-4 w-4" />
       Nous appeler
     </Button>,
