@@ -14,7 +14,7 @@ export default {
   component: Input,
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta<typeof Input>;

@@ -117,6 +117,6 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "src/assets/assets.d.ts"],
+  "include": ["src/**/*", "src/assets/assets.d.ts", "src/module.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

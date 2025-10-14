@@ -9,7 +9,7 @@ export default {
   component: Reference,
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta;

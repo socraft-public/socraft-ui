@@ -6,6 +6,11 @@ import { StatCardProps } from "./StatCard.type";
 export default {
   title: "socraft-ui/StatCard/Light-mode",
   component: StatCard,
+  parameters: {
+    backgrounds: {
+      default: "gray",
+    },
+  },
 } as Meta<typeof StatCard>;
 const Template: StoryFn<StatCardProps> = (args) => <StatCard {...args} />;
 

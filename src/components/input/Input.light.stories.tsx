@@ -12,6 +12,11 @@ import {
 export default {
   title: "socraft-ui/Input/Light-mode",
   component: Input,
+  parameters: {
+    backgrounds: {
+      default: "gray",
+    },
+  },
 } as Meta<typeof Input>;
 
 const Template: StoryFn<typeof Input> = (args) => <Input {...args} />;

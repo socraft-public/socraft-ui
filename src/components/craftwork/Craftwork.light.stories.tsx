@@ -8,7 +8,7 @@ export default {
   component: Craftwork,
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "gray",
     },
   },
 } as Meta;

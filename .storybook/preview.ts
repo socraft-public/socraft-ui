@@ -11,6 +11,19 @@ const preview: Preview = {
       },
     },
     layout: "centered",
+    backgrounds: {
+      default: "grey",
+      values: [
+        {
+          name: "gray",
+          value: "#f2f2f2",
+        },
+        {
+          name: "white",
+          value: "#ffffff",
+        },
+      ],
+    },
   },
 };
 

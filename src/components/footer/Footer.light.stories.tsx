@@ -8,6 +8,11 @@ import { IconMessage, IconPhone } from "@tabler/icons-react";
 export default {
   title: "socraft-ui/Footer/Light-mode",
   component: Footer,
+  parameters: {
+    backgrounds: {
+      default: "gray",
+    },
+  },
 } as Meta;
 
 const Template: StoryFn<FooterProps> = (args) => <Footer {...args} />;

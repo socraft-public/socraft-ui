@@ -7,6 +7,11 @@ import { IconArrowRight, IconPlus } from "@tabler/icons-react";
 export default {
   title: "socraft-ui/Card/Light-mode",
   component: Card,
+  parameters: {
+    backgrounds: {
+      default: "gray",
+    },
+  },
   decorators: [
     (Story) => (
       <div style={{ width: "50%", margin: "0 auto" }}>

@@ -16,7 +16,7 @@ export default {
   ],
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta<typeof Card>;

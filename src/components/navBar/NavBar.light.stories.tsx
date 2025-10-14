@@ -9,6 +9,9 @@ export default {
   component: NavBar,
   parameters: {
     layout: "fullscreen",
+    backgrounds: {
+      default: "gray",
+    },
   },
 } as Meta;
 

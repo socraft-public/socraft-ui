@@ -6,6 +6,11 @@ import { IconHome } from "@tabler/icons-react";
 export default {
   title: "socraft-ui/Button/Light-mode",
   component: Button,
+  parameters: {
+    backgrounds: {
+      default: "gray",
+    },
+  },
 } as Meta<typeof Button>;
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;

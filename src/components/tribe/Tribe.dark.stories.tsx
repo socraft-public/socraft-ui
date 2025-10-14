@@ -9,7 +9,7 @@ export default {
   component: Tribe,
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta;

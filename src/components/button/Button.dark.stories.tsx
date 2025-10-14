@@ -8,7 +8,7 @@ export default {
   component: Button,
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta<typeof Button>;

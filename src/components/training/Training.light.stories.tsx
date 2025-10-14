@@ -8,7 +8,7 @@ export default {
   component: Training,
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "gray",
     },
   },
 } as Meta;

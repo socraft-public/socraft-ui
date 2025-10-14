@@ -1,8 +1,12 @@
-import { DialogProps } from "primereact/dialog";
+import { ReactNode } from "react";
 
-export interface PopupProps extends Omit<DialogProps, "header" | "footer"> {
+export interface PopupProps {
+  children: ReactNode;
   title: string;
   subTitle?: string;
   width?: string;
   darkMode?: boolean;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  className?: string;
 }

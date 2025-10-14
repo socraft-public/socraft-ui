@@ -8,7 +8,7 @@ export default {
   component: Popup,
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "gray",
     },
   },
 } as Meta;
@@ -18,7 +18,8 @@ const Template: StoryFn<PopupProps> = (args) => <Popup {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  visible: true,
+  open: true,
+  onOpenChange: () => {},
   children: <p>I&apos;m a popup</p>,
   title: "Simple popup",
   subTitle: "This is a simple popup",

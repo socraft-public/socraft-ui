@@ -10,7 +10,7 @@ export default {
   component: Footer,
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta;
