@@ -33,7 +33,7 @@
   "author": {
     "name": "socraft SA",
     "email": "info@socraft.ch",
-    "url": "https://socraft.ch"
+    "url": "https://socraft.io"
   },
   "contributors": [
     {
@@ -44,14 +44,14 @@
     {
       "name": "Thomas Burkhalter",
       "email": "thomas@socraft.ch",
-      "url": "https://github.com/PepitoSir"
+      "url": "https://github.com/tburkhalterr"
     }
   ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/socraft-public/socraft-ui/issues"
   },
-  "homepage": "https://socraft.ch",
+  "homepage": "https://socraft.io",
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
     "@chromatic-com/storybook": "^3.2.2",
