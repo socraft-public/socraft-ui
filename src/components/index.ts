@@ -1,8 +1,6 @@
-export * from "./button";
 export * from "./input";
 export * from "./profile";
 export * from "./carousel";
-export * from "./card";
 export * from "./footer";
 export * from "./navBar";
 export * from "./animated-title";
@@ -17,3 +15,6 @@ export * from "./popup";
 export * from "./reference";
 export * from "./locale-selector";
 export * from "./banner";
+
+// shadcn/ui components
+export * from "./ui";
