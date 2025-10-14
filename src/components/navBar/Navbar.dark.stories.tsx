@@ -60,7 +60,10 @@ WithTwoLevelMenu.args = {
       children: [
         { title: "Service 1", url: "/craftwork-1" },
         { title: "Service 2", url: "/craftwork-2" },
-        { title: "Service 3", url: "/craftwork-3" },
+        {
+          title: "Service en grand avec beaucoup de texte",
+          url: "/craftwork-3",
+        },
       ],
     },
   ],

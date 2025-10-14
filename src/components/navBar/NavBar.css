@@ -124,6 +124,7 @@
     top: 0;
     right: -100%;
     width: 50%;
+    min-width: 280px;
     height: 100%;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
@@ -147,6 +148,10 @@
   .tab {
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 90%;
+    text-align: center;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 
   .tab,
@@ -235,6 +240,8 @@
   cursor: pointer;
   color: var(--black);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dropdown-item:hover {
@@ -294,6 +301,11 @@
   }
 
   .dropdown-item {
-    padding: 10px 0;
+    padding: 10px 15px;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
