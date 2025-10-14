@@ -8,7 +8,7 @@ import {
   IconBrandGithub,
 } from "@tabler/icons-react";
 import { Button } from "../button";
-import { Input } from "../ui/input";
+import { Input } from "../input";
 import { cn } from "../../lib/utils";
 
 const Footer: FC<FooterProps> = ({
@@ -202,17 +202,7 @@ const Footer: FC<FooterProps> = ({
                   name="email"
                   placeholder={newsletterPlaceholder}
                   required
-                  className={cn(
-                    "focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:outline-none",
-                    darkMode
-                      ? "border-gray-600 text-white placeholder:text-gray-400 focus:border-[var(--yellow)] focus-visible:border-[var(--yellow)]"
-                      : "border-gray-300 focus:border-[var(--yellow)] focus-visible:border-[var(--yellow)]",
-                  )}
-                  style={
-                    darkMode
-                      ? { backgroundColor: "var(--darkGray)" }
-                      : { backgroundColor: "transparent" }
-                  }
+                  darkMode={darkMode}
                 />
                 <Button
                   type="submit"

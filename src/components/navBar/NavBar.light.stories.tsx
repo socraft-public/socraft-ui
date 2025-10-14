@@ -55,9 +55,9 @@ WithLocaleSelector.args = {
 
 WithTwoLevelMenu.args = {
   ...WithLocaleSelector.args,
-  activeTabUrl: "/craftworks",
   tabs: [
     { title: "Accueil", url: "/home" },
+    { title: "Craftworks", url: "/about" },
     {
       title: "Services",
       url: "",

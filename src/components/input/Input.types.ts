@@ -6,21 +6,32 @@ import { InputHTMLAttributes, ReactNode } from "react";
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   /**
    * An optional icon to display at the start of the input field.
+   * The icon will be automatically sized and colored based on the theme.
    */
   startIcon?: ReactNode;
 
   /**
    * An optional icon to display at the end of the input field.
+   * The icon will be automatically sized and colored based on the theme.
    */
   endIcon?: ReactNode;
 
   /**
    * An optional error message to display below the input field.
-   * This can be used to provide validation feedback to the user.
+   * When provided, the input will automatically switch to error variant.
    */
   errorMessage?: string;
+
   /**
-   * An optional dark mode for the input field.
+   * Whether the input should be rendered in dark mode.
+   * This affects colors, borders, and text styling.
    */
   darkMode?: boolean;
+
+  /**
+   * The visual variant of the input.
+   * - `default`: Standard input styling
+   * - `error`: Error state styling (automatically applied when errorMessage is provided)
+   */
+  variant?: "default" | "error";
 }
