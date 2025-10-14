@@ -2,13 +2,21 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import NavBar from "./NavBar";
 import { NavBarProps } from "./NavBar.types";
+import "../../styles/globals.css";
 
 export default {
   title: "socraft-ui/NavBar/Light-mode",
   component: NavBar,
+  parameters: {
+    layout: "fullscreen",
+  },
 } as Meta;
 
-const Template: StoryFn<NavBarProps> = (args) => <NavBar {...args} />;
+const Template: StoryFn<NavBarProps> = (args) => (
+  <div className="min-h-screen bg-background">
+    <NavBar {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 export const WithDarkModeToggle = Template.bind({});
@@ -16,6 +24,8 @@ export const WithLocaleSelector = Template.bind({});
 export const WithTwoLevelMenu = Template.bind({});
 
 Default.args = {
+  activeTabUrl: "/home",
+  darkMode: false,
   tabs: [
     { title: "Accueil", url: "/home" },
     { title: "Craftworks", url: "/about" },
@@ -31,7 +41,8 @@ Default.args = {
 WithDarkModeToggle.args = {
   ...Default.args,
   showDarkModeToggle: true,
-  onDarkModeToggle: () => void 0,
+  darkModeText: "Mode sombre",
+  onDarkModeToggle: (enabled: boolean) => console.log("Dark mode:", enabled),
 };
 
 WithLocaleSelector.args = {
@@ -39,7 +50,7 @@ WithLocaleSelector.args = {
   showLocaleSelector: true,
   locale: "FR",
   locales: ["FR", "EN", "DE", "IT"],
-  onLocaleChange: () => void 0,
+  onLocaleChange: (locale: string) => console.log("Locale changed:", locale),
 };
 
 WithTwoLevelMenu.args = {
@@ -48,7 +59,7 @@ WithTwoLevelMenu.args = {
   tabs: [
     { title: "Accueil", url: "/home" },
     {
-      title: "Service",
+      title: "Services",
       url: "",
       children: [
         { title: "Service 1", url: "/craftwork-1" },

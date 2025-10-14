@@ -13,5 +13,24 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  webpackFinal: async (config) => {
+    // Add PostCSS loader for Tailwind CSS
+    config.module?.rules?.push({
+      test: /\.css$/,
+      use: [
+        {
+          loader: "postcss-loader",
+          options: {
+            postcssOptions: {
+              plugins: ["tailwindcss", "autoprefixer"],
+            },
+          },
+        },
+      ],
+      include: /\.css$/,
+    });
+
+    return config;
+  },
 };
 export default config;
