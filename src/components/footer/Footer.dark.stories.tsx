@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Footer from "./Footer";
 import { FooterProps } from "./Footer.types";
-import { Button } from "../button";
+import { Button } from "../ui/button";
 import { IconMessage, IconPhone } from "@tabler/icons-react";
 
 export default {
@@ -19,7 +19,6 @@ const Template: StoryFn<FooterProps> = (args) => <Footer {...args} />;
 
 export const Default = Template.bind({});
 export const WithBadges = Template.bind({});
-export const WithMoreActions = Template.bind({});
 
 Default.args = {
   cities: ["Lausanne", "Genève", "Zurich", "Paris", "Casablanca"],
@@ -30,15 +29,18 @@ Default.args = {
   socialNetworksText: "Suivez-nous sur les réseaux sociaux",
   instagramLink: "#",
   linkedinLink: "#",
+  githubLink: "#",
   facebookLink: "#",
   youtubeLink: "#",
   darkMode: true,
   centerButtonsText: "Contactez-nous",
   centerButtons: [
-    <Button key={1} variant="yellow" endIcon={<IconMessage />}>
+    <Button key={1} variant="outline" className="gap-2">
+      <IconMessage className="h-4 w-4" />
       Nous écrire
     </Button>,
-    <Button key={2} variant="yellow" endIcon={<IconPhone />}>
+    <Button key={2} variant="outline" className="gap-2">
+      <IconPhone className="h-4 w-4" />
       Nous appeler
     </Button>,
   ],
@@ -53,31 +55,26 @@ WithBadges.args = {
   socialNetworksText: "Suivez-nous sur les réseaux sociaux",
   instagramLink: "#",
   linkedinLink: "#",
+  githubLink: "#",
   facebookLink: "#",
   youtubeLink: "#",
   centerButtonsText: "Contactez-nous",
   centerButtons: [
-    <Button key={1} variant="yellow" endIcon={<IconMessage />}>
+    <Button key={1} variant="outline" className="gap-2">
+      <IconMessage className="h-4 w-4" />
       Nous écrire
     </Button>,
-    <Button key={2} variant="yellow" endIcon={<IconPhone />}>
+    <Button key={2} variant="outline" className="gap-2">
+      <IconPhone className="h-4 w-4" />
       Nous appeler
     </Button>,
   ],
-  badges: [
-    <div className="example-badge" key={1}>
-      I&apos;m a badge !
-    </div>,
-    <div className="example-badge" key={2}>
-      I&apos;m another badge !
-    </div>,
-  ],
+  badges: ["Badge Example 1", "Badge Example 2"],
   darkMode: true,
-};
-
-WithMoreActions.args = {
-  ...WithBadges.args,
-  moreActions: (
-    <Button variant="yellow">S&apos;inscrire à la newsletter</Button>
-  ),
+  newsletterText: "Newsletter",
+  newsletterPlaceholder: "Entrez votre email...",
+  newsletterButtonText: "S'abonner",
+  onNewsletterSubmit: (email: string) => {
+    console.log("Newsletter subscription:", email);
+  },
 };

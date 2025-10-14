@@ -37,9 +37,14 @@ const NavBar: React.FC<NavBarProps> = ({
         transparent
           ? "bg-transparent border-transparent"
           : darkMode
-            ? "bg-gray-900 border-gray-800"
+            ? "border-gray-800"
             : "bg-white border-gray-200"
       }`}
+      style={
+        darkMode && !transparent
+          ? { backgroundColor: "var(--black)" }
+          : undefined
+      }
     >
       <div className="flex items-center justify-between">
         <img
@@ -169,11 +174,16 @@ const NavBar: React.FC<NavBarProps> = ({
                     onChange={(e) =>
                       onLocaleChange && onLocaleChange(e.target.value)
                     }
-                    className={`px-3 py-1 text-sm border rounded cursor-pointer ${
+                    className={`px-3 py-1 text-sm border rounded cursor-pointer focus:ring-0 focus:outline-none ${
                       darkMode
-                        ? "bg-gray-800 border-gray-700 text-white"
-                        : "bg-white border-gray-300 text-gray-900"
+                        ? "border-gray-700 text-white focus:border-[var(--yellow)]"
+                        : "bg-white border-gray-300 text-gray-900 focus:border-[var(--yellow)] focus:ring-[var(--yellow)]/20"
                     }`}
+                    style={
+                      darkMode
+                        ? { backgroundColor: "var(--darkGray)" }
+                        : undefined
+                    }
                   >
                     {locales.map((loc) => (
                       <option key={loc} value={loc}>
@@ -207,10 +217,9 @@ const NavBar: React.FC<NavBarProps> = ({
           />
           <div
             className={`fixed right-0 top-0 h-full w-80 p-6 transform transition-transform duration-300 ease-in-out translate-x-0 ${
-              darkMode
-                ? "bg-gray-900 border-gray-800"
-                : "bg-white border-gray-200"
+              darkMode ? "border-gray-800" : "bg-white border-gray-200"
             } border-l shadow-xl`}
+            style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
           >
             {/* Close Button */}
             <button
@@ -376,11 +385,16 @@ const NavBar: React.FC<NavBarProps> = ({
                       onChange={(e) =>
                         onLocaleChange && onLocaleChange(e.target.value)
                       }
-                      className={`px-3 py-1 text-sm border rounded ${
+                      className={`px-3 py-1 text-sm border rounded focus:ring-0 focus:outline-none ${
                         darkMode
-                          ? "bg-gray-800 border-gray-700 text-white"
-                          : "bg-white border-gray-300 text-gray-900"
+                          ? "border-gray-700 text-white focus:border-[var(--yellow)]"
+                          : "bg-white border-gray-300 text-gray-900 focus:border-[var(--yellow)] focus:ring-[var(--yellow)]/20"
                       }`}
+                      style={
+                        darkMode
+                          ? { backgroundColor: "var(--darkGray)" }
+                          : undefined
+                      }
                     >
                       {locales.map((loc) => (
                         <option key={loc} value={loc}>
