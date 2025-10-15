@@ -15,7 +15,7 @@ export default {
 const Template: StoryFn<typeof Profile> = (args) => <Profile {...args} />;
 
 export const DefaultProfile = Template.bind({});
-export const OpenToWorkProfile = Template.bind({});
+export const WithJob = Template.bind({});
 
 DefaultProfile.args = {
   crafter: {
@@ -26,11 +26,14 @@ DefaultProfile.args = {
       "https://www.gravatar.com/avatar/36a5f0dd82b6823d76ad795a0e56c01e74cb1aefb5cb13b2126c557a07087617?s=500&d=https://avatars.slack-edge.com/2023-02-01/4735569099092_250e4584903fddadc1ac_132.png",
     id: "16d223c7-808f-4c2e-9223-c23fedebedc1",
     job: "Entrepreneur",
+    openToWork: false,
   },
+  opensTheProfile: true,
+  opensTheProfileInANewTab: true,
   darkMode: true,
 };
 
-OpenToWorkProfile.args = {
+WithJob.args = {
   crafter: {
     shortId: "farbou",
     firstname: "Farhdine",
@@ -41,5 +44,9 @@ OpenToWorkProfile.args = {
     job: "Entrepreneur",
     openToWork: true,
   },
+  opensTheProfile: true,
+  opensTheProfileInANewTab: true,
+  showJob: true,
+  showOpenToWork: true,
   darkMode: true,
 };

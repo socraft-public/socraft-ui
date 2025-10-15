@@ -15,7 +15,7 @@ export default {
 const Template: StoryFn<typeof Profile> = (args) => <Profile {...args} />;
 
 export const DefaultProfile = Template.bind({});
-export const OpenToWorkProfile = Template.bind({});
+export const WithJob = Template.bind({});
 
 DefaultProfile.args = {
   crafter: {
@@ -28,9 +28,11 @@ DefaultProfile.args = {
     job: "Entrepreneur",
     openToWork: false,
   },
+  opensTheProfile: true,
+  opensTheProfileInANewTab: true,
 };
 
-OpenToWorkProfile.args = {
+WithJob.args = {
   crafter: {
     shortId: "farbou",
     firstname: "Farhdine",
@@ -41,4 +43,8 @@ OpenToWorkProfile.args = {
     job: "Entrepreneur",
     openToWork: true,
   },
+  opensTheProfile: true,
+  opensTheProfileInANewTab: true,
+  showJob: true,
+  showOpenToWork: true,
 };

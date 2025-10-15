@@ -1,7 +1,9 @@
+import { HTMLAttributes } from "react";
+
 /**
  * Props for the Profile component.
  */
-export interface ProfileProps {
+export interface ProfileProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * The crafter object containing details about the individual.
    */
@@ -18,10 +20,26 @@ export interface ProfileProps {
    * If `true`, this overrides `opensTheProfile`.
    */
   opensTheProfileInANewTab?: boolean;
+
   /**
    * Determines if the profile is displayed in dark mode.
    */
   darkMode?: boolean;
+
+  /**
+   * Whether to show the job title.
+   */
+  showJob?: boolean;
+
+  /**
+   * Whether to show the "Open to work" badge.
+   */
+  showOpenToWork?: boolean;
+
+  /**
+   * Additional CSS classes.
+   */
+  className?: string;
 }
 
 /**
