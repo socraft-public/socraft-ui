@@ -21,6 +21,8 @@ export const OutlinedButton = Template.bind({});
 export const SocraftIconButton = Template.bind({});
 export const WithStartIcon = Template.bind({});
 export const WithEndIcon = Template.bind({});
+export const LoadingButton = Template.bind({});
+export const LoadingButtonWithText = Template.bind({});
 export const DefaultButton = Template.bind({});
 export const DestructiveButton = Template.bind({});
 export const OutlineButton = Template.bind({});
@@ -62,6 +64,19 @@ WithEndIcon.args = {
   children: <span>Button with End Icon</span>,
   variant: "yellow",
   endIcon: <IconHome />,
+};
+
+LoadingButton.args = {
+  children: <span>Loading Button</span>,
+  variant: "yellow",
+  loading: true,
+};
+
+LoadingButtonWithText.args = {
+  children: <span>Send Newsletter</span>,
+  variant: "yellow",
+  loading: true,
+  loadingText: "Sending...",
 };
 
 DefaultButton.args = {

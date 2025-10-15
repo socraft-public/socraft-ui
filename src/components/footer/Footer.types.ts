@@ -80,7 +80,27 @@ export interface FooterProps {
   /**
    * Newsletter submit handler
    */
-  onNewsletterSubmit?: (email: string) => void;
+  onNewsletterSubmit?: (email: string) => void | Promise<void>;
+  /**
+   * Newsletter loading state
+   */
+  newsletterLoading?: boolean;
+  /**
+   * Newsletter submit handler with loading control
+   */
+  onNewsletterSubmitAsync?: (email: string) => Promise<void>;
+  /**
+   * Success message to display after newsletter submission
+   */
+  newsletterSuccessMessage?: string;
+  /**
+   * Error message to display when newsletter submission fails
+   */
+  newsletterErrorMessage?: string;
+  /**
+   * Duration in milliseconds to show success/error messages (default: 3000)
+   */
+  newsletterMessageDuration?: number;
   /**
    * Additional CSS classes
    */

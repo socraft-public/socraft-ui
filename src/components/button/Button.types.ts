@@ -63,4 +63,10 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
    * merging their props and behavior.
    */
   asChild?: boolean;
+
+  /**
+   * Whether the button is in a loading state.
+   * When true, shows a loading spinner and disables the button.
+   */
+  loading?: boolean;
 }

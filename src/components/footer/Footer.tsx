@@ -1,4 +1,10 @@
-import React, { FC, cloneElement, isValidElement } from "react";
+import React, {
+  FC,
+  cloneElement,
+  isValidElement,
+  useState,
+  useEffect,
+} from "react";
 import { FooterProps } from "./Footer.types";
 import {
   IconBrandInstagram,
@@ -32,8 +38,28 @@ const Footer: FC<FooterProps> = ({
   newsletterPlaceholder = "Votre email...",
   newsletterButtonText = "S'abonner",
   onNewsletterSubmit,
+  newsletterLoading: externalLoading,
+  onNewsletterSubmitAsync,
+  newsletterSuccessMessage = "Newsletter envoyée avec succès !",
+  newsletterErrorMessage = "Erreur lors de l'envoi de la newsletter",
+  newsletterMessageDuration = 3000,
   ...props
 }) => {
+  const [internalLoading, setInternalLoading] = useState(false);
+  const [message, setMessage] = useState<{
+    text: string;
+    type: "success" | "error";
+  } | null>(null);
+  const isLoading = externalLoading || internalLoading;
+
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage(null);
+      }, newsletterMessageDuration);
+      return () => clearTimeout(timer);
+    }
+  }, [message, newsletterMessageDuration]);
   const socialLinks = [
     { href: instagramLink, icon: IconBrandInstagram, label: "Instagram" },
     { href: linkedinLink, icon: IconBrandLinkedin, label: "LinkedIn" },
@@ -190,13 +216,51 @@ const Footer: FC<FooterProps> = ({
               </h2>
 
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
                   const email = (e.target as HTMLFormElement).email.value;
-                  onNewsletterSubmit?.(email);
+
+                  if (onNewsletterSubmitAsync) {
+                    setInternalLoading(true);
+                    try {
+                      await onNewsletterSubmitAsync(email);
+                      // Reset form after successful submission
+                      (e.target as HTMLFormElement).reset();
+                      setMessage({
+                        text: newsletterSuccessMessage,
+                        type: "success",
+                      });
+                    } catch (error) {
+                      console.error("Newsletter submission error:", error);
+                      setMessage({
+                        text: newsletterErrorMessage,
+                        type: "error",
+                      });
+                    } finally {
+                      setInternalLoading(false);
+                    }
+                  } else {
+                    onNewsletterSubmit?.(email);
+                  }
                 }}
                 className="space-y-3"
               >
+                {message && (
+                  <div
+                    className={cn(
+                      "p-3 rounded-lg text-sm font-medium text-center transition-all duration-200",
+                      message.type === "success"
+                        ? "bg-green-100 text-green-800 border border-green-200"
+                        : "bg-red-100 text-red-800 border border-red-200",
+                      darkMode &&
+                        (message.type === "success"
+                          ? "bg-green-900/20 text-green-400 border-green-800/30"
+                          : "bg-red-900/20 text-red-400 border-red-800/30"),
+                    )}
+                  >
+                    {message.text}
+                  </div>
+                )}
                 <Input
                   type="email"
                   name="email"
@@ -207,6 +271,8 @@ const Footer: FC<FooterProps> = ({
                 <Button
                   type="submit"
                   variant="yellow"
+                  disabled={isLoading}
+                  loading={isLoading}
                   className={cn(
                     "w-full",
                     "hover:brightness-110 transition-all duration-200",
