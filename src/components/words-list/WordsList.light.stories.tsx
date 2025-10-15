@@ -8,7 +8,7 @@ export default {
   component: WordsList,
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "gray",
     },
   },
 } as Meta;

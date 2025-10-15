@@ -28,23 +28,23 @@ export interface FooterProps {
   /**
    * The link to the Instagram page.
    */
-  instagramLink: string;
+  instagramLink?: string;
   /**
    * The link to the LinkedIn page.
    */
-  linkedinLink: string;
+  linkedinLink?: string;
   /**
    * The link to the GitHub page.
    */
-  githubLink: string;
+  githubLink?: string;
   /**
    * The link to the Facebook page.
    */
-  facebookLink: string;
+  facebookLink?: string;
   /**
    * The link to the YouTube page.
    */
-  youtubeLink: string;
+  youtubeLink?: string;
   /**
    * An optional dark mode for the footer.
    */
@@ -65,4 +65,44 @@ export interface FooterProps {
    * More actions
    */
   moreActions?: ReactNode;
+  /**
+   * Newsletter section title
+   */
+  newsletterText?: string;
+  /**
+   * Newsletter input placeholder text
+   */
+  newsletterPlaceholder?: string;
+  /**
+   * Newsletter submit button text
+   */
+  newsletterButtonText?: string;
+  /**
+   * Newsletter submit handler
+   */
+  onNewsletterSubmit?: (email: string) => void | Promise<void>;
+  /**
+   * Newsletter loading state
+   */
+  newsletterLoading?: boolean;
+  /**
+   * Newsletter submit handler with loading control
+   */
+  onNewsletterSubmitAsync?: (email: string) => Promise<void>;
+  /**
+   * Success message to display after newsletter submission
+   */
+  newsletterSuccessMessage?: string;
+  /**
+   * Error message to display when newsletter submission fails
+   */
+  newsletterErrorMessage?: string;
+  /**
+   * Duration in milliseconds to show success/error messages (default: 3000)
+   */
+  newsletterMessageDuration?: number;
+  /**
+   * Additional CSS classes
+   */
+  className?: string;
 }

@@ -7,8 +7,9 @@ export default {
   title: "socraft-ui/Banner/Dark-mode",
   component: Banner,
   parameters: {
+    Layout: "fullscreen",
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta;

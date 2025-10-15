@@ -5,6 +5,11 @@ import React from "react";
 export default {
   title: "socraft-ui/Profile/Light-mode",
   component: Profile,
+  parameters: {
+    backgrounds: {
+      default: "gray",
+    },
+  },
 } as Meta<typeof Profile>;
 
 const Template: StoryFn<typeof Profile> = (args) => <Profile {...args} />;

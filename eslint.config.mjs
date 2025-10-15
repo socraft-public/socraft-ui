@@ -44,6 +44,8 @@ export default [
     rules: {
       "prettier/prettier": "error",
       "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "react/require-default-props": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-empty-interface": "off",
       "@typescript-eslint/no-non-null-assertion": "error",

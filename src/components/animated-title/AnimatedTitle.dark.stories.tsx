@@ -7,7 +7,7 @@ export default {
   component: AnimatedTitle,
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: "gray",
     },
   },
 } as Meta<typeof AnimatedTitle>;
