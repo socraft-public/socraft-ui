@@ -4,7 +4,6 @@ import {
   Card as ShadcnCard,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
@@ -62,19 +61,17 @@ const Card: FC<CardProps> = ({ darkMode, image, buttons, ...props }) => {
       )}
 
       {(buttons || props.footer) && (
-        <CardFooter className="p-0 mt-8">
+        <div className="mt-8 flex gap-3 flex-wrap items-center">
           {props.footer ? (
             <div>{props.footer as React.ReactNode}</div>
           ) : (
-            <div className="flex flex-wrap gap-2.5 w-full">
+            <>
               {React.Children.map(buttons, (button, index) => (
-                <div key={index} className="flex-1 min-w-0">
-                  {button}
-                </div>
+                <React.Fragment key={index}>{button}</React.Fragment>
               ))}
-            </div>
+            </>
           )}
-        </CardFooter>
+        </div>
       )}
     </ShadcnCard>
   );
