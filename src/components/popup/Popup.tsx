@@ -26,20 +26,20 @@ const Popup: FC<PopupProps> = ({
     <Dialog open={open} onOpenChange={onOpenChange} {...props}>
       <DialogContent
         className={cn(
-          "sm:max-w-lg border-0 shadow-lg",
+          "w-[95vw] max-w-[95vw] sm:w-auto sm:max-w-lg border-0 shadow-lg p-4 sm:p-6 rounded-xl sm:rounded-lg",
           width && `sm:max-w-[${width}]`,
           darkMode && "text-white",
           className,
         )}
         style={{
-          ...(width ? { width } : {}),
+          ...(width ? { maxWidth: width, width: "auto" } : {}),
           backgroundColor: darkMode ? "var(--black)" : "white",
         }}
       >
-        <DialogHeader>
+        <DialogHeader className="space-y-2 pr-8">
           <DialogTitle
             className={cn(
-              "text-lg font-semibold",
+              "text-base sm:text-lg font-semibold leading-tight",
               darkMode ? "text-white" : "text-gray-900",
             )}
           >
@@ -48,7 +48,7 @@ const Popup: FC<PopupProps> = ({
           {subTitle && (
             <DialogDescription
               className={cn(
-                "text-sm",
+                "text-xs sm:text-sm leading-relaxed",
                 darkMode ? "text-gray-300" : "text-muted-foreground",
               )}
             >
@@ -56,18 +56,23 @@ const Popup: FC<PopupProps> = ({
             </DialogDescription>
           )}
         </DialogHeader>
-        <div className={cn("mt-4", darkMode ? "text-white" : "text-gray-900")}>
+        <div
+          className={cn(
+            "mt-4 overflow-y-auto max-h-[70vh] sm:max-h-[80vh]",
+            darkMode ? "text-white" : "text-gray-900",
+          )}
+        >
           {children}
         </div>
         <DialogClose
           className={cn(
-            "absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none",
+            "absolute right-2 top-2 sm:right-4 sm:top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none p-1",
             darkMode
               ? "text-gray-300 hover:text-white focus:ring-gray-500"
               : "text-gray-600 hover:text-gray-900 focus:ring-gray-400",
           )}
         >
-          <X className="h-4 w-4" />
+          <X className="h-3 w-3 sm:h-4 sm:w-4" />
           <span className="sr-only">Close</span>
         </DialogClose>
       </DialogContent>
