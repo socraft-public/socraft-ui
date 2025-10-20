@@ -3,7 +3,7 @@ import { CraftworkProps } from "./Craftwork.types";
 import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "../button";
 import { Card } from "../ui/card";
-import { Avatar, AvatarImage } from "../ui/avatar";
+import { Profile } from "../profile";
 import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
@@ -30,18 +30,18 @@ const Craftwork: FC<CraftworkProps> = ({
         {holder && (
           <div className="flex flex-col gap-4 flex-shrink-0 max-[550px]:items-start">
             <div className="flex-shrink-0">
-              <a
-                href={`https://socraft.community/profiles/${holder.shortId}`}
-                className="block group"
-              >
-                <Avatar className="w-[75px] h-[75px] rounded-[10%] transition-all duration-300 group-hover:scale-110 group-hover:opacity-80">
-                  <AvatarImage
-                    src={holder.profilePicture}
-                    alt="profile-picture"
-                    className="object-cover"
-                  />
-                </Avatar>
-              </a>
+              <Profile
+                crafter={{
+                  firstname: holder.firstname,
+                  profilePicture: holder.profilePicture,
+                  shortId: holder.shortId,
+                  id: holder.id,
+                }}
+                darkMode={darkMode}
+                opensTheProfile={true}
+                opensTheProfileInANewTab={true}
+                className="scale-75 [&_h3]:hidden [&_p]:hidden [&>div]:hover:scale-100 [&>div]:hover:ring-0"
+              />
             </div>
           </div>
         )}
