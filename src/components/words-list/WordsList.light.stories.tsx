@@ -8,7 +8,13 @@ export default {
   component: WordsList,
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
   argTypes: {
