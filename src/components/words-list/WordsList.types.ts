@@ -7,4 +7,16 @@ export interface WordsListProps {
    * Dark mode
    */
   darkMode?: boolean;
+  /**
+   * Additional CSS classes
+   */
+  className?: string;
+  /**
+   * Size of the words
+   */
+  size?: "sm" | "default" | "lg";
+  /**
+   * Type of separator between words
+   */
+  separator?: "dot" | "pipe" | "slash";
 }
