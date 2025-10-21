@@ -9,7 +9,7 @@ export default {
   component: Card,
   decorators: [
     (Story) => (
-      <div style={{ width: "50%", margin: "0 auto" }}>
+      <div className="w-full md:w-1/2 mx-auto">
         <Story />
       </div>
     ),

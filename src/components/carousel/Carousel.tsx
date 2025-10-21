@@ -128,6 +128,16 @@ const Carousel: FC<CarouselProps> = ({
     return "basis-full";
   };
 
+  const getImageResponsiveClass = () => {
+    return cn(
+      "basis-full",
+      "sm:basis-1/2",
+      "md:basis-1/3",
+      "lg:basis-1/4",
+      "xl:basis-1/5",
+    );
+  };
+
   if (!useCustomElements && crafters.length === 0) {
     return (
       <div
@@ -276,63 +286,64 @@ const Carousel: FC<CarouselProps> = ({
           dragFree: false,
           startIndex: 0,
           containScroll: "trimSnaps",
+          duration: 40,
+          dragThreshold: 20,
         }}
         className="w-full"
       >
-        <CarouselContent className="flex items-start">
+        <CarouselContent
+          className={cn(
+            "flex items-start",
+            getDuplicatedCustomElements()?.some(
+              (element) =>
+                React.isValidElement(element) && element.type === "img",
+            )
+              ? "px-0"
+              : "px-6 sm:px-0 gap-4",
+          )}
+        >
           {getDuplicatedCustomElements()?.map((element, index) => (
             <CarouselItem
               key={index}
-              className={cn(getCustomBasisClass(), "pl-2 flex-shrink-0")}
+              className={cn(
+                React.isValidElement(element) && element.type === "img"
+                  ? getImageResponsiveClass()
+                  : getCustomBasisClass(),
+                "flex-shrink-0",
+                React.isValidElement(element) && element.type === "img"
+                  ? "pl-2"
+                  : "pl-0",
+              )}
             >
               <div
                 className={cn(
                   "flex justify-center w-full h-auto",
                   React.isValidElement(element) && element.type === "img"
-                    ? "items-center p-2"
-                    : "items-center p-1",
+                    ? "items-center p-2 mx-8 sm:mx-2"
+                    : "items-center p-1 mx-8 sm:mx-2",
                 )}
               >
                 {React.isValidElement(element) && element.type === "img" ? (
-                  <div
-                    className={cn(
-                      "flex justify-center items-center",
-                      numVisible === 5
-                        ? "w-[150px] h-[150px]"
-                        : "w-full h-full max-w-md",
-                    )}
-                  >
+                  <div className="flex justify-center items-center w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[150px] md:h-[150px] mx-auto">
                     {React.cloneElement(element as React.ReactElement, {
                       className: cn(
                         (element as React.ReactElement).props.className,
-                        "object-contain",
-                        numVisible === 5
-                          ? "w-[150px] h-auto filter grayscale"
-                          : "max-w-full max-h-full",
-                        darkMode && numVisible === 5 && "invert",
+                        "object-contain w-full h-auto filter grayscale",
+                        darkMode && "invert",
                       ),
                       style: {
                         ...(element as React.ReactElement).props.style,
                         objectFit: "contain",
-                        ...(numVisible === 5
-                          ? {
-                              width: "150px",
-                              height: "auto",
-                              filter: darkMode
-                                ? "grayscale(100%) invert(1)"
-                                : "grayscale(100%)",
-                            }
-                          : {
-                              maxWidth: "100%",
-                              maxHeight: "100%",
-                              width: "auto",
-                              height: "auto",
-                            }),
+                        width: "100%",
+                        height: "auto",
+                        filter: darkMode
+                          ? "grayscale(100%) invert(1)"
+                          : "grayscale(100%)",
                       },
                     })}
                   </div>
                 ) : (
-                  <div className="w-full h-full flex justify-center items-center max-w-md mx-auto">
+                  <div className="w-full h-full flex justify-center items-center max-w-md mx-auto px-0">
                     {React.isValidElement(element) && element.type === Card
                       ? React.cloneElement(element as React.ReactElement, {
                           className: cn(
@@ -350,8 +361,11 @@ const Carousel: FC<CarouselProps> = ({
         <CarouselPrevious
           className={cn(
             "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 z-10",
-            numVisible === 5
-              ? "-left-2 top-[75px]"
+            getDuplicatedCustomElements()?.some(
+              (element) =>
+                React.isValidElement(element) && element.type === "img",
+            )
+              ? "left-2 top-[60px] sm:top-[70px] md:top-[75px]"
               : "hidden sm:flex -left-1 sm:top-[70px] md:top-[80px] lg:top-[90px] xl:top-[100px]",
             darkMode &&
               "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
@@ -360,8 +374,11 @@ const Carousel: FC<CarouselProps> = ({
         <CarouselNext
           className={cn(
             "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 z-10",
-            numVisible === 5
-              ? "-right-2 top-[75px]"
+            getDuplicatedCustomElements()?.some(
+              (element) =>
+                React.isValidElement(element) && element.type === "img",
+            )
+              ? "right-2 top-[60px] sm:top-[70px] md:top-[75px]"
               : "hidden sm:flex -right-1 sm:top-[70px] md:top-[80px] lg:top-[90px] xl:top-[100px]",
             darkMode &&
               "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
