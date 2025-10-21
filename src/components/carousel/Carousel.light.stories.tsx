@@ -11,7 +11,13 @@ export default {
   component: Carousel,
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta<typeof Carousel>;

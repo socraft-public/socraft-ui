@@ -7,7 +7,13 @@ export default {
   component: Profile,
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta<typeof Profile>;

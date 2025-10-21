@@ -28,12 +28,12 @@ const Popup: FC<PopupProps> = ({
         className={cn(
           "w-[95vw] max-w-[95vw] sm:w-auto sm:max-w-lg border-0 shadow-lg p-4 sm:p-6 rounded-xl sm:rounded-lg",
           width && `sm:max-w-[${width}]`,
-          darkMode && "text-white",
+          darkMode && "text-white bg-[#282828]",
+          !darkMode && "bg-white",
           className,
         )}
         style={{
           ...(width ? { maxWidth: width, width: "auto" } : {}),
-          backgroundColor: darkMode ? "var(--black)" : "white",
         }}
       >
         <DialogHeader className="space-y-2 pr-8">

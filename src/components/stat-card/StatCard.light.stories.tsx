@@ -8,7 +8,13 @@ export default {
   component: StatCard,
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta<typeof StatCard>;

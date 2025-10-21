@@ -22,7 +22,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn<NavBarProps> = (args) => (
-  <div className="min-h-screen bg-background dark">
+  <div className="min-h-screen">
     <NavBar {...args} />
   </div>
 );

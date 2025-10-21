@@ -9,7 +9,13 @@ export default {
   component: Footer,
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta;

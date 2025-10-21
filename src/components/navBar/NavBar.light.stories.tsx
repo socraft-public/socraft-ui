@@ -7,16 +7,19 @@ import "../../styles/globals.css";
 export default {
   title: "socraft-ui/NavBar/Light-mode",
   component: NavBar,
-  parameters: {
-    layout: "fullscreen",
-    backgrounds: {
-      default: "gray",
-    },
+  backgrounds: {
+    default: "light",
+    values: [
+      {
+        name: "light",
+        value: "#ffffff",
+      },
+    ],
   },
 } as Meta;
 
 const Template: StoryFn<NavBarProps> = (args) => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen">
     <NavBar {...args} />
   </div>
 );
