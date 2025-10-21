@@ -19,4 +19,8 @@ export interface ReferenceProps {
    * The dark mode of the reference
    */
   darkMode?: boolean;
+  /*
+   * Additional CSS classes
+   */
+  className?: string;
 }

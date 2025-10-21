@@ -9,7 +9,13 @@ export default {
   component: Reference,
   parameters: {
     backgrounds: {
-      default: "gray",
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta;
@@ -17,9 +23,24 @@ export default {
 const Template: StoryFn<ReferenceProps> = (args) => <Reference {...args} />;
 
 export const Default = Template.bind({});
-
 Default.args = {
   logo,
   title: "Titre de référence",
   category: ["Catégorie 1", "Catégorie 2"],
+};
+
+export const TechCompany = Template.bind({});
+TechCompany.args = {
+  logo,
+  title: "Tech Solutions",
+  category: ["Développement", "Innovation"],
+  darkMode: false,
+};
+
+export const SingleCategory = Template.bind({});
+SingleCategory.args = {
+  logo,
+  title: "Design Studio",
+  category: ["UI/UX Design"],
+  darkMode: false,
 };
