@@ -32,7 +32,7 @@ const Tribe: FC<TribeProps> = ({
   return (
     <Card
       className={cn(
-        "w-[800px] overflow-hidden flex flex-col justify-between",
+        "w-full max-w-[800px] overflow-hidden flex flex-col justify-between",
         "border border-border bg-background transition-colors",
         darkMode && "text-white border-white/20",
       )}
@@ -41,14 +41,14 @@ const Tribe: FC<TribeProps> = ({
     >
       <div className="relative overflow-hidden">
         <div
-          className="h-[200px] w-full bg-cover bg-center relative flex items-end"
+          className="w-full bg-cover bg-center relative flex items-end h-[180px] md:h-[200px]"
           style={{ backgroundImage: `url(${image})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
           {!isExpanded && (
-            <div className="relative w-full p-10 pb-5">
-              <h2 className="text-3xl font-semibold text-white m-0 drop-shadow-lg">
+            <div className="relative w-full px-6 pb-5 pt-6 md:px-10 md:pt-8">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white m-0 drop-shadow-lg leading-tight">
                 {name}
               </h2>
             </div>
@@ -57,19 +57,23 @@ const Tribe: FC<TribeProps> = ({
       </div>
 
       {isExpanded && (
-        <div className="p-5 pb-8 overflow-hidden animate-in slide-in-from-top-4 fade-in-0 duration-500 w-full">
-          <h2 className="text-3xl font-semibold mb-5 px-10 m-0">{name}</h2>
+        <div className="px-6 md:px-10 pt-6 md:pt-8 pb-6 md:pb-8 overflow-hidden animate-in slide-in-from-top-4 fade-in-0 duration-500 w-full">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-5 m-0">
+            {name}
+          </h2>
 
-          <div className="mb-5 px-10">
-            <p className="text-lg leading-relaxed text-justify m-0">
+          <div className="mb-4 md:mb-5">
+            <p className="text-base md:text-lg leading-relaxed text-left md:text-justify m-0">
               {description}
             </p>
           </div>
 
           {hasCrafters && (
             <>
-              <div className="flex items-baseline gap-3 px-10 mb-2.5">
-                <h3 className="text-2xl font-medium m-0">{expertsTitle}</h3>
+              <div className="flex items-baseline gap-3 mb-3 flex-wrap">
+                <h3 className="text-xl md:text-2xl font-medium m-0">
+                  {expertsTitle}
+                </h3>
                 <Badge
                   variant="secondary"
                   className={cn(
@@ -80,7 +84,7 @@ const Tribe: FC<TribeProps> = ({
                   {crafters?.length || 0}
                 </Badge>
               </div>
-              <div className="mt-2.5 w-full px-10 max-w-full">
+              <div className="mt-0 md:mt-3 w-full max-w-full">
                 <Carousel
                   useCustomElements={false}
                   crafters={crafters}
@@ -121,7 +125,7 @@ const Tribe: FC<TribeProps> = ({
         </div>
       )}
 
-      <div className="flex gap-2.5 mx-8 mb-5 pt-5">
+      <div className="flex gap-2.5 px-6 md:px-8 mb-4 pt-2 md:pt-3">
         <Button
           variant="outlined"
           darkMode={darkMode}
