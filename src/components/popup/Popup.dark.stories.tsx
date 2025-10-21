@@ -22,6 +22,7 @@ export default {
 const Template: StoryFn<PopupProps> = (args) => <Popup {...args} />;
 
 export const Default = Template.bind({});
+export const WithBlur = Template.bind({});
 export const SmallContent = Template.bind({});
 export const LargeContent = Template.bind({});
 
@@ -32,6 +33,17 @@ Default.args = {
   title: "Simple popup",
   subTitle: "This is a simple popup",
   darkMode: true,
+  blur: false,
+};
+
+WithBlur.args = {
+  open: true,
+  onOpenChange: () => {},
+  children: <p>I&apos;m a popup with blur effect</p>,
+  title: "Popup with blur",
+  subTitle: "Background is blurred",
+  darkMode: true,
+  blur: true,
 };
 
 SmallContent.args = {
