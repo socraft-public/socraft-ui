@@ -22,4 +22,8 @@ export interface AnimatedTitleProps {
    * Whether the title is in dark mode
    */
   darkMode?: boolean;
+  /**
+   * Additional CSS classes
+   */
+  className?: string;
 }

@@ -40,9 +40,7 @@ const WordsList: FC<WordsListProps> = ({
         return <span className={cn(separatorClasses, "font-light")}>|</span>;
       case "slash":
         return <span className={cn(separatorClasses, "font-light")}>/</span>;
-      case "none":
-        return null;
-      default: // dot
+      default:
         return (
           <div
             className={cn(
