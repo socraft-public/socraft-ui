@@ -12,6 +12,13 @@ import {
 export default {
   title: "socraft-ui/Input/Dark-mode",
   component: Input,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -41,33 +48,28 @@ export const ReadOnlyInput = Template.bind({});
 
 DefaultInput.args = {
   placeholder: "Entrez votre texte...",
-  darkMode: true,
 };
 
 InputWithStartIcon.args = {
   placeholder: "Nom d'utilisateur",
   startIcon: <IconUser />,
-  darkMode: true,
 };
 
 InputWithEndIcon.args = {
   placeholder: "Rechercher...",
   endIcon: <IconSearch />,
-  darkMode: true,
 };
 
 InputWithBothIcons.args = {
   placeholder: "Adresse e-mail",
   startIcon: <IconAt />,
   endIcon: <IconEye />,
-  darkMode: true,
 };
 
 InputWithError.args = {
   placeholder: "Adresse e-mail",
   value: "email-invalide",
   errorMessage: "L'adresse e-mail est invalide",
-  darkMode: true,
 };
 
 InputWithErrorAndIcon.args = {
@@ -75,28 +77,24 @@ InputWithErrorAndIcon.args = {
   startIcon: <IconAt />,
   value: "email-invalide",
   errorMessage: "Format d'email incorrect",
-  darkMode: true,
 };
 
 PasswordInput.args = {
   type: "password",
   placeholder: "Mot de passe",
   startIcon: <IconEyeOff />,
-  darkMode: true,
 };
 
 SearchInput.args = {
   type: "search",
   placeholder: "Rechercher des articles...",
   startIcon: <IconSearch />,
-  darkMode: true,
 };
 
 EmailInput.args = {
   type: "email",
   placeholder: "votre@email.com",
   startIcon: <IconAt />,
-  darkMode: true,
 };
 
 DisabledInput.args = {
@@ -104,7 +102,6 @@ DisabledInput.args = {
   startIcon: <IconUser />,
   disabled: true,
   value: "Valeur désactivée",
-  darkMode: true,
 };
 
 ReadOnlyInput.args = {
@@ -112,5 +109,4 @@ ReadOnlyInput.args = {
   startIcon: <IconUser />,
   readOnly: true,
   value: "Valeur en lecture seule",
-  darkMode: true,
 };

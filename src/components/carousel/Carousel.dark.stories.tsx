@@ -9,6 +9,13 @@ import icon from "../../assets/logo-dark.svg";
 export default {
   title: "socraft-ui/Carousel/Dark-mode",
   component: Carousel,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -29,7 +36,6 @@ export const CarouselWithCustomElements = Template.bind({});
 export const CarouselWithImages = Template.bind({});
 
 DefaultCarousel.args = {
-  darkMode: true,
   crafters: [
     {
       id: "1",
@@ -61,7 +67,6 @@ DefaultCarousel.args = {
 
 CarouselWithCustomElements.args = {
   useCustomElements: true,
-  darkMode: true,
   customElements: [
     <Card
       key={1}
@@ -83,7 +88,7 @@ CarouselWithCustomElements.args = {
       subTitle="Another custom element's subtitle"
       buttons={
         <>
-          <Button variant="outlined" darkMode endIcon={<IconPlus />}>
+          <Button variant="outlined" endIcon={<IconPlus />}>
             I&apos;m an action
           </Button>
           <Button variant="yellow" endIcon={<IconArrowRight />}>
@@ -99,7 +104,6 @@ CarouselWithCustomElements.args = {
 
 CarouselWithImages.args = {
   useCustomElements: true,
-  darkMode: true,
   numVisible: 5,
   customElements: [
     <img key={1} className="logo" src={icon} alt="Placeholder image" />,

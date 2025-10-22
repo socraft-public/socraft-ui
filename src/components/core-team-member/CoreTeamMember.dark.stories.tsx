@@ -6,6 +6,13 @@ import { CoreTeamMemberProps } from "./CoreTeamMember.types";
 export default {
   title: "socraft-ui/CoreTeamMember/Dark-mode",
   component: CoreTeamMember,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -31,5 +38,4 @@ Default.args = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   fullname: "John Doe",
   role: "Software Engineer",
-  darkMode: true,
 };

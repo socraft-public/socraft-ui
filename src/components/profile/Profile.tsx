@@ -36,15 +36,6 @@ const Profile: FC<ProfileProps> = ({
     }
   };
 
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((word) => word.charAt(0))
-      .join("")
-      .toUpperCase()
-      .slice(0, 2);
-  };
-
   return (
     <div
       className={cn(
@@ -53,6 +44,7 @@ const Profile: FC<ProfileProps> = ({
         "cursor-pointer group",
         opensTheProfile && "hover:opacity-70",
         "gap-3",
+        "dark:text-white",
         className,
       )}
       onClick={handleClick}
@@ -78,7 +70,7 @@ const Profile: FC<ProfileProps> = ({
               className="h-full w-full object-cover"
             />
           ) : (
-            <div>{getInitials(firstname)}</div>
+            <>{firstname}</>
           )}
         </div>
 
@@ -94,9 +86,9 @@ const Profile: FC<ProfileProps> = ({
       </div>
 
       <div className="flex flex-col items-center space-y-1 min-h-[2rem]">
-        <h3 className={cn("font-semibold")}>{firstname}</h3>
+        <h3 className="font-semibold">{firstname}</h3>
 
-        {showJob && job && <p className={cn("text-sm")}>{job}</p>}
+        {showJob && job && <p className="text-sm">{job}</p>}
       </div>
     </div>
   );

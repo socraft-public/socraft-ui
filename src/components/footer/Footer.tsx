@@ -28,7 +28,6 @@ const Footer: FC<FooterProps> = ({
   githubLink,
   facebookLink,
   youtubeLink,
-  darkMode,
   centerButtons,
   badges,
   socialNetworksText = "Suivez-nous",
@@ -70,45 +69,21 @@ const Footer: FC<FooterProps> = ({
 
   return (
     <footer
-      className={cn(
-        "bg-background px-0 py-8 sm:px-4 md:px-6 lg:px-8",
-        darkMode && "text-white",
-      )}
-      style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
+      className="bg-background px-0 py-8 sm:px-4 md:px-6 lg:px-8  dark:text-white"
       {...props}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-0">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-16">
-          {/* Section 1: Cities and Address */}
           <div className="space-y-4 w-full min-w-0 overflow-hidden">
-            <h2
-              className={cn(
-                "text-lg font-semibold",
-                darkMode ? "text-white" : "text-foreground",
-              )}
-            >
-              {cities.join(" - ")}
-            </h2>
+            <h2 className="text-lg font-semibold">{cities.join(" - ")}</h2>
 
-            <div
-              className={cn(
-                "space-y-2 text-sm",
-                darkMode ? "text-gray-300" : "text-muted-foreground",
-              )}
-            >
+            <div className="space-y-2 text-sm">
               {address.split("\n").map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>
 
-            <p
-              className={cn(
-                "text-sm",
-                darkMode ? "text-gray-300" : "text-muted-foreground",
-              )}
-            >
-              {copyright}
-            </p>
+            <p className="text-sm">{copyright}</p>
 
             {cguLink && cguText && (
               <Button
@@ -135,12 +110,7 @@ const Footer: FC<FooterProps> = ({
           {/* Section 2: Center Buttons */}
           {centerButtons && centerButtons.length > 0 ? (
             <div className="space-y-4 w-full min-w-0 overflow-hidden flex flex-col items-center">
-              <h2
-                className={cn(
-                  "text-lg font-semibold text-center",
-                  darkMode ? "text-white" : "text-foreground",
-                )}
-              >
+              <h2 className="text-lg font-semibold text-center">
                 {centerButtonsText}
               </h2>
 
@@ -171,14 +141,7 @@ const Footer: FC<FooterProps> = ({
 
           {/* Section 3: Social Networks */}
           <div className="space-y-4 w-full min-w-0 overflow-hidden text-right">
-            <h2
-              className={cn(
-                "text-lg font-semibold",
-                darkMode ? "text-white" : "text-foreground",
-              )}
-            >
-              {socialNetworksText}
-            </h2>
+            <h2 className="text-lg font-semibold">{socialNetworksText}</h2>
 
             <div className="flex justify-end gap-1">
               {socialLinks.map(({ href, icon: Icon, label }) => (
@@ -186,7 +149,6 @@ const Footer: FC<FooterProps> = ({
                   key={label}
                   variant="socraft-icon"
                   size="icon"
-                  darkMode={darkMode}
                   asChild
                   className="h-9 w-9 p-1.5"
                 >
@@ -204,16 +166,8 @@ const Footer: FC<FooterProps> = ({
 
             {moreActions && <div className="pt-4">{moreActions}</div>}
 
-            {/* Newsletter Section */}
             <div className="space-y-4 mt-8 text-right">
-              <h2
-                className={cn(
-                  "text-lg font-semibold",
-                  darkMode ? "text-white" : "text-foreground",
-                )}
-              >
-                {newsletterText}
-              </h2>
+              <h2 className="text-lg font-semibold">{newsletterText}</h2>
 
               <form
                 onSubmit={async (e) => {
@@ -224,7 +178,6 @@ const Footer: FC<FooterProps> = ({
                     setInternalLoading(true);
                     try {
                       await onNewsletterSubmitAsync(email);
-                      // Reset form after successful submission
                       (e.target as HTMLFormElement).reset();
                       setMessage({
                         text: newsletterSuccessMessage,
@@ -252,10 +205,6 @@ const Footer: FC<FooterProps> = ({
                       message.type === "success"
                         ? "bg-green-100 text-green-800 border border-green-200"
                         : "bg-red-100 text-red-800 border border-red-200",
-                      darkMode &&
-                        (message.type === "success"
-                          ? "bg-green-900/20 text-green-400 border-green-800/30"
-                          : "bg-red-900/20 text-red-400 border-red-800/30"),
                     )}
                   >
                     {message.text}
@@ -266,7 +215,6 @@ const Footer: FC<FooterProps> = ({
                   name="email"
                   placeholder={newsletterPlaceholder}
                   required
-                  darkMode={darkMode}
                 />
                 <Button
                   type="submit"

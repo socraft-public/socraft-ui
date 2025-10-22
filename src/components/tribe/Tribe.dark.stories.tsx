@@ -7,6 +7,13 @@ import { Crafter } from "../profile/Profile.types";
 export default {
   title: "socraft-ui/Tribe/Dark-mode",
   component: Tribe,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",

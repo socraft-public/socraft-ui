@@ -9,8 +9,6 @@ const NavBar: React.FC<NavBarProps> = ({
   activeTabUrl,
   tabs,
   buttons,
-  transparent,
-  darkMode,
   showDarkModeToggle,
   darkModeText,
   onDarkModeToggle,
@@ -34,26 +32,20 @@ const NavBar: React.FC<NavBarProps> = ({
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-100 ease-in-out border-b px-4 md:px-12 lg:px-[200px] py-2.5 ${
-        transparent
-          ? "bg-transparent border-transparent"
-          : darkMode
-            ? "border-gray-800"
-            : "bg-white border-gray-200"
-      }`}
-      style={
-        darkMode && !transparent
-          ? { backgroundColor: "var(--black)" }
-          : undefined
-      }
+      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-100 ease-in-out border-b px-4 md:px-12 lg:px-[200px] py-2.5  dark:text-white`}
     >
       <div className="flex items-center justify-between">
-        <img
-          src={darkMode ? logoLight : logoDark}
-          alt="logo"
-          className="h-8 md:h-10 cursor-pointer"
+        <div
+          className="relative cursor-pointer"
           onClick={() => (window.location.href = window.location.origin)}
-        />
+        >
+          <img src={logoDark} alt="logo" className="h-8 md:h-10 dark:hidden" />
+          <img
+            src={logoLight}
+            alt="logo"
+            className="h-8 md:h-10 hidden dark:block"
+          />
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center">
@@ -63,12 +55,10 @@ const NavBar: React.FC<NavBarProps> = ({
                 {tab.children ? (
                   <div>
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-yellow-500 ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md${
                         activeTabUrl === tab.url
                           ? "text-yellow-500"
-                          : darkMode
-                            ? "text-white"
-                            : "text-gray-900"
+                          : "text-gray-900 dark:text-white"
                       }`}
                       onClick={() => {
                         setOpenDropdown(openDropdown === index ? null : index);
@@ -97,7 +87,7 @@ const NavBar: React.FC<NavBarProps> = ({
                           {tab.children.map((child, childIndex) => (
                             <button
                               key={childIndex}
-                              className="block w-full text-left px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 rounded-sm transition-colors text-gray-900 dark:text-white"
+                              className="block w-full text-left px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md transition-colors text-gray-900 dark:text-white"
                               onClick={() => {
                                 handleTabClick(child.url);
                                 setOpenDropdown(null);
@@ -112,13 +102,7 @@ const NavBar: React.FC<NavBarProps> = ({
                   </div>
                 ) : (
                   <button
-                    className={`px-4 py-2 text-sm font-medium transition-colors hover:text-yellow-500 ${
-                      activeTabUrl === tab.url
-                        ? "text-yellow-500"
-                        : darkMode
-                          ? "text-white"
-                          : "text-gray-900"
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md`}
                     onClick={() => handleTabClick(tab.url)}
                   >
                     {tab.title}
@@ -136,11 +120,7 @@ const NavBar: React.FC<NavBarProps> = ({
                 className={`px-4 py-2 text-sm font-medium ${
                   button.appearance === "yellow"
                     ? "hover:brightness-110 transition-all duration-200"
-                    : `transition-colors ${
-                        darkMode
-                          ? "text-white hover:text-yellow-500 hover:bg-transparent focus:bg-transparent active:bg-transparent focus-visible:ring-0"
-                          : "text-gray-900 hover:text-yellow-500 hover:bg-transparent focus:bg-transparent active:bg-transparent focus-visible:ring-0"
-                      }`
+                    : ""
                 }`}
                 onClick={() => handleButtonClick(button)}
               >
@@ -155,13 +135,15 @@ const NavBar: React.FC<NavBarProps> = ({
                 <Button
                   variant="socraft-icon"
                   size="icon"
-                  darkMode={darkMode}
                   className="h-8 w-8 p-2"
                   onClick={() =>
-                    onDarkModeToggle && onDarkModeToggle(!darkMode)
+                    onDarkModeToggle &&
+                    onDarkModeToggle(
+                      !document.documentElement.classList.contains("dark"),
+                    )
                   }
                 >
-                  {darkMode ? (
+                  {document.documentElement.classList.contains("dark") ? (
                     <MoonIcon className="h-4 w-4" />
                   ) : (
                     <SunIcon className="h-4 w-4" />
@@ -177,16 +159,7 @@ const NavBar: React.FC<NavBarProps> = ({
                     onChange={(e) =>
                       onLocaleChange && onLocaleChange(e.target.value)
                     }
-                    className={`px-3 py-1 text-sm border rounded cursor-pointer focus:ring-0 focus:outline-none ${
-                      darkMode
-                        ? "border-gray-700 text-white focus:border-[var(--yellow)]"
-                        : "bg-white border-gray-300 text-gray-900 focus:border-[var(--yellow)] focus:ring-[var(--yellow)]/20"
-                    }`}
-                    style={
-                      darkMode
-                        ? { backgroundColor: "var(--darkGray)" }
-                        : undefined
-                    }
+                    className={`px-3 py-1 text-sm border rounded cursor-pointer focus:ring-0 focus:outline-none bg-white dark:bg-inherit text-gray-900 dark:text-white border-gray-200 dark:border-gray-700`}
                   >
                     {locales.map((loc) => (
                       <option key={loc} value={loc}>
@@ -205,7 +178,6 @@ const NavBar: React.FC<NavBarProps> = ({
           <Button
             variant="socraft-icon"
             size="icon"
-            darkMode={darkMode}
             className="h-10 w-10 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -222,16 +194,12 @@ const NavBar: React.FC<NavBarProps> = ({
             onClick={() => setIsMenuOpen(false)}
           />
           <div
-            className={`fixed right-0 top-0 h-full w-80 p-6 transform transition-transform duration-300 ease-in-out translate-x-0 ${
-              darkMode ? "border-gray-800" : "bg-white border-gray-200"
-            } border-l shadow-xl`}
-            style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
+            className={`fixed right-0 top-0 h-full w-80 p-6 transform transition-transform duration-300 ease-in-out translate-x-0 border-l shadow-xl`}
           >
             {/* Close Button */}
             <Button
               variant="socraft-icon"
               size="icon"
-              darkMode={darkMode}
               className="absolute top-4 right-4 h-10 w-10 p-2"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
@@ -248,9 +216,7 @@ const NavBar: React.FC<NavBarProps> = ({
                       className={`flex items-center w-full text-left text-base font-medium px-0 py-2 transition-colors ${
                         activeTabUrl === tab.url
                           ? "text-yellow-500"
-                          : darkMode
-                            ? "text-white"
-                            : "text-gray-900"
+                          : "text-gray-900"
                       }`}
                       onClick={() => {
                         if (!tab.children) {
@@ -287,11 +253,7 @@ const NavBar: React.FC<NavBarProps> = ({
                         {tab.children.map((child, childIndex) => (
                           <button
                             key={childIndex}
-                            className={`text-left text-sm px-0 py-1 transition-colors ${
-                              darkMode
-                                ? "text-gray-300 hover:text-white"
-                                : "text-gray-600 hover:text-gray-900"
-                            }`}
+                            className={`text-left text-sm px-0 py-1 transition-colors`}
                             onClick={() => {
                               handleTabClick(child.url);
                               setIsMenuOpen(false);
@@ -331,11 +293,7 @@ const NavBar: React.FC<NavBarProps> = ({
                     <button
                       key={index}
                       type="button"
-                      className={`flex items-center w-full text-left text-base font-medium px-0 py-2 transition-colors ${
-                        darkMode
-                          ? "text-white hover:text-yellow-500"
-                          : "text-gray-900 hover:text-yellow-500"
-                      }`}
+                      className={`flex items-center w-full text-left text-base font-medium px-0 py-2 transition-colors`}
                       onClick={() => {
                         handleButtonClick(button);
                         setIsMenuOpen(false);
@@ -348,30 +306,24 @@ const NavBar: React.FC<NavBarProps> = ({
               </div>
 
               {/* Mobile Actions */}
-              <div
-                className={`flex flex-col gap-4 pt-4 border-t ${
-                  darkMode ? "border-gray-700" : "border-gray-200"
-                }`}
-              >
+              <div className={`flex flex-col gap-4 pt-4 border-t`}>
                 {showDarkModeToggle && (
                   <div className="flex items-center justify-start gap-4">
-                    <span
-                      className={`text-sm font-medium ${
-                        darkMode ? "text-white" : "text-gray-900"
-                      }`}
-                    >
+                    <span className={`text-sm font-medium`}>
                       {darkModeText || "Dark Mode"}
                     </span>
                     <Button
                       variant="socraft-icon"
                       size="icon"
-                      darkMode={darkMode}
                       className="h-8 w-8 p-2"
                       onClick={() =>
-                        onDarkModeToggle && onDarkModeToggle(!darkMode)
+                        onDarkModeToggle &&
+                        onDarkModeToggle(
+                          !document.documentElement.classList.contains("dark"),
+                        )
                       }
                     >
-                      {darkMode ? (
+                      {document.documentElement.classList.contains("dark") ? (
                         <MoonIcon className="h-4 w-4" />
                       ) : (
                         <SunIcon className="h-4 w-4" />
@@ -382,11 +334,7 @@ const NavBar: React.FC<NavBarProps> = ({
 
                 {showLocaleSelector && (
                   <div className="flex items-center justify-start gap-4">
-                    <span
-                      className={`text-sm font-medium ${
-                        darkMode ? "text-white" : "text-gray-900"
-                      }`}
-                    >
+                    <span className={`text-sm font-medium`}>
                       {locale === "fr" ? "Langue" : "Language"}
                     </span>
                     <select
@@ -394,16 +342,7 @@ const NavBar: React.FC<NavBarProps> = ({
                       onChange={(e) =>
                         onLocaleChange && onLocaleChange(e.target.value)
                       }
-                      className={`px-3 py-1 text-sm border rounded focus:ring-0 focus:outline-none ${
-                        darkMode
-                          ? "border-gray-700 text-white focus:border-[var(--yellow)]"
-                          : "bg-white border-gray-300 text-gray-900 focus:border-[var(--yellow)] focus:ring-[var(--yellow)]/20"
-                      }`}
-                      style={
-                        darkMode
-                          ? { backgroundColor: "var(--darkGray)" }
-                          : undefined
-                      }
+                      className={`px-3 py-1 text-sm border rounded focus:ring-0 focus:outline-none`}
                     >
                       {locales.map((loc) => (
                         <option key={loc} value={loc}>

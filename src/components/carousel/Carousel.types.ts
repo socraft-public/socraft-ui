@@ -42,10 +42,6 @@ export interface CarouselProps extends PrimeCarouselProps {
    */
   centered?: boolean;
   /**
-   * Determines if the carousel should be in dark mode.
-   */
-  darkMode?: boolean;
-  /**
    * List of crafters.
    */
   crafters?: Crafter[];

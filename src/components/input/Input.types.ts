@@ -23,12 +23,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
 
   /**
-   * Whether the input should be rendered in dark mode.
-   * This affects colors, borders, and text styling.
-   */
-  darkMode?: boolean;
-
-  /**
    * The visual variant of the input.
    * - `default`: Standard input styling
    * - `error`: Error state styling (automatically applied when errorMessage is provided)

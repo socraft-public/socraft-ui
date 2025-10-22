@@ -46,10 +46,6 @@ export interface FooterProps {
    */
   youtubeLink?: string;
   /**
-   * An optional dark mode for the footer.
-   */
-  darkMode?: boolean;
-  /**
    * The text above the center buttons
    */
   centerButtonsText?: string;

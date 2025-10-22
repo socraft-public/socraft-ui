@@ -7,6 +7,13 @@ import "../../styles/globals.css";
 export default {
   title: "socraft-ui/NavBar/Dark-mode",
   component: NavBar,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -34,7 +41,6 @@ export const WithTwoLevelMenu = Template.bind({});
 
 Default.args = {
   activeTabUrl: "/home",
-  darkMode: true,
   tabs: [
     { title: "Accueil", url: "/home" },
     { title: "Craftworks", url: "/about" },

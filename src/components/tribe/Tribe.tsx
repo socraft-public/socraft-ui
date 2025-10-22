@@ -13,7 +13,6 @@ const Tribe: FC<TribeProps> = ({
   description,
   image,
   crafters,
-  darkMode = false,
   showMoreText = "En savoir plus",
   opensTheProfileInANewTab = true,
 }) => {
@@ -34,9 +33,7 @@ const Tribe: FC<TribeProps> = ({
       className={cn(
         "w-full max-w-[800px] overflow-hidden flex flex-col justify-between",
         "border border-border bg-background transition-colors",
-        darkMode && "text-white border-white/20",
       )}
-      style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
       data-tribe-id={id || name}
     >
       <div className="relative overflow-hidden">
@@ -76,10 +73,7 @@ const Tribe: FC<TribeProps> = ({
                 </h3>
                 <Badge
                   variant="secondary"
-                  className={cn(
-                    "text-xs px-2 py-1 hover:bg-secondary",
-                    darkMode && "bg-white/10 text-white hover:bg-white/10",
-                  )}
+                  className={cn("text-xs px-2 py-1 hover:bg-secondary")}
                 >
                   {crafters?.length || 0}
                 </Badge>
@@ -88,7 +82,6 @@ const Tribe: FC<TribeProps> = ({
                 <Carousel
                   useCustomElements={false}
                   crafters={crafters}
-                  darkMode={darkMode}
                   shouldOpenTheProfile={true}
                   shouldOpenTheProfileInANewTab={opensTheProfileInANewTab}
                   numVisible={2}
@@ -128,7 +121,6 @@ const Tribe: FC<TribeProps> = ({
       <div className="flex gap-2.5 px-6 md:px-8 mb-4 pt-2 md:pt-3">
         <Button
           variant="outlined"
-          darkMode={darkMode}
           endIcon={isExpanded ? <IconChevronUp /> : <IconChevronDown />}
           onClick={toggleExpand}
           className="flex-1"

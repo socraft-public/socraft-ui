@@ -12,12 +12,11 @@ import { Profile } from "../profile";
 import { cn } from "../../lib/utils";
 import { Card } from "../card";
 
-const Skeleton: FC<{ darkMode?: boolean }> = ({ darkMode }) => (
+const Skeleton: FC = () => (
   <div
     className={cn(
       "h-[150px] w-[150px] rounded-[29px] border",
       "bg-gray-200 animate-pulse",
-      darkMode && "bg-gray-700 border-white/20",
     )}
   />
 );
@@ -30,7 +29,6 @@ const Carousel: FC<CarouselProps> = ({
   shouldOpenTheProfile = true,
   shouldOpenTheProfileInANewTab = true,
 
-  darkMode,
   numVisible = 1,
   autoplayInterval = 3000,
   circular = true,
@@ -59,7 +57,6 @@ const Carousel: FC<CarouselProps> = ({
           crafter={crafter}
           opensTheProfile={shouldOpenTheProfile}
           opensTheProfileInANewTab={shouldOpenTheProfileInANewTab}
-          darkMode={darkMode}
         />
       </div>
     );
@@ -146,7 +143,6 @@ const Carousel: FC<CarouselProps> = ({
           fullWidth
             ? "w-full"
             : "w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[70%]",
-          darkMode && "text-white",
           className,
         )}
         style={{
@@ -173,7 +169,7 @@ const Carousel: FC<CarouselProps> = ({
                 className={cn(getResponsiveBasisClass(), "pl-2 flex-shrink-0")}
               >
                 <div className="flex justify-center items-start w-full p-4 min-h-[220px] h-auto">
-                  <Skeleton darkMode={darkMode} />
+                  <Skeleton />
                 </div>
               </CarouselItem>
             ))}
@@ -182,16 +178,12 @@ const Carousel: FC<CarouselProps> = ({
             className={cn(
               "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 -left-2 z-10",
               "top-[75px] sm:top-[85px] md:top-[95px] lg:top-[105px] xl:top-[110px]",
-              darkMode &&
-                "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
             )}
           />
           <CarouselNext
             className={cn(
               "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 -right-2 z-10",
               "top-[75px] sm:top-[85px] md:top-[95px] lg:top-[105px] xl:top-[110px]",
-              darkMode &&
-                "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
             )}
           />
         </ShadcnCarousel>
@@ -207,7 +199,6 @@ const Carousel: FC<CarouselProps> = ({
           fullWidth
             ? "w-full"
             : "w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[70%]",
-          darkMode && "text-white",
           className,
         )}
         style={{
@@ -241,18 +232,14 @@ const Carousel: FC<CarouselProps> = ({
           </CarouselContent>
           <CarouselPrevious
             className={cn(
-              "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 -left-2 z-10",
+              "flex h-10 w-10 -left-2 z-10",
               "top-[75px] sm:top-[85px] md:top-[95px] lg:top-[105px] xl:top-[110px]",
-              darkMode &&
-                "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
             )}
           />
           <CarouselNext
             className={cn(
-              "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 -right-2 z-10",
+              "flex h-10 w-10 -right-2 z-10",
               "top-[75px] sm:top-[85px] md:top-[95px] lg:top-[105px] xl:top-[110px]",
-              darkMode &&
-                "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
             )}
           />
         </ShadcnCarousel>
@@ -269,7 +256,6 @@ const Carousel: FC<CarouselProps> = ({
           : numVisible === 1
             ? "w-full"
             : "w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[70%]",
-        darkMode && "text-white",
         className,
       )}
       style={{
@@ -329,16 +315,12 @@ const Carousel: FC<CarouselProps> = ({
                       className: cn(
                         (element as React.ReactElement).props.className,
                         "object-contain w-full h-auto filter grayscale",
-                        darkMode && "invert",
                       ),
                       style: {
                         ...(element as React.ReactElement).props.style,
                         objectFit: "contain",
                         width: "100%",
                         height: "auto",
-                        filter: darkMode
-                          ? "grayscale(100%) invert(1)"
-                          : "grayscale(100%)",
                       },
                     })}
                   </div>
@@ -360,28 +342,24 @@ const Carousel: FC<CarouselProps> = ({
         </CarouselContent>
         <CarouselPrevious
           className={cn(
-            "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 z-10",
+            "flex h-10 w-10 z-10",
             getDuplicatedCustomElements()?.some(
               (element) =>
                 React.isValidElement(element) && element.type === "img",
             )
               ? "left-2 top-[60px] sm:top-[70px] md:top-[75px]"
               : "hidden sm:flex -left-1 sm:top-[70px] md:top-[80px] lg:top-[90px] xl:top-[100px]",
-            darkMode &&
-              "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
           )}
         />
         <CarouselNext
           className={cn(
-            "flex h-10 w-10 bg-white border-2 border-gray-200 shadow-lg hover:bg-gray-50 z-10",
+            "flex h-10 w-10 z-10",
             getDuplicatedCustomElements()?.some(
               (element) =>
                 React.isValidElement(element) && element.type === "img",
             )
               ? "right-2 top-[60px] sm:top-[70px] md:top-[75px]"
               : "hidden sm:flex -right-1 sm:top-[70px] md:top-[80px] lg:top-[90px] xl:top-[100px]",
-            darkMode &&
-              "bg-gray-800 border-white/20 text-white hover:bg-gray-700",
           )}
         />
       </ShadcnCarousel>
