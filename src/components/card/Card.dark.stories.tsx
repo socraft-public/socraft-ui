@@ -9,7 +9,7 @@ export default {
   component: Card,
   decorators: [
     (Story) => (
-      <div className="w-full md:w-1/2 mx-auto">
+      <div className="dark w-full md:w-1/2 mx-auto">
         <Story />
       </div>
     ),
@@ -52,7 +52,6 @@ DefaultCard.args = {
       eu, posuere in magna. Etiam elementum imperdiet tincidunt.
     </p>
   ),
-  darkMode: true,
 };
 
 CardWithButtons.args = {
@@ -84,7 +83,6 @@ CardWithButtons.args = {
       </Button>
     </>
   ),
-  darkMode: true,
 };
 
 CardWithImage.args = {
@@ -108,5 +106,4 @@ CardWithImage.args = {
       eu, posuere in magna. Etiam elementum imperdiet tincidunt.
     </p>
   ),
-  darkMode: true,
 };

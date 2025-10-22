@@ -6,44 +6,31 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "../ui/card";
-import { cn } from "../../lib/utils";
 import React from "react";
 
-const Card: FC<CardProps> = ({ darkMode, image, buttons, ...props }) => {
+const Card: FC<CardProps> = ({ image, buttons, ...props }) => {
   return (
-    <ShadcnCard
-      className={cn("flex flex-col gap-6 p-6 md:p-8", props.className)}
-      style={{
-        ...(darkMode
-          ? { backgroundColor: "var(--black)", color: "white" }
-          : {}),
-        ...props.style,
-      }}
-    >
-      {image && (
-        <div className="flex justify-center md:justify-start">
-          <img
-            src={image}
-            alt="Profil Image"
-            className="h-24 w-24 rounded-lg object-cover"
-          />
-        </div>
-      )}
-
+    <ShadcnCard className={props.className}>
       {(props.title || props.subTitle || props.header) && (
-        <CardHeader className={cn("p-0", image && "mt-5")}>
+        <CardHeader>
           {props.header ? (
-            <div>{props.header as React.ReactNode}</div>
+            <>{props.header as React.ReactNode}</>
           ) : (
             <>
+              {image && (
+                <img
+                  src={image}
+                  alt="card image"
+                  className="h-24 w-24 rounded-lg object-cover mb-2"
+                />
+              )}
               {props.title && (
-                <CardTitle className="text-2xl font-medium leading-tight mb-0">
-                  {props.title as React.ReactNode}
-                </CardTitle>
+                <CardTitle>{props.title as React.ReactNode}</CardTitle>
               )}
               {props.subTitle && (
-                <CardDescription className="text-xl font-normal mt-0">
+                <CardDescription>
                   {props.subTitle as React.ReactNode}
                 </CardDescription>
               )}
@@ -53,15 +40,11 @@ const Card: FC<CardProps> = ({ darkMode, image, buttons, ...props }) => {
       )}
 
       {props.children && (
-        <CardContent className="p-0">
-          <div className="text-lg font-medium opacity-60 text-justify leading-relaxed">
-            {props.children as React.ReactNode}
-          </div>
-        </CardContent>
+        <CardContent>{props.children as React.ReactNode}</CardContent>
       )}
 
       {(buttons || props.footer) && (
-        <div className="mt-8 flex gap-3 flex-wrap items-center">
+        <CardFooter className="justify-end gap-2">
           {props.footer ? (
             <div>{props.footer as React.ReactNode}</div>
           ) : (
@@ -71,7 +54,7 @@ const Card: FC<CardProps> = ({ darkMode, image, buttons, ...props }) => {
               ))}
             </>
           )}
-        </div>
+        </CardFooter>
       )}
     </ShadcnCard>
   );

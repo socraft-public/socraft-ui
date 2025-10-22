@@ -7,10 +7,6 @@ export interface CardProps extends PrimeCardProps {
    */
   buttons?: ReactNode;
   /**
-   * Whether to display the card in dark mode
-   */
-  darkMode?: boolean;
-  /**
    * The image to display at the top of the card
    */
   image?: string;
