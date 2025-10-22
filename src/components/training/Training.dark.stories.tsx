@@ -6,6 +6,13 @@ import { TrainingProps } from "./Training.types";
 export default {
   title: "socraft-ui/Training/Dark-mode",
   component: Training,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -52,5 +59,4 @@ Default.args = {
     category: "Développement",
     featured: true,
   },
-  darkMode: true,
 };

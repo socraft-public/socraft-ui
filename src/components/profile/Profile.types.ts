@@ -22,11 +22,6 @@ export interface ProfileProps extends HTMLAttributes<HTMLDivElement> {
   opensTheProfileInANewTab?: boolean;
 
   /**
-   * Determines if the profile is displayed in dark mode.
-   */
-  darkMode?: boolean;
-
-  /**
    * Whether to show the job title.
    */
   showJob?: boolean;

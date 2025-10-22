@@ -52,12 +52,6 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
    * - `icon`: Icon-only button size
    */
   size?: "default" | "sm" | "lg" | "icon";
-
-  /**
-   * Whether the button should be rendered in dark mode.
-   */
-  darkMode?: boolean;
-
   /**
    * Change the default rendered element for the one passed as a child,
    * merging their props and behavior.

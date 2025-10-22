@@ -32,38 +32,28 @@ const buttonVariants = cva(
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
       },
-      darkMode: {
-        true: "",
-        false: "",
-      },
     },
     compoundVariants: [
       {
         variant: "socraft-link",
-        darkMode: true,
         class: "text-white hover:text-[#fbbb10]",
       },
       {
         variant: "outlined",
-        darkMode: true,
         class: "text-white border-[#ffffff20]",
       },
-      // Dark mode variants for socraft-icon
       {
         variant: "socraft-icon",
-        darkMode: true,
         class: "text-gray-300",
       },
       {
         variant: "socraft-icon",
-        darkMode: false,
         class: "text-foreground",
       },
     ],
     defaultVariants: {
       variant: "default",
       size: "default",
-      darkMode: false,
     },
   },
 );
@@ -74,7 +64,6 @@ export interface ButtonProps
   asChild?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  darkMode?: boolean;
   loading?: boolean;
   loadingText?: string;
 }
@@ -85,7 +74,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       variant,
       size,
-      darkMode,
       asChild = false,
       startIcon,
       endIcon,
@@ -102,7 +90,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (asChild) {
       return (
         <Comp
-          className={cn(buttonVariants({ variant, size, darkMode, className }))}
+          className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}
           {...props}
         >
@@ -113,7 +101,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, darkMode, className }))}
+        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         disabled={disabled || loading}
         {...props}

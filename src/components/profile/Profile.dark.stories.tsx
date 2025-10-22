@@ -5,6 +5,13 @@ import React from "react";
 export default {
   title: "socraft-ui/Profile/Dark-mode",
   component: Profile,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -36,7 +43,6 @@ DefaultProfile.args = {
   },
   opensTheProfile: true,
   opensTheProfileInANewTab: true,
-  darkMode: true,
 };
 
 WithJob.args = {
@@ -54,5 +60,4 @@ WithJob.args = {
   opensTheProfileInANewTab: true,
   showJob: true,
   showOpenToWork: true,
-  darkMode: true,
 };

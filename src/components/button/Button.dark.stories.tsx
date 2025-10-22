@@ -6,6 +6,13 @@ import { IconHome, IconArrowRight } from "@tabler/icons-react";
 export default {
   title: "socraft-ui/Button/Dark-mode",
   component: Button,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -42,40 +49,34 @@ export const IconButton = Template.bind({});
 YellowButton.args = {
   children: <span>Yellow Button</span>,
   variant: "yellow",
-  darkMode: true,
 };
 
 SocraftLinkButton.args = {
   children: <span>Socraft Link Button</span>,
   variant: "socraft-link",
-  darkMode: true,
 };
 
 OutlinedButton.args = {
   children: <span>Outlined Button</span>,
   variant: "outlined",
-  darkMode: true,
 };
 
 SocraftIconButton.args = {
   children: <IconHome />,
   variant: "socraft-icon",
   size: "icon",
-  darkMode: true,
 };
 
 WithStartIcon.args = {
   children: <span>Button with Start Icon</span>,
   variant: "outlined",
   startIcon: <IconHome />,
-  darkMode: true,
 };
 
 WithEndIcon.args = {
   children: <span>Button with End Icon</span>,
   variant: "yellow",
   endIcon: <IconArrowRight />,
-  darkMode: true,
 };
 
 LoadingButton.args = {
@@ -94,56 +95,47 @@ LoadingButtonWithText.args = {
 DefaultButton.args = {
   children: <span>Default Button</span>,
   variant: "default",
-  darkMode: true,
 };
 
 DestructiveButton.args = {
   children: <span>Destructive Button</span>,
   variant: "destructive",
-  darkMode: true,
 };
 
 OutlineButton.args = {
   children: <span>Outline Button</span>,
   variant: "outline",
-  darkMode: true,
 };
 
 SecondaryButton.args = {
   children: <span>Secondary Button</span>,
   variant: "secondary",
-  darkMode: true,
 };
 
 GhostButton.args = {
   children: <span>Ghost Button</span>,
   variant: "ghost",
-  darkMode: true,
 };
 
 LinkButton.args = {
   children: <span>Link Button</span>,
   variant: "link",
-  darkMode: true,
 };
 
 SmallButton.args = {
   children: <span>Small Button</span>,
   variant: "yellow",
   size: "sm",
-  darkMode: true,
 };
 
 LargeButton.args = {
   children: <span>Large Button</span>,
   variant: "yellow",
   size: "lg",
-  darkMode: true,
 };
 
 IconButton.args = {
   children: <IconHome />,
   variant: "outline",
   size: "icon",
-  darkMode: true,
 };

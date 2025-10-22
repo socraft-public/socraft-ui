@@ -8,9 +8,7 @@ const Profile: FC<ProfileProps> = ({
   crafter,
   opensTheProfile = true,
   opensTheProfileInANewTab = true,
-  darkMode = false,
   className,
-
   showJob = false,
   showOpenToWork = false,
   ...props
@@ -55,7 +53,6 @@ const Profile: FC<ProfileProps> = ({
         "cursor-pointer group",
         opensTheProfile && "hover:opacity-70",
         "gap-3",
-        darkMode && "text-white",
         className,
       )}
       onClick={handleClick}
@@ -70,12 +67,8 @@ const Profile: FC<ProfileProps> = ({
       <div className="relative">
         <div
           className={cn(
-            "h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32",
-            "relative overflow-hidden rounded-full ring-2 ring-offset-2 transition-all duration-200",
-            "group-hover:scale-105 group-hover:ring-4",
-            darkMode
-              ? "ring-white/20 ring-offset-gray-900 group-hover:ring-white/40"
-              : "ring-gray-200 ring-offset-white group-hover:ring-gray-300",
+            "lg:h-32 lg:w-32",
+            "relative overflow-hidden rounded-full transition-all duration-200",
           )}
         >
           {profilePicture ? (
@@ -85,52 +78,25 @@ const Profile: FC<ProfileProps> = ({
               className="h-full w-full object-cover"
             />
           ) : (
-            <div
-              className={cn(
-                "flex h-full w-full items-center justify-center text-lg font-semibold",
-                darkMode
-                  ? "bg-gray-700 text-white"
-                  : "bg-gray-100 text-gray-900",
-              )}
-            >
-              {getInitials(firstname)}
-            </div>
+            <div>{getInitials(firstname)}</div>
           )}
         </div>
 
         {showOpenToWork && openToWork && (
           <Badge
             variant="secondary"
-            className="absolute -bottom-0 -right-0 text-[10px] px-1.5 py-0.5 sm:text-xs sm:px-2 sm:py-1 bg-green-100 text-green-800 border border-green-200"
+            className="absolute -bottom-0 -right-0 text-[10px] sm:px-2 sm:py-1 bg-green-100 text-green-800 border border-green-200"
           >
-            <span className="hidden sm:inline">Open to work</span>
+            <span>Open to work</span>
             <IconBriefcase className="h-3 w-3 sm:hidden" />
           </Badge>
         )}
       </div>
 
       <div className="flex flex-col items-center space-y-1 min-h-[2rem]">
-        <h3
-          className={cn(
-            "text-base sm:text-lg font-semibold",
-            "leading-tight transition-colors duration-200",
-            darkMode ? "text-white" : "text-gray-900",
-          )}
-        >
-          {firstname}
-        </h3>
+        <h3 className={cn("font-semibold")}>{firstname}</h3>
 
-        {showJob && job && (
-          <p
-            className={cn(
-              "text-sm",
-              "leading-relaxed",
-              darkMode ? "text-gray-300" : "text-gray-600",
-            )}
-          >
-            {job}
-          </p>
-        )}
+        {showJob && job && <p className={cn("text-sm")}>{job}</p>}
       </div>
     </div>
   );
