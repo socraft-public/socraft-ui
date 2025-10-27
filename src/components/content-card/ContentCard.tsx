@@ -154,9 +154,8 @@ const ContentCard: FC<ContentCardProps> = ({
   return (
     <Card
       className={cn(
-        "flex w-full max-w-[600px] flex-col justify-between gap-6 p-8 transition-colors",
-        "md:w-[600px]",
-        "max-[580px]:w-[90%] max-[580px]:min-w-0",
+        "flex w-full flex-col justify-between gap-6 p-6 transition-colors",
+        "md:w-[600px] md:p-8",
       )}
     >
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-4">
@@ -173,7 +172,7 @@ const ContentCard: FC<ContentCardProps> = ({
             {domain && (
               <Badge
                 variant="outline"
-                className="self-start max-[550px]:text-xs"
+                className="self-start border max-[550px]:text-xs dark:border-[#fbbb10]/50 border-[#fbbb10]/80"
               >
                 {domain}
               </Badge>
