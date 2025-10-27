@@ -25,9 +25,9 @@ export interface BannerProps {
    */
   link: string;
   /**
-   * onClose function
+   * onClose callback fired when the banner is dismissed
    */
-  onClose: () => void;
+  onClose?: () => void;
   /**
    * label for button
    */

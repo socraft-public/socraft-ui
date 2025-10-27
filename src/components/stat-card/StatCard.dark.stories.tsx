@@ -6,6 +6,13 @@ import { StatCardProps } from "./StatCard.type";
 export default {
   title: "socraft-ui/StatCard/Dark-mode",
   component: StatCard,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -28,7 +35,6 @@ Default.args = {
     value: 100,
     link: { title: "Example", url: "http://localhost:8080" },
   },
-  darkMode: true,
 };
 
 Loading.args = {
@@ -38,5 +44,4 @@ Loading.args = {
     link: { title: "Exemple", url: "http://localhost:8080" },
   },
   loading: true,
-  darkMode: true,
 };

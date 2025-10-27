@@ -7,6 +7,13 @@ import logo from "../../assets/logo-light.svg";
 export default {
   title: "socraft-ui/Reference/Dark-mode",
   component: Reference,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
@@ -27,7 +34,6 @@ Default.args = {
   logo,
   title: "Titre de référence",
   category: ["Catégorie 1", "Catégorie 2"],
-  darkMode: true,
 };
 
 export const TechCompany = Template.bind({});
@@ -35,7 +41,6 @@ TechCompany.args = {
   logo,
   title: "Tech Solutions",
   category: ["Développement", "Innovation"],
-  darkMode: true,
 };
 
 export const SingleCategory = Template.bind({});
@@ -43,5 +48,4 @@ SingleCategory.args = {
   logo,
   title: "Design Studio",
   category: ["UI/UX Design"],
-  darkMode: true,
 };

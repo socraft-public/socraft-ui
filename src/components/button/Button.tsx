@@ -36,11 +36,11 @@ const buttonVariants = cva(
     compoundVariants: [
       {
         variant: "socraft-link",
-        class: "text-white hover:text-[#fbbb10]",
+        class: "dark:text-white dark:hover:text-[#fbbb10]",
       },
       {
         variant: "outlined",
-        class: "text-white border-[#ffffff20]",
+        class: "dark:text-white dark:border-[#ffffff20] ",
       },
       {
         variant: "socraft-icon",

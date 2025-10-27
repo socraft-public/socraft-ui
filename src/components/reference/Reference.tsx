@@ -3,7 +3,6 @@ import { ReferenceProps } from "./Reference.types";
 import { cn } from "../../lib/utils";
 
 const Reference: FC<ReferenceProps> = ({
-  darkMode,
   logo,
   title,
   category,
@@ -15,28 +14,16 @@ const Reference: FC<ReferenceProps> = ({
     className,
   );
 
-  const headClasses = cn(
-    "h-48 w-48 md:h-52 md:w-52 flex items-center justify-center rounded-2xl overflow-hidden",
-    darkMode
-      ? "bg-yellow-400/10 border border-yellow-400/20"
-      : "bg-yellow-400/5 border border-yellow-400/10",
-  );
+  const headClasses =
+    "h-48 w-48 md:h-52 md:w-52 flex items-center justify-center rounded-2xl overflow-hidden";
 
-  const logoClasses = cn(
-    "w-auto h-auto max-w-32 md:max-w-36 transition-transform duration-300 group-hover:scale-110",
-  );
+  const logoClasses =
+    "w-auto h-auto max-w-32 md:max-w-36 transition-transform duration-300 group-hover:scale-110";
+  const bodyClasses = "text-center mt-4 space-y-2";
 
-  const bodyClasses = cn("text-center mt-4 space-y-2");
+  const titleClasses = "text-lg md:text-xl font-medium";
 
-  const titleClasses = cn(
-    "text-lg md:text-xl font-medium",
-    darkMode ? "text-white" : "text-zinc-800",
-  );
-
-  const categoryClasses = cn(
-    "text-sm font-medium tracking-wide",
-    darkMode ? "text-zinc-400" : "text-zinc-500",
-  );
+  const categoryClasses = "text-sm font-medium tracking-wide";
 
   return (
     <div className={containerClasses} onClick={onClick}>

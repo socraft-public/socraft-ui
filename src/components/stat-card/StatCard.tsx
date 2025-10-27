@@ -6,11 +6,7 @@ import { Card } from "../ui/card";
 import { Spinner } from "../ui/spinner";
 import { StatCardProps } from "./StatCard.type";
 
-const StatCard: React.FC<StatCardProps> = ({
-  stat,
-  darkMode = false,
-  loading = false,
-}) => {
+const StatCard: React.FC<StatCardProps> = ({ stat, loading = false }) => {
   const [animatedValue, setAnimatedValue] = useState(0);
 
   useEffect(() => {
@@ -47,9 +43,7 @@ const StatCard: React.FC<StatCardProps> = ({
         className={cn(
           "w-[250px] h-[200px] flex items-center justify-center",
           "border border-border bg-background",
-          darkMode && "border-white/20",
         )}
-        style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
       >
         <Spinner
           className="w-8 h-8"
@@ -66,13 +60,11 @@ const StatCard: React.FC<StatCardProps> = ({
       className={cn(
         "w-[250px] flex flex-col items-center gap-4 p-8 relative overflow-hidden",
         "border border-border bg-background",
-        darkMode && "text-white border-white/20",
       )}
-      style={darkMode ? { backgroundColor: "var(--black)" } : undefined}
     >
       <div className="text-center space-y-2">
         <h2
-          className={cn("text-6xl font-bold m-0")}
+          className="text-6xl font-bold m-0"
           style={{
             color: "#fbbb10",
           }}
@@ -84,7 +76,6 @@ const StatCard: React.FC<StatCardProps> = ({
           className={cn(
             "text-xl font-medium m-0 transition-all duration-300",
             "text-foreground/80 group-hover:text-foreground",
-            darkMode && "text-white/80 group-hover:text-white",
           )}
         >
           {stat.title}
@@ -93,7 +84,6 @@ const StatCard: React.FC<StatCardProps> = ({
 
       <Button
         variant="outlined"
-        darkMode={darkMode}
         onClick={(e) => {
           e.stopPropagation();
           window.open(stat.link.url, "_blank");

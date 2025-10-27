@@ -16,10 +16,6 @@ export interface ReferenceProps {
    */
   onClick?: () => void;
   /*
-   * The dark mode of the reference
-   */
-  darkMode?: boolean;
-  /*
    * Additional CSS classes
    */
   className?: string;
