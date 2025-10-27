@@ -7,9 +7,22 @@ import { Crafter } from "../profile/Profile.types";
 export default {
   title: "socraft-ui/Tribe/Dark-mode",
   component: Tribe,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#1a1a1a",
+        },
+      ],
     },
   },
 } as Meta;
@@ -58,7 +71,6 @@ Default.args = {
     "Avec un nom comme socraft, nous ne pourrions pas faire l'impasse sur le software craftsmanship. Plus qu'un manifeste, il est pour nous une philosophie de vie dont les principes vont bien au-delà du code. Ainsi vous trouverez régulièrement des crafters affairés à creuser un sujet lors d'un meetup, expérimenter une nouvelle façon de tester au cours d'un atelier mob programming, ou plus simplement appliquer ces pratiques au sein d'une équipe de développement produit.",
   image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
   crafters: mockCrafters,
-  darkMode: true,
   showMoreText: "En savoir plus",
   opensTheProfileInANewTab: true,
 };
@@ -71,7 +83,6 @@ export const MultipleTribes: StoryFn = () => (
       description="Avec un nom comme socraft, nous ne pourrions pas faire l'impasse sur le software craftsmanship. Plus qu'un manifeste, il est pour nous une philosophie de vie dont les principes vont bien au-delà du code."
       image="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg"
       crafters={mockCrafters}
-      darkMode={true}
       showMoreText="En savoir plus"
       opensTheProfileInANewTab={true}
     />
@@ -81,7 +92,6 @@ export const MultipleTribes: StoryFn = () => (
       description="Notre équipe de designers se concentre sur la création d'expériences utilisateur exceptionnelles. Nous croyons que le design n'est pas seulement une question d'esthétique, mais aussi de fonctionnalité."
       image="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg"
       crafters={mockCrafters}
-      darkMode={true}
       showMoreText="En savoir plus"
       opensTheProfileInANewTab={true}
     />

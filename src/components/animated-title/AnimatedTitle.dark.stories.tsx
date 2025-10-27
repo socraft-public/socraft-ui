@@ -8,6 +8,12 @@ export default {
   parameters: {
     backgrounds: {
       default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#1a1a1a",
+        },
+      ],
     },
   },
 } as Meta<typeof AnimatedTitle>;
@@ -16,17 +22,16 @@ const Template: StoryFn<typeof AnimatedTitle> = (args) => (
   <AnimatedTitle {...args} />
 );
 
-export const AnimatedTitleWithSeveralYellowWords = Template.bind({});
-export const AnimatedTitleWithOneYellowWord = Template.bind({});
-
-AnimatedTitleWithSeveralYellowWords.args = {
+export const WithSeveralWords = Template.bind({});
+WithSeveralWords.args = {
   staticPart: "Hello",
-  yellowWords: ["World", "Universe", "Galaxy"],
+  yellowWords: ["World", "Universe", "Galaxy", "Community"],
   darkMode: true,
 };
 
-AnimatedTitleWithOneYellowWord.args = {
-  staticPart: "Hello",
-  yellowWords: ["World"],
+export const SingleWord = Template.bind({});
+SingleWord.args = {
+  staticPart: "Bienvenue dans le",
+  yellowWords: ["futur"],
   darkMode: true,
 };

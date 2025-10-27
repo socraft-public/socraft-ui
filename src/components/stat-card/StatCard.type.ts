@@ -1,6 +1,5 @@
 export interface StatCardProps {
   stat: Stat;
-  darkMode?: boolean;
   loading?: boolean;
 }
 

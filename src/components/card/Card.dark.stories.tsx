@@ -9,7 +9,7 @@ export default {
   component: Card,
   decorators: [
     (Story) => (
-      <div style={{ width: "50%", margin: "0 auto" }}>
+      <div className="dark w-full md:w-1/2 mx-auto">
         <Story />
       </div>
     ),
@@ -17,6 +17,12 @@ export default {
   parameters: {
     backgrounds: {
       default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#1a1a1a",
+        },
+      ],
     },
   },
 } as Meta<typeof Card>;
@@ -46,7 +52,6 @@ DefaultCard.args = {
       eu, posuere in magna. Etiam elementum imperdiet tincidunt.
     </p>
   ),
-  darkMode: true,
 };
 
 CardWithButtons.args = {
@@ -78,7 +83,6 @@ CardWithButtons.args = {
       </Button>
     </>
   ),
-  darkMode: true,
 };
 
 CardWithImage.args = {
@@ -102,5 +106,4 @@ CardWithImage.args = {
       eu, posuere in magna. Etiam elementum imperdiet tincidunt.
     </p>
   ),
-  darkMode: true,
 };

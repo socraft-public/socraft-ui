@@ -1,15 +1,15 @@
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { AnimatedTitleProps } from "./AnimatedTitle.types";
-import "./AnimatedTitle.css";
-import React from "react";
+import { cn } from "../../lib/utils";
 import TextTransition, { presets } from "react-text-transition";
 
 const AnimatedTitle: FC<AnimatedTitleProps> = ({
   staticPart,
   yellowWords,
   fontSize = 40,
-  fontWeight = 700,
+  fontWeight = 600,
   darkMode,
+  className,
 }) => {
   const [index, setIndex] = useState<number>(0);
 
@@ -18,14 +18,26 @@ const AnimatedTitle: FC<AnimatedTitleProps> = ({
     return () => clearTimeout(intervalId);
   }, []);
 
+  const containerClasses = cn(
+    "flex items-center flex-wrap justify-center gap-2 md:gap-3",
+    "my-8 md:my-12 mx-4 leading-tight",
+    darkMode ? "text-white" : "text-zinc-800",
+    className,
+  );
+
+  const animatedTextClasses = cn(
+    "transition-colors duration-200",
+    darkMode ? "text-yellow-400" : "text-yellow-500",
+  );
+
   return (
     <h1
-      className={darkMode ? "animated-title dark" : "animated-title"}
+      className={containerClasses}
       style={{ fontSize: `${fontSize}px`, fontWeight }}
     >
-      {staticPart}
-      <span className="yellow-words">
-        <TextTransition springConfig={presets.stiff} direction="down">
+      <span>{staticPart}</span>
+      <span className={animatedTextClasses}>
+        <TextTransition springConfig={presets.gentle} direction="up">
           {yellowWords[index % yellowWords.length]}
         </TextTransition>
       </span>

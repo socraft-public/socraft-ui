@@ -22,10 +22,6 @@ export interface TribeProps {
    */
   crafters?: Crafter[];
   /**
-   * Whether the tribe is in dark mode
-   */
-  darkMode?: boolean;
-  /**
    * The show more button's text
    */
   showMoreText?: string;

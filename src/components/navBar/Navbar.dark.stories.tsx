@@ -2,18 +2,37 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import NavBar from "./NavBar";
 import { NavBarProps } from "./NavBar.types";
+import "../../styles/globals.css";
 
 export default {
   title: "socraft-ui/NavBar/Dark-mode",
   component: NavBar,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
+    layout: "fullscreen",
     backgrounds: {
       default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#1a1a1a",
+        },
+      ],
     },
   },
 } as Meta;
 
-const Template: StoryFn<NavBarProps> = (args) => <NavBar {...args} />;
+const Template: StoryFn<NavBarProps> = (args) => (
+  <div className="min-h-screen">
+    <NavBar {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 export const WithDarkModeToggle = Template.bind({});
@@ -21,6 +40,7 @@ export const WithLocaleSelector = Template.bind({});
 export const WithTwoLevelMenu = Template.bind({});
 
 Default.args = {
+  activeTabUrl: "/home",
   tabs: [
     { title: "Accueil", url: "/home" },
     { title: "Craftworks", url: "/about" },
@@ -31,14 +51,13 @@ Default.args = {
     { title: "Blog", url: "/contact", appearance: "link" },
     { title: "Communauté", url: "/contact", appearance: "yellow" },
   ],
-  darkMode: true,
 };
 
 WithDarkModeToggle.args = {
   ...Default.args,
   showDarkModeToggle: true,
-  darkMode: true,
-  onDarkModeToggle: () => void 0,
+  darkModeText: "Mode sombre",
+  onDarkModeToggle: (enabled: boolean) => console.log("Dark mode:", enabled),
 };
 
 WithLocaleSelector.args = {
@@ -46,7 +65,7 @@ WithLocaleSelector.args = {
   showLocaleSelector: true,
   locale: "FR",
   locales: ["FR", "EN", "DE", "IT"],
-  onLocaleChange: () => void 0,
+  onLocaleChange: (locale: string) => console.log("Locale changed:", locale),
 };
 
 WithTwoLevelMenu.args = {

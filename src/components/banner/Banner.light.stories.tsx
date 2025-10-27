@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import { Meta, StoryFn } from "@storybook/react";
 import { Banner } from "./";
 import { BannerProps } from "./Banner.types";
@@ -9,6 +10,12 @@ export default {
   parameters: {
     backgrounds: {
       default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta;
@@ -43,4 +50,5 @@ Default.args = {
   labelButton: "Inscription",
   date: "2024-07-15T00:00:00+00:00",
   link: "https://www.example.com/inscription-light",
+  onClose: action("onClose"),
 };

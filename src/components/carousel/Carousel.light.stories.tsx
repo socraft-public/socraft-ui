@@ -9,6 +9,17 @@ import icon from "../../assets/logo-dark.svg";
 export default {
   title: "socraft-ui/Carousel/Light-mode",
   component: Carousel,
+  parameters: {
+    backgrounds: {
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
+    },
+  },
 } as Meta<typeof Carousel>;
 
 const Template: StoryFn<typeof Carousel> = (args) => <Carousel {...args} />;

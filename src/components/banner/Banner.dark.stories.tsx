@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import { Meta, StoryFn } from "@storybook/react";
 import { Banner } from "./";
 import { BannerProps } from "./Banner.types";
@@ -7,8 +8,15 @@ export default {
   title: "socraft-ui/Banner/Dark-mode",
   component: Banner,
   parameters: {
+    Layout: "fullscreen",
     backgrounds: {
       default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#1a1a1a",
+        },
+      ],
     },
   },
 } as Meta;
@@ -43,4 +51,5 @@ Default.args = {
   labelButton: "Inscription",
   date: "2024-07-22T20:00:00+00:00",
   link: "https://www.example.com/inscription-dark",
+  onClose: action("onClose"),
 };

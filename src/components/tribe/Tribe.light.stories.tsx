@@ -10,6 +10,12 @@ export default {
   parameters: {
     backgrounds: {
       default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
 } as Meta;

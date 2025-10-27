@@ -6,9 +6,22 @@ import { CraftworkProps } from "./Craftwork.types";
 export default {
   title: "socraft-ui/Craftwork/Dark-mode",
   component: Craftwork,
+  decorators: [
+    (Story) => (
+      <div className="dark w-full mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#1a1a1a",
+        },
+      ],
     },
   },
 } as Meta;
