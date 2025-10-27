@@ -32,11 +32,12 @@ DefaultFooter.args = {
   copyright: "© 2025 socraft",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
-  instagramLink: "#",
-  linkedinLink: "#",
-  githubLink: "#",
-  facebookLink: "#",
-  youtubeLink: "#",
+  instagramLink: "https://www.instagram.com/socraft.io/",
+  linkedinLink:
+    "https://www.linkedin.com/company/socraft-ch/posts/?feedView=all",
+  githubLink: "https://github.com/socraft-public",
+  facebookLink: "https://www.facebook.com/socraft.ch",
+  youtubeLink: "https://www.youtube.com/@socraft",
   centerButtons: [
     <Button key={1} variant="outlined" className="gap-2">
       <IconMessage className="h-4 w-4" />
@@ -62,11 +63,12 @@ WithBadges.args = {
   copyright: "© 2025 socraft",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
-  instagramLink: "#",
-  linkedinLink: "#",
-  githubLink: "#",
-  facebookLink: "#",
-  youtubeLink: "#",
+  instagramLink: "https://www.instagram.com/socraft.io/",
+  linkedinLink:
+    "https://www.linkedin.com/company/socraft-ch/posts/?feedView=all",
+  githubLink: "https://github.com/socraft-public",
+  facebookLink: "https://www.facebook.com/socraft.ch",
+  youtubeLink: "https://www.youtube.com/@socraft",
   centerButtons: [
     <Button key={1} variant="outlined" className="gap-2">
       <IconMessage className="h-4 w-4" />

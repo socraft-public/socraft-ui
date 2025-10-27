@@ -140,7 +140,7 @@ const Footer: FC<FooterProps> = ({
 
   return (
     <footer
-      className="bg-background px-0 py-8 sm:px-4 md:px-6 lg:px-8  dark:text-white"
+      className="bg-background px-0 py-8 sm:px-4 md:px-6 lg:px-8  dark:text-white bottom-0 w-full"
       {...props}
     >
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
