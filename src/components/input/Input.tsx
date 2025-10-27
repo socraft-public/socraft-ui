@@ -3,11 +3,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const inputVariants = cva(
-  "flex h-10 w-full rounded-[15px] border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 transition-colors duration-200 dark:bg-[var(--black)] dark:text-white dark:border-[#ffffff20] dark:placeholder:text-gray-400",
+  "flex h-10 w-full rounded-[15px] border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 transition-colors duration-200 dark:bg-[var(--black)] dark:text-white dark:border-[#4a4a4a] dark:placeholder:text-gray-400",
   {
     variants: {
       variant: {
-        default: "border-[#28282820] focus:border-[var(--yellow)]",
+        default:
+          "border-[#28282820] dark:border-[#4a4a4a] focus:border-[var(--yellow)] dark:focus:border-[#fbbb10]",
         error: "border-red-500 border-2",
       },
     },
@@ -48,44 +49,26 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <div className="relative">
           <div
             className={cn(
-              "flex items-center gap-3 rounded-[15px] border px-3 py-2 transition-colors duration-200",
+              "relative flex items-center h-10 overflow-hidden gap-2 rounded-[15px] border px-3 py-2 transition-colors duration-200",
               currentVariant === "error"
                 ? "border-red-500 border-2"
-                : "border-[#28282820] focus-within:border-[var(--yellow)]",
+                : "border-[#28282820] dark:border-[#4a4a4a] focus-within:border-[var(--yellow)] dark:focus-within:border-[#fbbb10]",
               hasError && "mb-6",
             )}
           >
-            {startIcon && (
-              <div className="flex-shrink-0">
-                {React.isValidElement(startIcon)
-                  ? React.cloneElement(startIcon as React.ReactElement, {
-                      className: cn(
-                        "h-4 w-4",
-                        (startIcon as React.ReactElement).props?.className,
-                      ),
-                    })
-                  : startIcon}
-              </div>
-            )}
+            {startIcon && <div className="flex-shrink-0">{startIcon}</div>}
             <input
               type={type}
               className={cn(
-                "flex-1 border-0 bg-transparent text-sm ring-0 focus:outline-none focus:ring-0 placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+                "flex-1 min-w-0 border-0 bg-transparent text-sm ring-0 focus:outline-none focus:ring-0 placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 pr-10",
                 className,
               )}
               ref={ref}
               {...props}
             />
             {endIcon && (
-              <div className="flex-shrink-0">
-                {React.isValidElement(endIcon)
-                  ? React.cloneElement(endIcon as React.ReactElement, {
-                      className: cn(
-                        "h-4 w-4",
-                        (endIcon as React.ReactElement).props?.className,
-                      ),
-                    })
-                  : endIcon}
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center">
+                {endIcon}
               </div>
             )}
           </div>

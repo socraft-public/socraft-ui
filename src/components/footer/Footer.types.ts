@@ -22,10 +22,6 @@ export interface FooterProps {
    */
   cguText?: string;
   /**
-   * The text above social links
-   */
-  socialNetworksText?: string;
-  /**
    * The link to the Instagram page.
    */
   instagramLink?: string;
@@ -46,6 +42,10 @@ export interface FooterProps {
    */
   youtubeLink?: string;
   /**
+   * Locale for built-in i18n ("fr" | "en"). If not provided, it will be auto-detected.
+   */
+  locale?: "fr" | "en";
+  /**
    * The text above the center buttons
    */
   centerButtonsText?: string;
@@ -58,21 +58,13 @@ export interface FooterProps {
    */
   badges?: ReactNode[];
   /**
-   * More actions
+   * Useful links
    */
-  moreActions?: ReactNode;
+  usefulLinks?: { title: string; href: string }[];
   /**
-   * Newsletter section title
+   * Title displayed above useful links section (uses built-in i18n by default; provide to override)
    */
-  newsletterText?: string;
-  /**
-   * Newsletter input placeholder text
-   */
-  newsletterPlaceholder?: string;
-  /**
-   * Newsletter submit button text
-   */
-  newsletterButtonText?: string;
+  usefulLinksTitle?: string;
   /**
    * Newsletter submit handler
    */
@@ -80,23 +72,11 @@ export interface FooterProps {
   /**
    * Newsletter loading state
    */
+  onNewsletterSubmitAsync?: (email: string) => void | Promise<void>;
+  /**
+   * Newsletter loading state
+   */
   newsletterLoading?: boolean;
-  /**
-   * Newsletter submit handler with loading control
-   */
-  onNewsletterSubmitAsync?: (email: string) => Promise<void>;
-  /**
-   * Success message to display after newsletter submission
-   */
-  newsletterSuccessMessage?: string;
-  /**
-   * Error message to display when newsletter submission fails
-   */
-  newsletterErrorMessage?: string;
-  /**
-   * Duration in milliseconds to show success/error messages (default: 3000)
-   */
-  newsletterMessageDuration?: number;
   /**
    * Additional CSS classes
    */
