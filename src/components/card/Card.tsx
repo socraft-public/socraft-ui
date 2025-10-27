@@ -4,11 +4,12 @@ import {
   Card as ShadcnCard,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "../ui/card";
 import React from "react";
+import { cn } from "../../lib/utils";
 
 const Card: FC<CardProps> = ({ image, buttons, ...props }) => {
   return (
@@ -19,21 +20,36 @@ const Card: FC<CardProps> = ({ image, buttons, ...props }) => {
             <>{props.header as React.ReactNode}</>
           ) : (
             <>
-              {image && (
-                <img
-                  src={image}
-                  alt="card image"
-                  className="h-24 w-24 rounded-lg object-cover mb-2"
-                />
-              )}
-              {props.title && (
-                <CardTitle>{props.title as React.ReactNode}</CardTitle>
-              )}
-              {props.subTitle && (
-                <CardDescription>
-                  {props.subTitle as React.ReactNode}
-                </CardDescription>
-              )}
+              <div
+                className={cn(
+                  "flex w-full gap-4",
+                  image
+                    ? "flex-row items-center"
+                    : "flex-col items-start text-left",
+                )}
+              >
+                {image && (
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-border bg-background transition-all duration-200">
+                    <img
+                      src={image}
+                      alt="card image"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col items-start text-left gap-1">
+                  {props.title && (
+                    <CardTitle className="leading-tight">
+                      {props.title as React.ReactNode}
+                    </CardTitle>
+                  )}
+                  {props.subTitle && (
+                    <CardDescription className="leading-snug">
+                      {props.subTitle as React.ReactNode}
+                    </CardDescription>
+                  )}
+                </div>
+              </div>
             </>
           )}
         </CardHeader>
@@ -44,7 +60,7 @@ const Card: FC<CardProps> = ({ image, buttons, ...props }) => {
       )}
 
       {(buttons || props.footer) && (
-        <CardFooter className="justify-end gap-2">
+        <CardFooter className="flex flex-col gap-2 items-end sm:flex-row sm:justify-end">
           {props.footer ? (
             <div>{props.footer as React.ReactNode}</div>
           ) : (
