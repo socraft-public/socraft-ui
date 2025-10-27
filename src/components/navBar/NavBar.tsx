@@ -32,7 +32,7 @@ const NavBar: React.FC<NavBarProps> = ({
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-100 ease-in-out border-b px-4 md:px-12 lg:px-[200px] py-2.5  dark:text-white`}
+      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-100 ease-in-out border-b px-4 md:px-12 lg:px-[200px] py-2.5 bg-white text-gray-900 dark:bg-background dark:text-white`}
     >
       <div className="flex items-center justify-between">
         <div
@@ -159,7 +159,7 @@ const NavBar: React.FC<NavBarProps> = ({
                     onChange={(e) =>
                       onLocaleChange && onLocaleChange(e.target.value)
                     }
-                    className={`px-3 py-1 text-sm border rounded cursor-pointer focus:ring-0 focus:outline-none bg-white dark:bg-inherit text-gray-900 dark:text-white border-gray-200 dark:border-gray-700`}
+                    className={`px-3 py-1 text-sm border rounded-md cursor-pointer focus:ring-0 focus:outline-none bg-white dark:bg-inherit text-gray-900 dark:text-white border-gray-200 dark:border-gray-700`}
                   >
                     {locales.map((loc) => (
                       <option key={loc} value={loc}>
@@ -194,7 +194,7 @@ const NavBar: React.FC<NavBarProps> = ({
             onClick={() => setIsMenuOpen(false)}
           />
           <div
-            className={`fixed right-0 top-0 h-full w-80 p-6 transform transition-transform duration-300 ease-in-out translate-x-0 border-l shadow-xl`}
+            className={`fixed right-0 top-0 h-full w-80 bg-white dark:bg-gray-900 p-6 transform transition-transform duration-300 ease-in-out translate-x-0 border-l shadow-xl`}
           >
             {/* Close Button */}
             <Button
@@ -213,7 +213,7 @@ const NavBar: React.FC<NavBarProps> = ({
                 {tabs.map((tab, index) => (
                   <div key={index} className="flex flex-col gap-2">
                     <button
-                      className={`flex items-center w-full text-left text-base font-medium px-0 py-2 transition-colors ${
+                      className={`flex items-center w-full text-left text-base font-medium px-4 py-2 transition-colors rounded-md hover:bg-accent ${
                         activeTabUrl === tab.url
                           ? "text-yellow-500"
                           : "text-gray-900"
@@ -253,7 +253,7 @@ const NavBar: React.FC<NavBarProps> = ({
                         {tab.children.map((child, childIndex) => (
                           <button
                             key={childIndex}
-                            className={`text-left text-sm px-0 py-1 transition-colors`}
+                            className={`text-left text-sm px-3 py-1 transition-colors rounded-md hover:bg-accent`}
                             onClick={() => {
                               handleTabClick(child.url);
                               setIsMenuOpen(false);
@@ -293,7 +293,7 @@ const NavBar: React.FC<NavBarProps> = ({
                     <button
                       key={index}
                       type="button"
-                      className={`flex items-center w-full text-left text-base font-medium px-0 py-2 transition-colors`}
+                      className={`flex items-center w-full text-left text-base font-medium px-4 py-2 transition-colors rounded-md hover:bg-accent dark:text-white`}
                       onClick={() => {
                         handleButtonClick(button);
                         setIsMenuOpen(false);
@@ -342,7 +342,7 @@ const NavBar: React.FC<NavBarProps> = ({
                       onChange={(e) =>
                         onLocaleChange && onLocaleChange(e.target.value)
                       }
-                      className={`px-3 py-1 text-sm border rounded focus:ring-0 focus:outline-none`}
+                      className={`px-3 py-1 text-sm border rounded-md focus:ring-0 focus:outline-none`}
                     >
                       {locales.map((loc) => (
                         <option key={loc} value={loc}>

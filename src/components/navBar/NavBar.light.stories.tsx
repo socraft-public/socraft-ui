@@ -31,7 +31,6 @@ export const WithTwoLevelMenu = Template.bind({});
 
 Default.args = {
   activeTabUrl: "/home",
-  darkMode: false,
   tabs: [
     { title: "Accueil", url: "/home" },
     { title: "Craftworks", url: "/about" },
