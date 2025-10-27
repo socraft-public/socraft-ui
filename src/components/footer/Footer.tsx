@@ -30,7 +30,7 @@ const Footer: FC<FooterProps> = ({
   youtubeLink,
   centerButtons,
   badges,
-  socialNetworksText = "Suivez-nous",
+  socialNetworksText = "Restons en contact",
   centerButtonsText = "Actions",
   moreActions,
   newsletterText = "Newsletter",

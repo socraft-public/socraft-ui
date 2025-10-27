@@ -1,10 +1,11 @@
+import { type ComponentType, type ReactNode } from "react";
+
 import { Crafter } from "../profile/Profile.types";
-import { ReactNode } from "react";
 
 /**
  * Props for the Craftwork component.
  */
-export interface CraftworkProps {
+export interface ContentCardProps {
   /**
    * The name of the craftwork or project.
    */
@@ -16,9 +17,9 @@ export interface CraftworkProps {
   domain: string;
 
   /**
-   * Optional holder (Crafter) of the craftwork.
+   * Optional list of holders to display. Provide one or multiple crafters.
    */
-  holder?: Crafter;
+  holders?: Crafter[];
 
   /**
    * A brief pitch or description of the craftwork.
@@ -31,17 +32,8 @@ export interface CraftworkProps {
   website: string;
 
   /**
-   * Optional partnership level for the craftwork, if applicable.
+   * Optional icon component rendered at the end of the CTA button.
+   * Defaults to an arrow icon.
    */
-  partnershipLevel?: string;
-
-  /**
-   * Optional stage of development (e.g., prototype, launched).
-   */
-  stageOfDevelopment?: string;
-
-  /**
-   * Optional flag to indicate if dark mode is enabled.
-   */
-  darkMode?: boolean;
+  actionIcon?: ComponentType<{ className?: string }>;
 }

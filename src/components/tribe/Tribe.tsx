@@ -4,7 +4,6 @@ import { Button } from "../button";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { Carousel } from "../carousel";
 import { Card } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 const Tribe: FC<TribeProps> = ({
@@ -71,12 +70,6 @@ const Tribe: FC<TribeProps> = ({
                 <h3 className="text-xl md:text-2xl font-medium m-0">
                   {expertsTitle}
                 </h3>
-                <Badge
-                  variant="secondary"
-                  className={cn("text-xs px-2 py-1 hover:bg-secondary")}
-                >
-                  {crafters?.length || 0}
-                </Badge>
               </div>
               <div className="mt-0 md:mt-3 w-full max-w-full">
                 <Carousel
