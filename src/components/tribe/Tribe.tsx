@@ -47,7 +47,7 @@ const Tribe: FC<TribeProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
             {!isExpanded && (
-              <div className="relative w-full px-6 pb-5 pt-6 md:px-10 md:pt-8">
+              <div className="relative w-full px-6 pb-5 pt-6 md:px-10">
                 <h2 className="text-2xl md:text-3xl font-semibold text-white m-0 drop-shadow-lg leading-tight">
                   {name}
                 </h2>
@@ -57,8 +57,8 @@ const Tribe: FC<TribeProps> = ({
         </div>
 
         {isExpanded && (
-          <div className="px-6 md:px-10 pt-6 md:pt-8 pb-6 md:pb-8 overflow-hidden animate-in slide-in-from-top-4 fade-in-0 duration-500 w-full">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-5 m-0">
+          <div className="px-6 md:px-10 overflow-hidden animate-in slide-in-from-top-4 fade-in-0 duration-500 w-full">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4 pt-3">
               {name}
             </h2>
 
@@ -75,7 +75,7 @@ const Tribe: FC<TribeProps> = ({
                     {expertsTitle}
                   </h3>
                 </div>
-                <div className="mt-3 md:mt-3 w-full max-w-full">
+                <div className="mt-8 md:mt-3 w-full max-w-full">
                   <Carousel
                     useCustomElements={false}
                     crafters={crafters}

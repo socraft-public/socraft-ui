@@ -5,7 +5,6 @@ export * from "./footer";
 export * from "./navBar";
 export * from "./animated-title";
 export * from "./stat-card";
-export * from "./content-card";
 export * from "./words-list";
 export * from "./core-team-member";
 export * from "./tribe";
