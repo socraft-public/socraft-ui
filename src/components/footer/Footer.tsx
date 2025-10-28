@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  cloneElement,
-  isValidElement,
-  useState,
-  useEffect,
-} from "react";
+import React, { FC, useState, useEffect } from "react";
 import { FooterProps } from "./Footer.types";
 import {
   IconBrandInstagram,
@@ -25,17 +19,17 @@ import logoDark from "../../assets/logo-dark.svg";
 const Footer: FC<FooterProps> = ({
   cities,
   address,
-  copyright,
+  contactAddress,
   instagramLink,
   linkedinLink,
   githubLink,
   facebookLink,
   youtubeLink,
   locale: localeProp,
-  centerButtons,
   badges,
   usefulLinks,
   usefulLinksTitle,
+  newsletterDescription,
   onNewsletterSubmit,
   onNewsletterSubmitAsync,
   newsletterLoading: externalLoading,
@@ -102,41 +96,10 @@ const Footer: FC<FooterProps> = ({
     { href: youtubeLink, icon: IconBrandYoutube, label: "YouTube" },
   ].filter((link) => link.href);
 
-  const actions = centerButtons ?? [];
-  const primaryAction = actions.length > 0 ? actions[0] : null;
   const showUsefulLinks = usefulLinks && usefulLinks.length > 0;
   const gridClass = showUsefulLinks
     ? "grid-cols-1 md:grid-cols-3"
     : "md:grid-cols-2";
-
-  const renderYellowButton = (
-    button: React.ReactNode,
-    key: string,
-    options: { fullWidth?: boolean } = {},
-  ) => {
-    if (!button) return null;
-
-    const fullWidth = options.fullWidth ?? false;
-
-    if (isValidElement(button)) {
-      return cloneElement(button, {
-        key,
-        ...button.props,
-        className: cn(
-          "text-black hover:brightness-110 transition-all duration-200",
-          fullWidth && "w-full",
-          button.props.className,
-        ),
-        style: {
-          backgroundColor: "var(--yellow)",
-          borderColor: "var(--yellow)",
-          ...(button.props.style || {}),
-        },
-      });
-    }
-
-    return button;
-  };
 
   return (
     <footer
@@ -169,7 +132,6 @@ const Footer: FC<FooterProps> = ({
                         rel="noopener noreferrer"
                       >
                         <Icon
-                          className="hover:drop-shadow-[0_0_8px_#fbbb10] transition-all duration-200"
                           style={{
                             width: `${socialsIconSize * 0.8}px`,
                             height: `${socialsIconSize * 0.8}px`,
@@ -191,19 +153,22 @@ const Footer: FC<FooterProps> = ({
                 {locale === "fr" ? "Nous contacter" : "Contact us"}
               </h3>
               <div className="space-y-1 text-sm text-muted-foreground">
+                {contactAddress && (
+                  <p className="m-0">
+                    <a
+                      href={`mailto:${contactAddress}`}
+                      className="text-[#fbbb10] underline transition-opacity hover:opacity-80"
+                    >
+                      {contactAddress}
+                    </a>
+                  </p>
+                )}
                 {address.split("\n").map((line, index) => (
                   <p key={index} className="m-0">
                     {line}
                   </p>
                 ))}
               </div>
-              {primaryAction && (
-                <div className="pt-2">
-                  {renderYellowButton(primaryAction, "footer-primary-action", {
-                    fullWidth: true,
-                  })}
-                </div>
-              )}
             </div>
 
             {showUsefulLinks && (
@@ -212,7 +177,10 @@ const Footer: FC<FooterProps> = ({
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {(usefulLinks ?? []).map((link, index) => (
                     <li key={index}>
-                      <a href={link.href} className="hover:underline">
+                      <a
+                        href={link.href}
+                        className="hover:underline hover:text-[#fbbb10]"
+                      >
                         {link.title}
                       </a>
                     </li>
@@ -221,10 +189,13 @@ const Footer: FC<FooterProps> = ({
               </div>
             )}
 
-            <div className="space-y-8">
+            <div className="space-y-8 w-full max-w-sm md:justify-self-start">
               <h3 className="text-lg font-semibold text-left">
                 {newsletterTitleResolved}
               </h3>
+              <span className="text-xs text-muted-foreground">
+                {newsletterDescription}
+              </span>
 
               <form
                 onSubmit={async (e) => {
@@ -303,9 +274,11 @@ const Footer: FC<FooterProps> = ({
                 ))}
               </div>
             )}
-            <p className="text-center">{copyright}</p>
+            <p className="text-center rounded-full border border-border/40 bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+              © 2025 socraft
+            </p>
             <div className="flex flex-wrap items-center gap-3 justify-center md:justify-end">
-              <div className="flex items-center gap-2 rounded-full border border-border/40 bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+              <div className="flex flex-col items-center gap-1 text-center rounded-full border border-border/40 bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide md:flex-row md:gap-2 md:text-left">
                 {locale === "fr"
                   ? "Développé avec passion par"
                   : "Developed with passion by"}
@@ -317,12 +290,12 @@ const Footer: FC<FooterProps> = ({
                 >
                   <img
                     src={logoDark}
-                    alt="Socraft"
+                    alt="socraft logo dark"
                     className="h-4 w-auto block dark:hidden"
                   />
                   <img
                     src={logoLight}
-                    alt="Socraft"
+                    alt="socraft logo light"
                     className="h-4 w-auto hidden dark:block"
                   />
                 </a>

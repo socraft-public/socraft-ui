@@ -2,6 +2,10 @@ import { ReactNode } from "react";
 
 export interface FooterProps {
   /**
+   * Locale for built-in i18n ("fr" | "en"). If not provided, it will be auto-detected.
+   */
+  locale?: "fr" | "en";
+  /**
    * The list of cities where the company is located.
    */
   cities: string[];
@@ -9,6 +13,10 @@ export interface FooterProps {
    * The address of the company.
    */
   address: string;
+  /**
+   * Address mail for contact
+   */
+  contactAddress: string;
   /**
    * The copyright text.
    */
@@ -42,18 +50,6 @@ export interface FooterProps {
    */
   youtubeLink?: string;
   /**
-   * Locale for built-in i18n ("fr" | "en"). If not provided, it will be auto-detected.
-   */
-  locale?: "fr" | "en";
-  /**
-   * The text above the center buttons
-   */
-  centerButtonsText?: string;
-  /**
-   * Center buttons
-   */
-  centerButtons?: ReactNode[];
-  /**
    * Badges
    */
   badges?: ReactNode[];
@@ -65,6 +61,10 @@ export interface FooterProps {
    * Title displayed above useful links section (uses built-in i18n by default; provide to override)
    */
   usefulLinksTitle?: string;
+  /**
+   * Newsletter descirpiton
+   */
+  newsletterDescription?: string;
   /**
    * Newsletter submit handler
    */

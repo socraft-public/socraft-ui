@@ -1,8 +1,6 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Footer from "./Footer";
-import { Button } from "../button";
-import { IconMessage } from "@tabler/icons-react";
 
 export default {
   title: "socraft-ui/Footer/Dark-mode",
@@ -36,7 +34,7 @@ export const WithBadges = Template.bind({});
 DefaultFooter.args = {
   cities: ["Lausanne", "Genève", "Paris", "Casablanca"],
   address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
-  copyright: "© 2025 socraft",
+  contactAddress: "info@socraft.ch",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
   instagramLink: "https://www.instagram.com/socraft.io/",
@@ -45,18 +43,15 @@ DefaultFooter.args = {
   githubLink: "https://github.com/socraft-public",
   facebookLink: "https://www.facebook.com/socraft.ch",
   youtubeLink: "https://www.youtube.com/@socraft",
-  centerButtons: [
-    <Button key={1} variant="outlined" className="gap-2">
-      <IconMessage className="h-4 w-4" />
-      Nous écrire
-    </Button>,
-  ],
   usefulLinksTitle: "Liens utiles",
   usefulLinks: [
-    { title: "Blog", href: "/blog" },
+    { title: "Contact", href: "/contact" },
     { title: "À propos", href: "/about" },
+    { title: "Blog", href: "/blog" },
     { title: "CGU", href: "/cgu" },
   ],
+  newsletterDescription:
+    "Votre adresse mail sera exclusivement utilisée pour recevoir la newsletter de socraft. Nous respectons vos données et vous pourrez vous désinscrire à tout moment.",
   onNewsletterSubmitAsync: async (email: string) => {
     console.log("Newsletter subscription:", email);
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -67,7 +62,7 @@ DefaultFooter.args = {
 WithBadges.args = {
   cities: ["Lausanne", "Genève", "Paris", "Casablanca"],
   address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
-  copyright: "© 2025 socraft",
+  contactAddress: "info@socraft.ch",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
   instagramLink: "https://www.instagram.com/socraft.io/",
@@ -76,19 +71,16 @@ WithBadges.args = {
   githubLink: "https://github.com/socraft-public",
   facebookLink: "https://www.facebook.com/socraft.ch",
   youtubeLink: "https://www.youtube.com/@socraft",
-  centerButtons: [
-    <Button key={1} variant="outlined" className="gap-2">
-      <IconMessage className="h-4 w-4" />
-      Nous écrire
-    </Button>,
-  ],
-  badges: ["Badge Example 1", "Badge Example 2"],
+  badges: ["Badge Example 1"],
   usefulLinksTitle: "Liens utiles",
   usefulLinks: [
-    { title: "Blog", href: "/blog" },
+    { title: "Contact", href: "/contact" },
     { title: "À propos", href: "/about" },
+    { title: "Blog", href: "/blog" },
     { title: "CGU", href: "/cgu" },
   ],
+  newsletterDescription:
+    "Votre adresse mail sera exclusivement utilisée pour recevoir la newsletter de socraft. Nous respectons vos données et vous pourrez vous désinscrire à tout moment.",
   onNewsletterSubmitAsync: async (email: string) => {
     console.log("Newsletter subscription:", email);
     if (Math.random() > 0.5) {
