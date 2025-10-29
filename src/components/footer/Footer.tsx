@@ -193,14 +193,13 @@ const Footer: FC<FooterProps> = ({
               </div>
             )}
 
-            <div className="space-y-8 w-full max-w-sm md:justify-self-start">
+            <div className="w-full max-w-sm md:justify-self-start">
               <h3 className="text-lg font-semibold text-left">
                 {newsletterTitleResolved}
               </h3>
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs font-medium text-muted-foreground">
                 {newsletterDescription}
               </span>
-
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
@@ -228,7 +227,7 @@ const Footer: FC<FooterProps> = ({
                     onNewsletterSubmit?.(email);
                   }
                 }}
-                className="space-y-3 max-w-md"
+                className="mt-5 max-w-md"
               >
                 {message && (
                   <div
