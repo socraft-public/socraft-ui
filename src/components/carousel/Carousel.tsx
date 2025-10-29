@@ -302,7 +302,9 @@ const Carousel: FC<CarouselProps> = ({
                 className={cn(
                   isImageElement
                     ? getImageResponsiveClass()
-                    : getCustomBasisClass(),
+                    : isCardElement
+                      ? "basis-full"
+                      : getCustomBasisClass(),
                   "flex-shrink-0",
                   isImageElement ? "pl-2" : "pl-0",
                 )}
@@ -313,7 +315,7 @@ const Carousel: FC<CarouselProps> = ({
                     isImageElement
                       ? "items-center p-2 mx-8 sm:mx-2"
                       : isCardElement
-                        ? "items-stretch px-3 sm:px-2 mx-4 sm:mx-2"
+                        ? "items-stretch px-3 sm:px-2 mx-4 sm:mx-2 md:mx-4"
                         : "items-center p-1 mx-8 sm:mx-2",
                   )}
                 >
@@ -333,11 +335,11 @@ const Carousel: FC<CarouselProps> = ({
                       })}
                     </div>
                   ) : isCardElement && typedElement ? (
-                    <div className="flex h-full w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[520px] sm:aspect-[4/3] md:aspect-[3/2]">
+                    <div className="flex h-auto w-full md:w-auto md:min-w-[360px] lg:min-w-[420px] xl:min-w-[520px] md:max-w-full">
                       {React.cloneElement(typedElement, {
                         className: cn(
                           typedElement.props.className,
-                          "!w-full !h-full !gap-4 !p-4 sm:!p-6",
+                          "!w-full md:!w-auto !h-auto !gap-4 !p-4 sm:!p-6 md:!max-w-none",
                         ),
                       })}
                     </div>

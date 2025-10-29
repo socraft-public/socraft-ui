@@ -194,7 +194,7 @@ const NavBar: React.FC<NavBarProps> = ({
             onClick={() => setIsMenuOpen(false)}
           />
           <div
-            className={`fixed right-0 top-0 h-full w-80 bg-white dark:bg-gray-900 p-6 transform transition-transform duration-300 ease-in-out translate-x-0 border-l shadow-xl`}
+            className={`fixed right-0 top-0 h-full w-80 bg-white text-gray-900 shadow-xl transition-transform duration-300 ease-in-out translate-x-0 dark:bg-background dark:text-white`}
           >
             {/* Close Button */}
             <Button
@@ -207,16 +207,14 @@ const NavBar: React.FC<NavBarProps> = ({
               <XIcon className="h-6 w-6" />
             </Button>
 
-            <div className="flex flex-col gap-4 mt-12">
+            <div className="flex flex-col gap-4 mt-12 px-6">
               {/* Mobile Navigation */}
               <div className="flex flex-col gap-4">
                 {tabs.map((tab, index) => (
                   <div key={index} className="flex flex-col gap-2">
                     <button
-                      className={`flex items-center w-full text-left text-base font-medium px-4 py-2 transition-colors rounded-md hover:bg-accent ${
-                        activeTabUrl === tab.url
-                          ? "text-yellow-500"
-                          : "text-gray-900"
+                      className={`flex items-center w-full text-left text-base font-medium px-4 py-2 transition-colors rounded-md hover:bg-accent hover:text-accent-foreground ${
+                        activeTabUrl === tab.url ? "text-yellow-500" : ""
                       }`}
                       onClick={() => {
                         if (!tab.children) {
@@ -253,7 +251,7 @@ const NavBar: React.FC<NavBarProps> = ({
                         {tab.children.map((child, childIndex) => (
                           <button
                             key={childIndex}
-                            className={`text-left text-sm px-3 py-1 transition-colors rounded-md hover:bg-accent`}
+                            className={`text-left text-sm px-3 py-1 transition-colors rounded-md hover:bg-accent hover:text-accent-foreground`}
                             onClick={() => {
                               handleTabClick(child.url);
                               setIsMenuOpen(false);
@@ -293,7 +291,7 @@ const NavBar: React.FC<NavBarProps> = ({
                     <button
                       key={index}
                       type="button"
-                      className={`flex items-center w-full text-left text-base font-medium px-4 py-2 transition-colors rounded-md hover:bg-accent dark:text-white`}
+                      className={`flex items-center w-full text-left text-base font-medium px-4 py-2 transition-colors rounded-md hover:bg-accent hover:text-accent-foreground`}
                       onClick={() => {
                         handleButtonClick(button);
                         setIsMenuOpen(false);
@@ -306,7 +304,9 @@ const NavBar: React.FC<NavBarProps> = ({
               </div>
 
               {/* Mobile Actions */}
-              <div className={`flex flex-col gap-4 pt-4 border-t`}>
+              <div
+                className={`flex flex-col gap-4 pt-4 border-t border-gray-200 dark:border-gray-700`}
+              >
                 {showDarkModeToggle && (
                   <div className="flex items-center justify-start gap-4">
                     <span className={`text-sm font-medium`}>
