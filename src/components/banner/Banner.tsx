@@ -35,11 +35,11 @@ const Banner: FC<BannerProps> = ({
       className="relative flex items-center justify-center bg-[#fbbb10] px-5 py-4 text-[#333] md:min-h-[40px] md:h-auto md:py-2.5"
       inset
     >
-      <div className="flex w-full flex-col items-center justify-center gap-3 pr-0 text-center md:max-w-none md:flex-row md:flex-nowrap md:items-center md:justify-center md:gap-6 md:pr-16">
+      <div className="flex w-full flex-col items-center justify-center gap-3 pr-0 text-center mt-6 md:mt-0 md:w-auto md:flex-row md:flex-nowrap md:items-center md:justify-center md:gap-6 md:pr-16 md:text-center md:mx-auto">
         <BannerTitle className="text-xl font-bold md:flex-none md:whitespace-nowrap">
           {name}
         </BannerTitle>
-        <p className="text-sm md:flex-1 md:min-w-0 md:text-center md:truncate">
+        <p className="text-sm md:flex-none md:whitespace-nowrap md:text-center">
           {formattedDate} - {renderedDescription}
         </p>
         <BannerAction
