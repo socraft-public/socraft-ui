@@ -60,7 +60,7 @@ DefaultCarousel.args = {
 
 CarouselWithCustomElements.args = {
   useCustomElements: true,
-
+  numVisible: 1,
   customElements: [
     <Card
       key={1}
@@ -100,11 +100,11 @@ CarouselWithImages.args = {
   useCustomElements: true,
   numVisible: 5,
   customElements: [
-    <img key={1} className="logo" src={icon} alt="Placeholder image" />,
-    <img key={2} className="logo" src={icon} alt="Placeholder image" />,
-    <img key={3} className="logo" src={icon} alt="Placeholder image" />,
-    <img key={4} className="logo" src={icon} alt="Placeholder image" />,
-    <img key={5} className="logo" src={icon} alt="Placeholder image" />,
-    <img key={6} className="logo" src={icon} alt="Placeholder image" />,
+    <img key={1} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={2} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={3} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={4} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={5} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={6} className="w-[200px]" src={icon} alt="Placeholder image" />,
   ],
 };
