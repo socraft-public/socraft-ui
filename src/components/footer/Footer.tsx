@@ -100,6 +100,10 @@ const Footer: FC<FooterProps> = ({
   const gridClass = showUsefulLinks
     ? "grid-cols-1 md:grid-cols-3"
     : "md:grid-cols-2";
+  const addressLines = (address ?? "")
+    .split(/[\n,]+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
 
   return (
     <footer
@@ -163,7 +167,7 @@ const Footer: FC<FooterProps> = ({
                     </a>
                   </p>
                 )}
-                {address.split("\n").map((line, index) => (
+                {addressLines.map((line, index) => (
                   <p key={index} className="m-0">
                     {line}
                   </p>

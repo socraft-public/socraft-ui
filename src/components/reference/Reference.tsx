@@ -10,15 +10,15 @@ const Reference: FC<ReferenceProps> = ({
   className,
 }) => {
   const containerClasses = cn(
-    "flex flex-col items-center cursor-pointer group",
+    "flex flex-col items-center dark:text-white cursor-pointer group",
     className,
   );
 
   const headClasses =
-    "h-48 w-48 md:h-52 md:w-52 flex items-center justify-center rounded-2xl overflow-hidden bg-[#fbbb10]/30 dark:bg-[#fbbb10]/20 shadow-[0_0_0_3px_rgba(251,187,16,0.15)]";
+    "h-48 w-48 md:h-52 md:w-52 flex items-center justify-center rounded-2xl overflow-hidden bg-[#fbbb1010] dark:bg-default";
 
   const logoClasses =
-    "w-auto h-auto max-w-32 md:max-w-36 transition-transform duration-300 group-hover:scale-110";
+    "w-auto h-auto max-w-32 md:max-w-36 transition-transform duration-300 group-hover:scale-110 grayscale-[1] dark:whitescale-[1]";
   const bodyClasses = "text-center mt-4 space-y-2";
 
   const titleClasses = "text-lg md:text-xl font-medium";

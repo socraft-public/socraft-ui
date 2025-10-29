@@ -33,7 +33,7 @@ export const WithBadges = Template.bind({});
 
 DefaultFooter.args = {
   cities: ["Lausanne", "Genève", "Paris", "Casablanca"],
-  address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
+  address: "Avenue du Léman 2, 1005 Lausanne, Suisse",
   contactAddress: "info@socraft.ch",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
@@ -61,7 +61,7 @@ DefaultFooter.args = {
 
 WithBadges.args = {
   cities: ["Lausanne", "Genève", "Paris", "Casablanca"],
-  address: "Avenue du Léman 2\n 1005 Lausanne\nSuisse",
+  address: "Avenue du Léman 2, 1005 Lausanne, Suisse",
   contactAddress: "info@socraft.ch",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",

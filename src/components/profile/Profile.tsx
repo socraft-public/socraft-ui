@@ -59,7 +59,7 @@ const Profile: FC<ProfileProps> = ({
       <div className="relative">
         <div
           className={cn(
-            "lg:h-32 lg:w-32",
+            "h-20 w-20 sm:h-24 sm:w-24 lg:h-32 lg:w-32",
             "relative overflow-hidden rounded-full transition-all duration-200",
           )}
         >
