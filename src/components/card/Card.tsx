@@ -240,8 +240,12 @@ const ContentVariantCard: FC<CardContentVariantProps> = ({
   const mobileAvatarSelector = renderAvatarSelector("mobile");
 
   return (
-    <ShadcnCard variant={variant} className={className} {...props}>
-      <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-4">
+    <ShadcnCard
+      variant={variant}
+      className={cn("flex h-full flex-col", className)}
+      {...props}
+    >
+      <div className="flex flex-1 flex-col gap-4 md:flex-row md:items-start md:gap-4">
         {desktopAvatarSelector}
 
         <div className="flex flex-1 flex-col">
@@ -266,7 +270,7 @@ const ContentVariantCard: FC<CardContentVariantProps> = ({
         </div>
       </div>
 
-      <div className="mt-1 flex flex-wrap items-center justify-end max-[550px]:justify-start">
+      <div className="mt-auto flex flex-wrap items-center justify-end pt-4 max-[550px]:justify-start">
         <Button
           variant="outlined"
           endIcon={<ActionIcon className="h-4 w-4" />}

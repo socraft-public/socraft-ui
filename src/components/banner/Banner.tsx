@@ -35,7 +35,7 @@ const Banner: FC<BannerProps> = ({
       className="relative flex-col items-center bg-[#fbbb10] px-5 py-4 text-[#333] md:min-h-[40px] md:h-auto md:flex-row md:py-2.5"
       inset
     >
-      <div className="flex w-full flex-col items-center gap-2 text-center md:flex-1 md:flex-row md:items-center md:justify-center md:gap-4 md:pr-12 md:text-left">
+      <div className="flex w-full flex-col justify-center items-center gap-2 text-center md:flex-1 md:flex-row md:items-center md:justify-center md:gap-4 md:pr-12 md:text-left">
         <BannerTitle className="text-xl font-bold md:w-auto md:flex-none md:whitespace-nowrap md:overflow-hidden md:text-ellipsis">
           {name}
         </BannerTitle>
