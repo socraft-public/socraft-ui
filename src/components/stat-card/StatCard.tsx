@@ -37,20 +37,42 @@ const StatCard: React.FC<StatCardProps> = ({ stat, loading = false }) => {
       return () => clearInterval(timer);
     }
   }, [stat.value, loading]);
+
   if (loading) {
     return (
       <Card
         className={cn(
-          "w-[250px] h-[200px] flex items-center justify-center",
+          "flex flex-col items-center gap-4 p-8 relative overflow-hidden",
           "border border-border bg-background",
         )}
       >
         <Spinner
-          className="w-8 h-8"
+          className="w-12 h-12"
           style={{
             color: "#fbbb10",
           }}
         />
+
+        <h4
+          className={cn(
+            "text-xl font-medium m-0 transition-all duration-300",
+            "text-foreground/80 group-hover:text-foreground",
+          )}
+        >
+          {stat.title}
+        </h4>
+
+        <Button
+          variant="outlined"
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(stat.link.url, "_blank");
+          }}
+          endIcon={<IconExternalLink className="w-4 h-4" />}
+          className="text-sm font-medium"
+        >
+          {stat.link.title}
+        </Button>
       </Card>
     );
   }
@@ -58,7 +80,7 @@ const StatCard: React.FC<StatCardProps> = ({ stat, loading = false }) => {
   return (
     <Card
       className={cn(
-        "w-[250px] flex flex-col items-center gap-4 p-8 relative overflow-hidden",
+        "flex flex-col items-center gap-4 p-8 relative overflow-hidden",
         "border border-border bg-background",
       )}
     >
