@@ -159,12 +159,7 @@ const Footer: FC<FooterProps> = ({
               <div className="space-y-1 text-sm text-muted-foreground">
                 {contactAddress && (
                   <p className="m-0">
-                    <a
-                      href={`mailto:${contactAddress}`}
-                      className="text-[#fbbb10] underline transition-opacity hover:opacity-80"
-                    >
-                      {contactAddress}
-                    </a>
+                    <a>{contactAddress}</a>
                   </p>
                 )}
                 {addressLines.map((line, index) => (
@@ -271,17 +266,14 @@ const Footer: FC<FooterProps> = ({
 
           <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
             {badges && badges.length > 0 && (
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <div className="flex flex-wrap gap-4 md:justify-start">
                 {badges.map((badge, index) => (
                   <div key={index}>{badge}</div>
                 ))}
               </div>
             )}
-            <p className="text-center rounded-full border border-border/40 bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
-              © 2025 socraft
-            </p>
             <div className="flex flex-wrap items-center gap-3 justify-center md:justify-end">
-              <div className="flex flex-col items-center gap-1 text-center rounded-full border border-border/40 bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide md:flex-row md:gap-2 md:text-left">
+              <div className="flex flex-col items-center gap-1 text-center rounded-full border border-border/40 bg-muted/40 px-3 py-1 text-xs font-semibold tracking-wide md:flex-row md:gap-2 md:text-left">
                 {locale === "fr"
                   ? "Développé avec passion par"
                   : "Developed with passion by"}
