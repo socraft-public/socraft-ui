@@ -22,9 +22,10 @@ const Carousel: FC<CarouselProps> = ({
   className,
 }) => {
   const [embla, setEmbla] = React.useState<any>(null);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   React.useEffect(() => {
-    if (!autoplay || !embla || embla.slideNodes().length <= 1) {
+    if (!autoplay || !embla || embla.slideNodes().length <= 1 || isHovered) {
       return;
     }
 
@@ -37,7 +38,7 @@ const Carousel: FC<CarouselProps> = ({
     }, 4000);
 
     return () => window.clearInterval(timer);
-  }, [autoplay, embla, loop]);
+  }, [autoplay, embla, loop, isHovered]);
 
   const elements = useCustomElements
     ? customElements
@@ -55,6 +56,8 @@ const Carousel: FC<CarouselProps> = ({
       className={cn("w-full", className)}
       opts={{ loop, align: "start" }}
       setApi={setEmbla}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <CarouselPrevious />
       <CarouselContent>
