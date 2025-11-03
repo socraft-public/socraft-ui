@@ -13,4 +13,5 @@ export interface CarouselProps {
   loop?: boolean;
   crafters?: Crafter[];
   className?: string;
+  autoplay?: boolean;
 }

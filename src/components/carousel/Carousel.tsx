@@ -13,6 +13,7 @@ import { cn } from "../../lib/utils";
 const Carousel: FC<CarouselProps> = ({
   useCustomElements,
   customElements,
+  autoplay = true,
   shouldOpenTheProfile = true,
   shouldOpenTheProfileInANewTab = true,
   numVisible = 3,
@@ -20,6 +21,24 @@ const Carousel: FC<CarouselProps> = ({
   crafters = [],
   className,
 }) => {
+  const [embla, setEmbla] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    if (!autoplay || !embla || embla.slideNodes().length <= 1) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      if (embla.canScrollNext()) {
+        embla.scrollNext();
+      } else if (!loop) {
+        embla.scrollTo(0);
+      }
+    }, 4000);
+
+    return () => window.clearInterval(timer);
+  }, [autoplay, embla, loop]);
+
   const elements = useCustomElements
     ? customElements
     : crafters.map((crafter, key) => (
@@ -35,6 +54,7 @@ const Carousel: FC<CarouselProps> = ({
     <ShadcnCarousel
       className={cn("w-full", className)}
       opts={{ loop, align: "start" }}
+      setApi={setEmbla}
     >
       <CarouselPrevious />
       <CarouselContent>
