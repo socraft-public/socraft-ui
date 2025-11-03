@@ -108,10 +108,10 @@ CarouselWithImages.args = {
   numVisible: 5,
   customElements: [
     <img key={1} className="w-[200px]" src={icon} alt="Placeholder image" />,
-    <img key={2} className="w-[200px]" src={icon} alt="Placeholder image" />,
-    <img key={3} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={2} className="w-[120px]" src={icon} alt="Placeholder image" />,
+    <img key={3} className="w-[80px]" src={icon} alt="Placeholder image" />,
     <img key={4} className="w-[200px]" src={icon} alt="Placeholder image" />,
-    <img key={5} className="w-[200px]" src={icon} alt="Placeholder image" />,
-    <img key={6} className="w-[200px]" src={icon} alt="Placeholder image" />,
+    <img key={5} className="w-[120px]" src={icon} alt="Placeholder image" />,
+    <img key={6} className="w-[80px]" src={icon} alt="Placeholder image" />,
   ],
 };
