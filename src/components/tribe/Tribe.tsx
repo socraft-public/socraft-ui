@@ -1,5 +1,5 @@
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { Button } from "../button";
 import { Carousel } from "../carousel";
 import { Card } from "../ui/card";

@@ -66,17 +66,17 @@ export interface FooterProps {
    */
   newsletterDescription?: string;
   /**
-   * Newsletter submit handler
-   */
-  onNewsletterSubmit?: (email: string) => void | Promise<void>;
-  /**
-   * Newsletter loading state
-   */
-  onNewsletterSubmitAsync?: (email: string) => void | Promise<void>;
-  /**
-   * Newsletter loading state
+   * Newsletter loading state propagated to the custom renderer.
    */
   newsletterLoading?: boolean;
+  /**
+   * Custom renderer for the newsletter form; receives base state to drive custom UI.
+   */
+  NewsLetterForm?: (params: {
+    locale: "fr" | "en";
+    isLoading: boolean;
+    renderDefaultForm: () => ReactNode;
+  }) => ReactNode;
   /**
    * Additional CSS classes
    */

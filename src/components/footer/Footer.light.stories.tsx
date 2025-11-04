@@ -45,11 +45,6 @@ DefaultFooter.args = {
   ],
   newsletterDescription:
     "Votre adresse mail sera exclusivement utilisée pour recevoir la newsletter de socraft. Nous respectons vos données et vous pourrez vous désinscrire à tout moment.",
-  onNewsletterSubmitAsync: async (email: string) => {
-    console.log("Newsletter subscription:", email);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log("Newsletter subscription completed!");
-  },
 };
 
 WithBadges.args = {
@@ -74,13 +69,4 @@ WithBadges.args = {
   ],
   newsletterDescription:
     "Votre adresse mail sera exclusivement utilisée pour recevoir la newsletter de socraft. Nous respectons vos données et vous pourrez vous désinscrire à tout moment.",
-  onNewsletterSubmitAsync: async (email: string) => {
-    console.log("Newsletter subscription:", email);
-    if (Math.random() > 0.5) {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      throw new Error("Erreur simulée du serveur");
-    }
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log("Newsletter subscription completed!");
-  },
 };
