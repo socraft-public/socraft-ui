@@ -34,7 +34,6 @@ export const Banner = ({
   defaultVisible = true,
   onClose,
   className,
-  inset = false,
   ...props
 }: BannerProps) => {
   const [show, setShow] = useControllableState({
@@ -52,7 +51,6 @@ export const Banner = ({
       <div
         className={cn(
           "flex w-full items-center justify-between gap-2 bg-primary px-4 py-2 text-primary-foreground",
-          inset && "rounded-lg",
           className,
         )}
         {...props}
