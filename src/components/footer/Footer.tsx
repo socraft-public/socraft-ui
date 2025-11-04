@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import { FooterProps } from "./Footer.types";
 import {
   IconBrandInstagram,
@@ -9,8 +9,8 @@ import {
   IconSend,
 } from "@tabler/icons-react";
 import { Button } from "../button";
-import { Input } from "../input";
 import { cn } from "../../lib/utils";
+import { Input } from "../input";
 import { Spinner } from "../ui/spinner";
 import { Separator } from "../ui/separator";
 import logoLight from "../../assets/logo-light.svg";
@@ -30,17 +30,11 @@ const Footer: FC<FooterProps> = ({
   usefulLinks,
   usefulLinksTitle,
   newsletterDescription,
-  onNewsletterSubmit,
-  onNewsletterSubmitAsync,
-  newsletterLoading: externalLoading,
+  newsletterLoading = false,
+  NewsLetterForm,
   ...props
 }) => {
-  const [internalLoading, setInternalLoading] = useState(false);
-  const [message, setMessage] = useState<{
-    text: string;
-    type: "success" | "error";
-  } | null>(null);
-  const isLoading = externalLoading || internalLoading;
+  const isLoading = newsletterLoading;
   const socialsIconSize = 35;
 
   const detectedLang = (() => {
@@ -73,21 +67,41 @@ const Footer: FC<FooterProps> = ({
     },
   } as const;
 
+  const newsletterTitleResolved = i18n[locale].newsletterTitle;
   const newsletterPlaceholderResolved = i18n[locale].newsletterPlaceholder;
   const newsletterButtonTextResolved = i18n[locale].newsletterButtonText;
-  const newsletterSuccessMessageResolved =
-    i18n[locale].newsletterSuccessMessage;
-  const newsletterErrorMessageResolved = i18n[locale].newsletterErrorMessage;
-  const newsletterTitleResolved = i18n[locale].newsletterTitle;
 
-  useEffect(() => {
-    if (message) {
-      const timer = setTimeout(() => {
-        setMessage(null);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [message]);
+  const renderDefaultForm = () => (
+    <form
+      className="mt-5 max-w-md space-y-2"
+      onSubmit={(event) => {
+        event.preventDefault();
+      }}
+    >
+      <Input
+        type="email"
+        name="email"
+        placeholder={newsletterPlaceholderResolved}
+        disabled={isLoading}
+        className="pr-2 md:pr-3"
+        endIcon={
+          <button
+            type="submit"
+            aria-label={newsletterButtonTextResolved}
+            disabled={isLoading}
+            className="flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded-full bg-[#fbbb10] text-[#282828] transition-all duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fbbb10] disabled:opacity-60 disabled:cursor-not-allowed dark:text-[#1f1f1f]"
+          >
+            {isLoading ? (
+              <Spinner className="h-4 w-4" />
+            ) : (
+              <IconSend className="h-4 w-4" />
+            )}
+          </button>
+        }
+      />
+    </form>
+  );
+
   const socialLinks = [
     { href: instagramLink, icon: IconBrandInstagram, label: "Instagram" },
     { href: linkedinLink, icon: IconBrandLinkedin, label: "LinkedIn" },
@@ -192,73 +206,20 @@ const Footer: FC<FooterProps> = ({
               <h3 className="text-lg font-semibold text-left">
                 {newsletterTitleResolved}
               </h3>
-              <span className="text-xs font-medium text-muted-foreground">
-                {newsletterDescription}
-              </span>
-              <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const email = (e.target as HTMLFormElement).email.value;
-
-                  if (onNewsletterSubmitAsync) {
-                    setInternalLoading(true);
-                    try {
-                      await onNewsletterSubmitAsync(email);
-                      (e.target as HTMLFormElement).reset();
-                      setMessage({
-                        text: newsletterSuccessMessageResolved,
-                        type: "success",
-                      });
-                    } catch (error) {
-                      console.error("Newsletter submission error:", error);
-                      setMessage({
-                        text: newsletterErrorMessageResolved,
-                        type: "error",
-                      });
-                    } finally {
-                      setInternalLoading(false);
-                    }
-                  } else {
-                    onNewsletterSubmit?.(email);
-                  }
-                }}
-                className="mt-5 max-w-md"
-              >
-                {message && (
-                  <div
-                    className={cn(
-                      "p-3 rounded-lg text-sm font-medium text-center transition-all duration-200",
-                      message.type === "success"
-                        ? "bg-green-100 text-green-800 border border-green-200"
-                        : "bg-red-100 text-red-800 border border-red-200",
-                    )}
-                  >
-                    {message.text}
-                  </div>
-                )}
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder={newsletterPlaceholderResolved}
-                  required
-                  disabled={isLoading}
-                  className="pr-2 md:pr-3"
-                  endIcon={
-                    <button
-                      type="submit"
-                      aria-label={newsletterButtonTextResolved}
-                      disabled={isLoading}
-                      className="flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded-full bg-[#fbbb10] text-[#282828] transition-all duration-200 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fbbb10] disabled:opacity-60 disabled:cursor-not-allowed dark:text-[#1f1f1f]"
-                    >
-                      {isLoading ? (
-                        <Spinner className="h-4 w-4" />
-                      ) : (
-                        <IconSend className="h-4 w-4" />
-                      )}
-                    </button>
-                  }
-                />
-              </form>
+              {newsletterDescription && (
+                <span className="text-xs font-medium text-muted-foreground block">
+                  {newsletterDescription}
+                </span>
+              )}
+              <div className="mt-5 max-w-md">
+                {NewsLetterForm
+                  ? NewsLetterForm({
+                      locale,
+                      isLoading,
+                      renderDefaultForm,
+                    })
+                  : renderDefaultForm()}
+              </div>
             </div>
           </div>
 
