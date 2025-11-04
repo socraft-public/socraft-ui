@@ -13,3 +13,4 @@ export * from "./reference";
 export * from "./banner";
 export * from "./button";
 export * from "./card";
+export * from "./events-timeline";
