@@ -29,4 +29,8 @@ export interface TribeProps {
    * Determines if clicking the crafter profile opens it in a new tab
    */
   opensTheProfileInANewTab?: boolean;
+  /**
+   * The class name
+   */
+  className?: string;
 }

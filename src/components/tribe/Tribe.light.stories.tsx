@@ -7,6 +7,13 @@ import { Crafter } from "../profile/Profile.types";
 export default {
   title: "socraft-ui/Tribe/Light-mode",
   component: Tribe,
+  decorators: [
+    (Story) => (
+      <div className="w-[600px] mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     backgrounds: {
       default: "light",
@@ -67,26 +74,3 @@ Default.args = {
   showMoreText: "En savoir plus",
   opensTheProfileInANewTab: true,
 };
-
-export const MultipleTribes: StoryFn = () => (
-  <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-    <Tribe
-      id="tribe-dev-1"
-      name="Développement (craft)"
-      description="Avec un nom comme socraft, nous ne pourrions pas faire l'impasse sur le software craftsmanship. Plus qu'un manifeste, il est pour nous une philosophie de vie dont les principes vont bien au-delà du code."
-      image="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg"
-      crafters={mockCrafters}
-      showMoreText="En savoir plus"
-      opensTheProfileInANewTab={true}
-    />
-    <Tribe
-      id="tribe-design-2"
-      name="Design UX/UI"
-      description="Notre équipe de designers se concentre sur la création d'expériences utilisateur exceptionnelles. Nous croyons que le design n'est pas seulement une question d'esthétique, mais aussi de fonctionnalité."
-      image="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg"
-      crafters={mockCrafters}
-      showMoreText="En savoir plus"
-      opensTheProfileInANewTab={true}
-    />
-  </div>
-);
