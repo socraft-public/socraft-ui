@@ -242,7 +242,7 @@ const ContentVariantCard: FC<CardContentVariantProps> = ({
   return (
     <ShadcnCard
       variant={variant}
-      className={cn("flex h-full flex-col", className)}
+      className={cn("flex h-full flex-col gap-0", className)}
       {...props}
     >
       <div className="flex flex-1 flex-col gap-4 md:flex-row md:items-start md:gap-4">
@@ -265,24 +265,22 @@ const ContentVariantCard: FC<CardContentVariantProps> = ({
               </Badge>
             )}
           </div>
-
-          <p className="mt-2 text-lg max-[550px]:text-sm">{pitch}</p>
+          {pitch !== undefined && (
+            <p className="mt-2 text-lg max-[550px]:text-sm">{pitch}</p>
+          )}
         </div>
       </div>
-
-      <div className="mt-auto flex flex-wrap items-center justify-end pt-4 max-[550px]:justify-start">
+      <CardFooter className="justify-end p-0">
         <Button
-          variant="outlined"
           endIcon={<ActionIcon className="h-4 w-4" />}
           onClick={(e) => {
             e.stopPropagation();
             window.open(website, "_blank");
           }}
-          className="flex-1 max-[550px]:w-full"
         >
           Voir plus
         </Button>
-      </div>
+      </CardFooter>
     </ShadcnCard>
   );
 };

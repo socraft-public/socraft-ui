@@ -120,8 +120,6 @@ ContentVariantSingle.args = {
   className: "mx-auto",
   variant: "content",
   name: "socraft",
-  pitch:
-    "A comprehensive platform for managing and showcasing software craftsmanship projects, connecting developers and fostering collaboration in the tech community",
   domain: "IT",
   website: "https://www.socraft.io/",
   holders: [
@@ -140,6 +138,8 @@ ContentVariantSingle.args = {
 
 ContentVariantMultiple.args = {
   ...ContentVariantSingle.args,
+  pitch:
+    "A comprehensive platform for managing and showcasing software craftsmanship projects, connecting developers and fostering collaboration in the tech community",
   holders: [
     ...(ContentVariantSingle.args.holders ?? []),
     {

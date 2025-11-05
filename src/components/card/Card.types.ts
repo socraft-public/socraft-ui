@@ -53,7 +53,7 @@ export interface CardContentVariantProps
   /**
    * A brief pitch or description of the craftwork.
    */
-  pitch: string | ReactNode;
+  pitch?: string | ReactNode;
   /**
    * The website link associated with the craftwork.
    */
