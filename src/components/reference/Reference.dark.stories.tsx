@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { Reference } from "./";
 import { ReferenceProps } from "./Reference.types";
-import logo from "../../assets/logo-light.svg";
+import logo from "../../assets/logo-dark.svg";
 
 export default {
   title: "socraft-ui/Reference/Dark-mode",

@@ -76,10 +76,7 @@ const Carousel: FC<CarouselProps> = ({
           >
             {React.isValidElement(element) && element.type === "img"
               ? React.cloneElement(element, {
-                  className: cn(
-                    element.props.className,
-                    "brightness-0 dark:invert",
-                  ),
+                  className: element.props.className,
                 } as any)
               : element}
           </CarouselItem>

@@ -15,10 +15,10 @@ const Reference: FC<ReferenceProps> = ({
   );
 
   const headClasses =
-    "h-48 w-48 md:h-52 md:w-52 flex items-center justify-center rounded-2xl overflow-hidden bg-[#fbbb1010] dark:bg-default";
+    "h-48 w-48 md:h-52 md:w-52 flex items-center justify-center rounded-2xl overflow-hidden bg-[#efefef]";
 
   const logoClasses =
-    "w-auto h-auto max-w-32 md:max-w-36 transition-transform duration-300 group-hover:scale-110 filter brightness-0 dark:invert";
+    "w-auto h-auto max-w-32 md:max-w-36 transition-transform duration-300 group-hover:scale-110";
   const bodyClasses = "text-center mt-4 space-y-2";
 
   const titleClasses = "text-lg md:text-xl font-medium";

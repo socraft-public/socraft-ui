@@ -259,7 +259,7 @@ const ContentVariantCard: FC<CardContentVariantProps> = ({
             {domain && (
               <Badge
                 variant="outline"
-                className="self-start border max-[550px]:text-xs dark:border-[#fbbb10]/50 border-[#fbbb10]/80"
+                className="self-start border max-[550px]:text-xs"
               >
                 {domain}
               </Badge>
