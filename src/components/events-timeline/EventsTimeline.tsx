@@ -1,20 +1,34 @@
 import React from "react";
 import type { Event } from "./EventsTimeline.types";
 import { differenceFromNow } from "../../utils/difference-from-now";
-import { formatDate } from "../../utils/format-date";
+import { formatDate, SupportedLocale } from "../../utils/format-date";
+
+const resolveLocale = (): SupportedLocale => {
+  if (typeof window === "undefined") {
+    return "fr";
+  }
+
+  return window.location.pathname.startsWith("/en") ? "en" : "fr";
+};
 
 export default function EventsTimeline({ events }: { events: Event[] }) {
+  const [locale, setLocale] = React.useState<SupportedLocale>("fr");
+
+  React.useEffect(() => {
+    setLocale(resolveLocale());
+  }, []);
+
   return (
     <div className="lg:max-w-screen mt-3">
       <div className="relative">
-        {events
+        {[...events]
           .reverse()
           .map(({ summary, description, start, location }, index) => (
             <div key={index} className="group relative">
               <div className="flex items-start">
                 <div className="mt-3 mr-5 flex flex-col gap-2 shrink-0 w-[45px] sm:w-[130px] text-end">
                   <h6 className="text-sm text-[#fbbb10] font-semibold">
-                    {formatDate((start.dateTime || start.date) as any)}
+                    {formatDate(start.dateTime || start.date || "", locale)}
                   </h6>
                   <span className="text-xs sm:text-sm text-muted-foreground">
                     {differenceFromNow(
@@ -23,6 +37,8 @@ export default function EventsTimeline({ events }: { events: Event[] }) {
                         : start.date
                           ? new Date(start.date).getTime()
                           : NaN,
+                      start.date,
+                      locale,
                     )}
                   </span>
                 </div>

@@ -1,16 +1,32 @@
-export const formatDate = (timestamp: number): string => {
-  const date: any = new Date(timestamp);
+export type SupportedLocale = "fr" | "en";
 
-  if (!isNaN(date)) {
-    const year =
-      String(date.getFullYear()).split("")[2] +
-      String(date.getFullYear()).split("")[3];
+const LOCALE_MAP: Record<SupportedLocale, string> = {
+  fr: "fr-CH",
+  en: "en-US",
+};
+
+export const formatDate = (
+  timestamp: number | string,
+  locale: SupportedLocale = "fr",
+): string => {
+  const date = new Date(timestamp);
+
+  if (isNaN(date.getTime())) {
+    return "";
+  }
+
+  try {
+    return new Intl.DateTimeFormat(LOCALE_MAP[locale], {
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+    }).format(date);
+  } catch {
+    const year = String(date.getFullYear()).slice(-2);
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
 
     return `${day}.${month}.${year}`;
-  } else {
-    return "";
   }
 };
 
