@@ -9,8 +9,7 @@ const cardVariants = cva(
     variants: {
       variant: {
         default: "",
-        content:
-          "flex w-full flex-col gap-6 p-6 transition-colors md:w-[600px] md:p-8",
+        content: "flex w-full flex-col gap-6 p-6 transition-colors md:p-8",
       },
     },
     defaultVariants: {
