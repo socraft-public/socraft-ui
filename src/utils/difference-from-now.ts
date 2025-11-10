@@ -16,7 +16,7 @@ export const differenceFromNow = (
   }
 
   const now: Dayjs = dayjs().startOf("day");
-  let differenceInDays = dateObj.diff(now, "days");
+  const differenceInDays = dateObj.diff(now, "days");
 
   if (differenceInDays === 0) {
     return locale === "fr" ? "aujourd'hui" : "today";

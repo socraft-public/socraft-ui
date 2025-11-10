@@ -76,7 +76,7 @@ const Carousel: FC<CarouselProps> = ({
           >
             {React.isValidElement(element) && element.type === "img"
               ? React.cloneElement(element, {
-                  className: element.props.className,
+                  className: cn("mx-auto block", element.props.className),
                 } as any)
               : element}
           </CarouselItem>
