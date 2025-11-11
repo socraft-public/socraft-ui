@@ -32,9 +32,9 @@ const Banner: FC<BannerProps> = ({
     <ShadcnBanner
       defaultVisible={canDisplay}
       onClose={onClose}
-      className="relative flex items-center justify-center bg-[#fbbb10] px-5 py-4 text-[#333] md:min-h-[40px] md:h-auto md:py-2.5"
+      className="relative flex items-center justify-center   bg-[#fbbb10] px-5 py-4 text-[#333] md:min-h-[40px] md:h-auto md:py-2.5"
     >
-      <div className="flex w-full flex-col items-center justify-center gap-3 pr-0 text-center mt-6 md:mt-0 md:w-auto md:flex-row md:flex-nowrap md:items-center md:justify-center md:gap-6 md:pr-16 md:text-center md:mx-auto">
+      <div className="flex w-full flex-col items-center justify-center gap-1 pr-0 text-center md:mt-0 md:w-auto md:flex-row md:flex-nowrap md:items-center md:justify-center md:gap-6 md:pr-16 md:text-center md:mx-auto">
         <BannerTitle className="text-xl font-bold md:flex-none md:whitespace-nowrap">
           {name}
         </BannerTitle>
@@ -51,13 +51,13 @@ const Banner: FC<BannerProps> = ({
             href={link}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 transition-all duration-200 hover:underline"
+            className="inline-flex items-center transition-all duration-200 hover:underline"
           >
             {labelButton} <IconExternalLink size={16} />
           </a>
         </BannerAction>
       </div>
-      <BannerClose className="absolute right-4 top-4 text-[#333] hover:bg-black/10 md:top-1/2 md:-translate-y-1/2" />
+      <BannerClose className="absolute right-0 top-0 z-10 text-[#333] md:right-4 md:top-1/2 md:-translate-y-1/2" />
     </ShadcnBanner>
   );
 };
