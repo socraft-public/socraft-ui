@@ -6,10 +6,6 @@ export interface FooterProps {
    */
   locale?: "fr" | "en";
   /**
-   * The list of cities where the company is located.
-   */
-  cities: string[];
-  /**
    * The address of the company.
    */
   address: string;
@@ -17,10 +13,6 @@ export interface FooterProps {
    * Address mail for contact
    */
   contactAddress: string;
-  /**
-   * The copyright text.
-   */
-  copyright: string;
   /**
    * The link to the terms and conditions.
    */
@@ -61,10 +53,6 @@ export interface FooterProps {
    * Title displayed above useful links section (uses built-in i18n by default; provide to override)
    */
   usefulLinksTitle?: string;
-  /**
-   * Newsletter descirpiton
-   */
-  newsletterDescription?: string;
   /**
    * Newsletter loading state propagated to the custom renderer.
    */

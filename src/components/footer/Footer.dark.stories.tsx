@@ -32,8 +32,7 @@ export const DefaultFooter = Template.bind({});
 export const WithBadges = Template.bind({});
 
 DefaultFooter.args = {
-  cities: ["Lausanne", "Genève", "Paris", "Casablanca"],
-  address: "Avenue du Léman 2, 1005 Lausanne, Suisse",
+  address: "Avenue du Léman 2, 1005 Lausanne, CH",
   contactAddress: "info@socraft.ch",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
@@ -50,13 +49,10 @@ DefaultFooter.args = {
     { title: "Blog", href: "/blog" },
     { title: "CGU", href: "/cgu" },
   ],
-  newsletterDescription:
-    "Votre adresse mail sera exclusivement utilisée pour recevoir la newsletter de socraft. Nous respectons vos données et vous pourrez vous désinscrire à tout moment.",
 };
 
 WithBadges.args = {
-  cities: ["Lausanne", "Genève", "Paris", "Casablanca"],
-  address: "Avenue du Léman 2, 1005 Lausanne, Suisse",
+  address: "Avenue du Léman 2, 1005 Lausanne, CH",
   contactAddress: "info@socraft.ch",
   cguLink: "#",
   cguText: "Conditions générales d'utilisation",
@@ -74,6 +70,4 @@ WithBadges.args = {
     { title: "Blog", href: "/blog" },
     { title: "CGU", href: "/cgu" },
   ],
-  newsletterDescription:
-    "Votre adresse mail sera exclusivement utilisée pour recevoir la newsletter de socraft. Nous respectons vos données et vous pourrez vous désinscrire à tout moment.",
 };

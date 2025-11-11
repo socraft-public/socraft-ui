@@ -7,6 +7,7 @@ import {
   IconBrandYoutube,
   IconBrandGithub,
   IconSend,
+  IconMail,
 } from "@tabler/icons-react";
 import { Button } from "../button";
 import { cn } from "../../lib/utils";
@@ -17,7 +18,6 @@ import logoLight from "../../assets/logo-light.svg";
 import logoDark from "../../assets/logo-dark.svg";
 
 const Footer: FC<FooterProps> = ({
-  cities,
   address,
   contactAddress,
   instagramLink,
@@ -29,7 +29,6 @@ const Footer: FC<FooterProps> = ({
   badges,
   usefulLinks,
   usefulLinksTitle,
-  newsletterDescription,
   newsletterLoading = false,
   NewsLetterForm,
   ...props
@@ -70,6 +69,10 @@ const Footer: FC<FooterProps> = ({
   const newsletterTitleResolved = i18n[locale].newsletterTitle;
   const newsletterPlaceholderResolved = i18n[locale].newsletterPlaceholder;
   const newsletterButtonTextResolved = i18n[locale].newsletterButtonText;
+  const newsletterDescription =
+    locale === "fr"
+      ? "Abonnez-vous à la newsletter de socraft."
+      : "Subscribe to the socraft newsletter.";
 
   const renderDefaultForm = () => (
     <form
@@ -118,6 +121,44 @@ const Footer: FC<FooterProps> = ({
     .split(/[\n,]+/)
     .map((line) => line.trim())
     .filter(Boolean);
+  const formattedAddress =
+    addressLines.length > 0
+      ? addressLines.join(", ")
+      : "Avenue du Léman 2, 1005 Lausanne, CH";
+  const socialLinksContent =
+    socialLinks.length > 0 ? (
+      <div className="w-full md:w-auto flex items-center gap-1 md:gap-2 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap">
+        {socialLinks.map(({ href, icon: Icon, label }) => (
+          <Button
+            key={label}
+            variant="socraft-icon"
+            size="icon"
+            asChild
+            className="shrink-0 p-1"
+            style={{
+              width: `${socialsIconSize}px`,
+              height: `${socialsIconSize}px`,
+            }}
+          >
+            <a
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon
+                style={{
+                  width: `${socialsIconSize * 0.8}px`,
+                  height: `${socialsIconSize * 0.8}px`,
+                }}
+              />
+            </a>
+          </Button>
+        ))}
+      </div>
+    ) : null;
+  const srOnlyContactAddress = contactAddress?.trim();
+  const writeUsLabel = locale === "fr" ? "Nous écrire" : "Write to us";
 
   return (
     <footer
@@ -125,42 +166,28 @@ const Footer: FC<FooterProps> = ({
       {...props}
     >
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-12">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <h2 className="text-xl font-semibold">{cities.join(" • ")}</h2>
-            {socialLinks.length > 0 && (
-              <div className="flex flex-col items-start gap-4 md:gap-5 text-sm text-muted-foreground md:items-end">
-                <div className="w-full md:w-auto flex items-center gap-1 md:gap-2 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap">
-                  {socialLinks.map(({ href, icon: Icon, label }) => (
-                    <Button
-                      key={label}
-                      variant="socraft-icon"
-                      size="icon"
-                      asChild
-                      className="shrink-0 p-1"
-                      style={{
-                        width: `${socialsIconSize}px`,
-                        height: `${socialsIconSize}px`,
-                      }}
-                    >
-                      <a
-                        href={href}
-                        aria-label={label}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon
-                          style={{
-                            width: `${socialsIconSize * 0.8}px`,
-                            height: `${socialsIconSize * 0.8}px`,
-                          }}
-                        />
-                      </a>
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            )}
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3 text-left md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-1">
+              <p className="text-xl font-semibold tracking-wide">socraft sa</p>
+              <p className="text-sm text-muted-foreground">
+                {formattedAddress}
+              </p>
+              <p className="text-xs text-muted-foreground">since 2019</p>
+            </div>
+            <Button
+              variant="yellow"
+              className="text-sm font-semibold w-fit self-start md:self-auto"
+              asChild
+            >
+              <a
+                href="mailto:info@socraft.io"
+                className="flex items-center gap-2"
+              >
+                {writeUsLabel}
+                <IconMail className="h-4 w-4" />
+              </a>
+            </Button>
           </div>
 
           <Separator />
@@ -168,19 +195,19 @@ const Footer: FC<FooterProps> = ({
           <div className={cn("grid gap-10", gridClass)}>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold">
-                {locale === "fr" ? "Nous contacter" : "Contact us"}
+                {locale === "fr" ? "Suivez-nous" : "Follow us"}
               </h3>
-              <div className="space-y-1 text-sm text-muted-foreground">
-                {contactAddress && (
+              <div className="space-y-3 text-sm text-muted-foreground">
+                {socialLinksContent ?? (
                   <p className="m-0">
-                    <a>{contactAddress}</a>
+                    {locale === "fr"
+                      ? "Réseaux sociaux bientôt disponibles."
+                      : "Social links coming soon."}
                   </p>
                 )}
-                {addressLines.map((line, index) => (
-                  <p key={index} className="m-0">
-                    {line}
-                  </p>
-                ))}
+                {srOnlyContactAddress && (
+                  <span className="sr-only">{srOnlyContactAddress}</span>
+                )}
               </div>
             </div>
 
@@ -202,15 +229,13 @@ const Footer: FC<FooterProps> = ({
               </div>
             )}
 
-            <div className="w-full max-w-sm md:justify-self-start">
+            <div className="w-full max-w-sm md:ml-auto md:justify-self-end">
               <h3 className="text-lg font-semibold text-left">
                 {newsletterTitleResolved}
               </h3>
-              {newsletterDescription && (
-                <span className="text-xs font-medium text-muted-foreground block">
-                  {newsletterDescription}
-                </span>
-              )}
+              <p className="mt-2 text-sm text-muted-foreground text-left">
+                {newsletterDescription}
+              </p>
               <div className="mt-5 max-w-md">
                 {NewsLetterForm
                   ? NewsLetterForm({
