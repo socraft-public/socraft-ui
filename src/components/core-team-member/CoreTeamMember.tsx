@@ -8,7 +8,7 @@ const CoreTeamMember: FC<CoreTeamMemberProps> = ({ fullname, role, image }) => {
       <div className="relative">
         <div
           className={cn(
-            "lg:h-32 lg:w-32",
+            "h-30 w-30",
             "relative overflow-hidden rounded-full transition-all duration-200",
           )}
         >
@@ -32,7 +32,6 @@ const CoreTeamMember: FC<CoreTeamMemberProps> = ({ fullname, role, image }) => {
 
       <div className="flex flex-col items-center space-y-1 min-h-[2rem]">
         <h3 className="text-base sm:text-lg font-semibold">{fullname}</h3>
-
         <p className="text-sm">{role}</p>
       </div>
     </div>
