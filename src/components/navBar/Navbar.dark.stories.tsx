@@ -43,14 +43,13 @@ Default.args = {
   activeTabUrl: "/home",
   tabs: [
     { title: "Accueil", url: "/home" },
-    { title: "Craftworks", url: "/about" },
+    { title: "A Propops", url: "#" },
+    { title: "Expertises", url: "#" },
+    { title: "References", url: "#" },
+    { title: "Formations", url: "#" },
+    { title: "Blogs", url: "#" },
   ],
-  buttons: [
-    { title: "References", url: "/contact", appearance: "link" },
-    { title: "Formations", url: "/contact", appearance: "link" },
-    { title: "Blog", url: "/contact", appearance: "link" },
-    { title: "Communauté", url: "/contact", appearance: "yellow" },
-  ],
+  buttons: [{ title: "Communauté", url: "/contact", appearance: "yellow" }],
 };
 
 WithDarkModeToggle.args = {
@@ -72,7 +71,7 @@ WithTwoLevelMenu.args = {
   ...WithLocaleSelector.args,
   tabs: [
     { title: "Accueil", url: "/home" },
-    { title: "Craftworks", url: "/about" },
+    { title: "Craftworks", url: "#" },
     {
       title: "Services",
       url: "",

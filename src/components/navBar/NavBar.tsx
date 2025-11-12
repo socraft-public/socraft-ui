@@ -48,7 +48,7 @@ const NavBar: React.FC<NavBarProps> = ({
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden 2xl:flex items-center">
           <div className="flex items-center">
             {tabs.map((tab, index) => (
               <div key={index} className="relative">
@@ -174,7 +174,7 @@ const NavBar: React.FC<NavBarProps> = ({
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden">
+        <div className="2xl:hidden">
           <Button
             variant="socraft-icon"
             size="icon"
@@ -188,7 +188,7 @@ const NavBar: React.FC<NavBarProps> = ({
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-16 lg:hidden z-50">
+        <div className="fixed inset-0 top-16 2xl:hidden z-50">
           <div
             className="fixed inset-0 bg-black/20 transition-opacity duration-200"
             onClick={() => setIsMenuOpen(false)}
