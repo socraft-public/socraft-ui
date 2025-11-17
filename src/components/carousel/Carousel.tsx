@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { cloneElement, FC, isValidElement, useState } from "react";
 import { CarouselProps } from "./Carousel.types";
 import { Profile } from "../profile";
 import {
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -21,24 +22,29 @@ const Carousel: FC<CarouselProps> = ({
   crafters = [],
   className,
 }) => {
-  const [embla, setEmbla] = React.useState<any>(null);
-  const [isHovered, setIsHovered] = React.useState(false);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [isHovered, setIsHovered] = useState(false);
 
   React.useEffect(() => {
-    if (!autoplay || !embla || embla.slideNodes().length <= 1 || isHovered) {
+    if (
+      !autoplay ||
+      !carouselApi ||
+      carouselApi.slideNodes().length <= 1 ||
+      isHovered
+    ) {
       return;
     }
 
     const timer = window.setInterval(() => {
-      if (embla.canScrollNext()) {
-        embla.scrollNext();
+      if (carouselApi.canScrollNext()) {
+        carouselApi.scrollNext();
       } else if (!loop) {
-        embla.scrollTo(0);
+        carouselApi.scrollTo(0);
       }
-    }, 4000);
+    }, 5000);
 
     return () => window.clearInterval(timer);
-  }, [autoplay, embla, loop, isHovered]);
+  }, [autoplay, carouselApi, loop, isHovered]);
 
   const elements = useCustomElements
     ? customElements
@@ -53,13 +59,12 @@ const Carousel: FC<CarouselProps> = ({
 
   return (
     <ShadcnCarousel
-      className={cn("w-full", className)}
+      className={cn("w-full max-w-full px-12", className)}
       opts={{ loop, align: "start" }}
-      setApi={setEmbla}
+      setApi={setCarouselApi}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <CarouselPrevious />
       <CarouselContent>
         {elements?.map((element, key) => (
           <CarouselItem
@@ -74,14 +79,15 @@ const Carousel: FC<CarouselProps> = ({
             }`}
             key={key}
           >
-            {React.isValidElement(element) && element.type === "img"
-              ? React.cloneElement(element, {
+            {isValidElement(element) && element.type === "img"
+              ? cloneElement(element, {
                   className: cn("mx-auto block", element.props.className),
                 } as any)
               : element}
           </CarouselItem>
         ))}
       </CarouselContent>
+      <CarouselPrevious />
       <CarouselNext />
     </ShadcnCarousel>
   );
