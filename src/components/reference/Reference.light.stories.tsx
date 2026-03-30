@@ -34,7 +34,6 @@ TechCompany.args = {
   logo,
   title: "Tech Solutions",
   category: ["Développement", "Innovation"],
-  darkMode: false,
 };
 
 export const SingleCategory = Template.bind({});
@@ -42,5 +41,4 @@ SingleCategory.args = {
   logo,
   title: "Design Studio",
   category: ["UI/UX Design"],
-  darkMode: false,
 };

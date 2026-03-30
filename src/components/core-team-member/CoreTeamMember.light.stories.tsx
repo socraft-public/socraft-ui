@@ -31,5 +31,4 @@ Default.args = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   fullname: "John Doe",
   role: "Software Engineer",
-  darkMode: false,
 };
