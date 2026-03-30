@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import logoDark from "../../assets/logo-dark.svg";
-import logoLight from "../../assets/logo-light.svg";
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from "./icons";
 import { NavBarProps } from "./NavBar.types";
 import { Button } from "../button";
@@ -16,6 +14,8 @@ const NavBar: React.FC<NavBarProps> = ({
   locale,
   locales = [],
   onLocaleChange,
+  logoSrc,
+  logoDarkSrc,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -39,9 +39,9 @@ const NavBar: React.FC<NavBarProps> = ({
           className="relative cursor-pointer"
           onClick={() => (window.location.href = window.location.origin)}
         >
-          <img src={logoDark} alt="logo" className="h-8 md:h-10 dark:hidden" />
+          <img src={logoSrc} alt="logo" className="h-8 md:h-10 dark:hidden" />
           <img
-            src={logoLight}
+            src={logoDarkSrc}
             alt="logo"
             className="h-8 md:h-10 hidden dark:block"
           />

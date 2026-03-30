@@ -3,6 +3,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import NavBar from "./NavBar";
 import { NavBarProps } from "./NavBar.types";
 import "../../styles/globals.css";
+import logo from "../../assets/logo-light.svg";
 
 export default {
   title: "socraft-ui/NavBar/Dark-mode",
@@ -30,7 +31,7 @@ export default {
 
 const Template: StoryFn<NavBarProps> = (args) => (
   <div className="min-h-screen">
-    <NavBar {...args} />
+    <NavBar {...args} logoDarkSrc={logo} />
   </div>
 );
 

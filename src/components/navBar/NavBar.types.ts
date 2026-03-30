@@ -55,4 +55,13 @@ export interface NavBarProps {
    * The list of available locales
    */
   locales?: string[];
+  /**
+   * Logo light variant
+   */
+  logoSrc?: string;
+
+  /**
+   * Logo dark variant
+   */
+  logoDarkSrc?: string;
 }
