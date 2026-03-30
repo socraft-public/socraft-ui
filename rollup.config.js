@@ -5,6 +5,7 @@ import { dts } from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import svgr from "@svgr/rollup";
+import postcss from "rollup-plugin-postcss";
 
 const packageJson = require("./package.json");
 
@@ -36,6 +37,10 @@ export default [
       svgr(),
       resolve({
         exportConditions: ["node"],
+      }),
+      postcss({
+        extract: "dist/constants.css",
+        include: ["src/constants.css"],
       }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
