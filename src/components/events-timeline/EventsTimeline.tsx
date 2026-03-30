@@ -11,7 +11,13 @@ const resolveLocale = (): SupportedLocale => {
   return window.location.pathname.startsWith("/en") ? "en" : "fr";
 };
 
-export default function EventsTimeline({ events }: { events: Event[] }) {
+export default function EventsTimeline({
+  events,
+  expanded,
+}: {
+  events: Event[];
+  expanded?: boolean;
+}) {
   const [locale, setLocale] = React.useState<SupportedLocale>("fr");
 
   React.useEffect(() => {
@@ -47,17 +53,21 @@ export default function EventsTimeline({ events }: { events: Event[] }) {
                   <h3 className="text-lg sm:text-xl font-semibold mb-0 dark:text-white">
                     {summary}
                   </h3>
-                  {location && (
-                    <h4 className="text-sm font-medium text-foreground/40">
-                      {location}
-                    </h4>
+                  {expanded && (
+                    <>
+                      {location && (
+                        <h4 className="text-sm font-medium text-foreground/40">
+                          {location}
+                        </h4>
+                      )}
+                      <p
+                        className="text-sm sm:text-base text-muted-foreground"
+                        dangerouslySetInnerHTML={{
+                          __html: description ?? "Bientôt plus d'infos...",
+                        }}
+                      />
+                    </>
                   )}
-                  <p
-                    className="text-sm sm:text-base text-muted-foreground"
-                    dangerouslySetInnerHTML={{
-                      __html: description ?? "Bientôt plus d'infos...",
-                    }}
-                  />
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 export interface EventsTimelineProps {
   events: Event[];
+  expanded?: boolean;
 }
 
 export interface EventCreator {
