@@ -14,3 +14,22 @@ export * from "./banner";
 export * from "./button";
 export * from "./card";
 export * from "./events-timeline";
+
+// shadcn
+
+export * from "./ui/avatar";
+export * from "./ui/badge";
+export * from "./ui/dialog";
+export * from "./ui/navigation-menu";
+export * from "./ui/select";
+export * from "./ui/separator";
+export * from "./ui/sheet";
+export * from "./ui/spinner";
+export * from "./ui/toggle";
+export {
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "./ui/card";
