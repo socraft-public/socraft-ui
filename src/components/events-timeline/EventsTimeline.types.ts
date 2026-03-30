@@ -1,6 +1,9 @@
 export interface EventsTimelineProps {
   events: Event[];
   expanded?: boolean;
+  loadMoreFn?: () => void | Promise<void>;
+  loadMoreDisabled?: boolean;
+  loadMoreLoading?: boolean;
 }
 
 export interface EventCreator {

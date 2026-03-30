@@ -19,6 +19,7 @@ const Template: StoryFn<EventsTimelineProps> = (args) => (
 
 export const Default = Template.bind({});
 export const Expanded = Template.bind({});
+export const WithLoadMore = Template.bind({});
 
 Default.args = {
   events: [
@@ -653,4 +654,9 @@ Expanded.args = {
       eventType: "default",
     },
   ] as any[],
+};
+
+WithLoadMore.args = {
+  ...Expanded.args,
+  loadMoreFn: () => console.log("hello"),
 };

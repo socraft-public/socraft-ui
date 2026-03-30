@@ -1,7 +1,9 @@
-import React from "react";
-import type { Event } from "./EventsTimeline.types";
+import React, { FC, useEffect, useState } from "react";
 import { differenceFromNow } from "../../utils/difference-from-now";
 import { formatDate, SupportedLocale } from "../../utils/format-date";
+import type { EventsTimelineProps } from "./EventsTimeline.types";
+import { Button } from "../ui/button";
+import { Plus } from "lucide-react";
 
 const resolveLocale = (): SupportedLocale => {
   if (typeof window === "undefined") {
@@ -11,21 +13,21 @@ const resolveLocale = (): SupportedLocale => {
   return window.location.pathname.startsWith("/en") ? "en" : "fr";
 };
 
-export default function EventsTimeline({
+const EventsTimeline: FC<EventsTimelineProps> = ({
   events,
   expanded,
-}: {
-  events: Event[];
-  expanded?: boolean;
-}) {
-  const [locale, setLocale] = React.useState<SupportedLocale>("fr");
+  loadMoreFn,
+  loadMoreDisabled,
+  loadMoreLoading,
+}) => {
+  const [locale, setLocale] = useState<SupportedLocale>("fr");
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLocale(resolveLocale());
   }, []);
 
   return (
-    <div className="lg:max-w-screen mt-3">
+    <div className="lg:max-w-screen mt-3 flex flex-col items-center gap-5">
       <div className="relative">
         {[...events].map(({ summary, description, start, location }, index) => (
           <div key={index} className="group relative">
@@ -71,6 +73,13 @@ export default function EventsTimeline({
           </div>
         ))}
       </div>
+      {loadMoreFn !== undefined && !loadMoreDisabled && (
+        <Button variant="ghost" onClick={loadMoreFn} loading={loadMoreLoading}>
+          Voir plus <Plus />
+        </Button>
+      )}
     </div>
   );
-}
+};
+
+export default EventsTimeline;
