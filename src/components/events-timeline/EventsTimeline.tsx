@@ -25,7 +25,7 @@ const EventsTimeline: FC<EventsTimelineProps> = ({
   }, []);
 
   return (
-    <div className="lg:max-w-screen w-full mt-3 flex flex-col items-center gap-5">
+    <div className="my-4">
       <div className="relative">
         {[...events].map(
           (
@@ -33,8 +33,8 @@ const EventsTimeline: FC<EventsTimelineProps> = ({
             index,
           ) => (
             <div key={index} className="group relative">
-              <div className="flex items-start">
-                <div className="mt-3 mr-5 flex flex-col gap-2 shrink-0 w-[45px] sm:w-[130px] text-end">
+              <div className="flex items-baseline">
+                <div className="mr-5 flex flex-col gap-2 shrink-0 w-[45px] sm:w-[130px] text-end">
                   <h6 className="text-sm text-[#fbbb10] font-semibold">
                     {formatDate(start.dateTime || start.date, locale)}
                   </h6>
@@ -46,7 +46,7 @@ const EventsTimeline: FC<EventsTimelineProps> = ({
                   </span>
                 </div>
                 <div className="relative pb-10 border-l-2 dark:border-l-white/20 group-last:pb-35 pl-6 sm:pl-8 space-y-2 flex flex-col items-start gap-2">
-                  <div className="absolute h-3 w-3 -translate-x-1/2 -left-px top-4 rounded-full border-2 border-[#fbbb10] bg-background" />
+                  <div className="absolute h-3 w-3 -translate-x-1/2 -left-px top-2 rounded-full border-2 border-[#fbbb10] bg-background" />
                   <h3 className="text-lg sm:text-xl font-semibold mb-0 dark:text-white">
                     {summary}
                   </h3>
@@ -85,14 +85,16 @@ const EventsTimeline: FC<EventsTimelineProps> = ({
         )}
       </div>
       {loadMoreFn !== undefined && !loadMoreDisabled && (
-        <Button
-          variant="ghost"
-          onClick={loadMoreFn}
-          loading={loadMoreLoading}
-          className="cursor-pointer"
-        >
-          Voir plus <Plus />
-        </Button>
+        <div className="flex pl-[15px] sm:pl-[calc(50px+3rem)]">
+          <Button
+            variant="link"
+            onClick={loadMoreFn}
+            loading={loadMoreLoading}
+            className="cursor-pointer"
+          >
+            Voir plus <Plus />
+          </Button>
+        </div>
       )}
     </div>
   );
