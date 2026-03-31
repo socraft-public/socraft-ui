@@ -22,6 +22,10 @@ export const differenceFromNow = (
     return locale === "fr" ? "aujourd'hui" : "today";
   }
 
+  if (differenceInDays === 1) {
+    return locale === "fr" ? "demain" : "tomorrow";
+  }
+
   const isPast = differenceInDays < 0;
   const absoluteDifference = Math.abs(differenceInDays);
 
