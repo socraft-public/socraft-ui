@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { differenceFromNow } from "../../utils/difference-from-now";
 import { formatDate, SupportedLocale } from "../../utils/format-date";
+import { formatTime } from "../../utils/format-time";
 import type { EventsTimelineProps } from "./EventsTimeline.types";
 import { Button } from "../ui/button";
 import { Plus, Video } from "lucide-react";
@@ -38,6 +39,11 @@ const EventsTimeline: FC<EventsTimelineProps> = ({
                   <h6 className="text-sm text-[#fbbb10] font-semibold">
                     {formatDate(start.dateTime || start.date, locale)}
                   </h6>
+                  {start.dateTime && (
+                    <span className="text-xs text-muted-foreground">
+                      {formatTime(start.dateTime, locale)}
+                    </span>
+                  )}
                   <span className="text-xs sm:text-sm text-muted-foreground">
                     {differenceFromNow(
                       new Date(start.dateTime || start.date).getTime(),
